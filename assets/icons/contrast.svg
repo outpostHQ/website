@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>slash-outline</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="slash-outline" fill="currentColor" fill-rule="nonzero">
+            <rect id="Rectangle" opacity="0" x="3" y="3" width="24" height="24"></rect>
+            <path d="M15,5 C9.4771525,5 5,9.4771525 5,15 C5,20.5228475 9.4771525,25 15,25 C20.5228475,25 25,20.5228475 25,15 C25,12.3478351 23.9464316,9.80429597 22.0710678,7.92893219 C20.195704,6.0535684 17.6521649,5 15,5 Z M20.6612548,20.6612548 L9.3650501,9.3650501 C11.160372,7.56972822 13.223345,6.99779061 15,6.99998104 C19.418278,6.99998104 23.0000457,10.581722 23.0000457,15 C23.0022094,16.776655 22.4536437,18.8688659 20.6612548,20.6612548 Z" id="Shape" transform="translate(15.000000, 15.000000) rotate(45.000000) translate(-15.000000, -15.000000) "></path>
+        </g>
+    </g>
+</svg>
