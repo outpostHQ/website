@@ -5,7 +5,12 @@
     height="min 100vh"
     box="n"
   >
-    <nu-theme id="main-theme" hue="272" saturation="60"></nu-theme>
+    <nu-theme
+      id="main-theme"
+      :hue="Theme.hue"
+      :saturation="Theme.saturation"
+      :pastel="Theme.pastel ? '' : null"
+    />
     <nu-props
       max-content-width="100rem - (--content-padding * 2)"
       grid-gap="3x"
@@ -21,7 +26,8 @@
 
 <script>
 import Vue from 'vue';
-import ContrastIcon from '../../assets/icons/contrast.svg';
+import ContrastIcon from '@/assets/icons/contrast.svg';
+import Theme from '@/services/theme';
 
 Vue.config.ignoredElements = [/^nu-/];
 
@@ -51,6 +57,12 @@ function initNude() {
   Nude.units.define('cp', 'var(--nu-content-padding)');
   Nude.units.define('gp', 'var(--nu-grid-gap)');
 
+  Nude.assign('nu-list', {
+    styles: {
+      position: 'inside',
+    },
+  });
+
   Nude.assign('nu-root', {
     styles: {
       font: 'Quicksand',
@@ -72,8 +84,8 @@ function initNude() {
   Nude.assign('nu-code', {
     styles: {
       font: 'Roboto Mono',
-      '--mrk-color': 'hue(272 70 60) :special[hue(272 0 0 special)]',
-      '--mrk-bg-color': 'hue(272 50 3) :special[hue(272 50 50 special)]',
+      '--mrk-color': '#white',
+      '--mrk-bg-color': '#special-bg',
     },
   });
 
@@ -101,5 +113,31 @@ if (process.client) {
 
 export default {
   name: 'Root',
+  data() {
+    return {
+      Theme,
+    };
+  },
+  mounted() {
+    const { Nude } = window;
+    const { routing } = Nude;
+
+    routing.setRouter((url, openNewTab) => {
+      // skip outside links and links that open in new tabs
+      if (
+        openNewTab ||
+        url.startsWith('https://') ||
+        url.includes('//') ||
+        url.startsWith('mailto:') ||
+        url.includes('/api/')
+      ) {
+        return true;
+      }
+
+      this.$router.push(url); // handle routing by yourself
+
+      return false;
+    });
+  },
 };
 </script>

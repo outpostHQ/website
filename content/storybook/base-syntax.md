@@ -1,6 +1,6 @@
 ---
 title: Base syntax
-description: some
+description: An in-depth look at the syntax of the language
 ---
 
 **Numl** is based on the so-called **Atomic approach**. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows ==any value== you provide. You can even use custom units like ==x== (default gap) for short.
@@ -42,7 +42,7 @@ Values from the right are ==Custom Units==. It's built-in units that are used in
 
 ## Customize styles
 
-It seems that our button is not enough internal space. We can add it by increasing a horizonal padding.
+It seems that our button is not enough internal space. We can add it by increasing a horizontal padding.
 
 Also, it would be nice to have a ==pointer== cursor on the button:
 
@@ -61,7 +61,7 @@ Well, now it looks great, but it isn't interactive. :(
 
 ## Make it active
 
-To be able to click on it we must inject ==active== behavior. To do so, we add an attribute whose name consists of the name of the behavior and suffix `use-`. It's not what you will do often using **Numl**, but it's a great demonstration of the **Behavior System**.
+To be able to click on it we must inject ==active== behavior. To do so, we add an attribute whose name consists of the name of the behavior and the suffix `use-`. It's not what you will do often using **Numl**, but it's a great demonstration of the **Behavior System**.
 
 ```html
 <split/>
@@ -103,7 +103,7 @@ We used a definition `inset="n :active[y]"` that means:
 
 For the attribute `inset`: `"y"` and `"n"` are shorthands that indicate whether or not to apply the inset effect.
 
-Also, we forgot to add **hover** state and styles for it. Let's inject ==hover== behavior that controls **hover** state. To visualize it we will use `mark` attribute which highlights the element.
+Also, we forgot to add **hover** state and styles for it. Let's inject ==hover== behavior that controls **hover** state. To visualize it we will use the `mark` attribute which highlights the element.
 
 ```html
 <split/>
@@ -147,11 +147,11 @@ Let's fix it by injecting a behavior called **focusable**. Also, we can add the 
 </nu-el>
 ```
 
-Well done! Now we can select our button using keyboard! Try to click on button and then press ==␣ Space== to click the button again with keyboard.
+Well done! Now we can select our button using the keyboard! Try to click on the button and then press ==␣ Space== to click the button again with the keyboard.
 
-We use `outline` attribute with similar shorthand as we used `mark` attribute before. So **outline** style will be applied only if the element is in ==focus== state.
+We use the `outline` attribute with similar shorthand as we used the `mark` attribute before. So **outline** style will be applied only if the element is in ==focus== state.
 
-By default, using an `outline="focus"` style means we need _polite focus_ for outline. The **focus** effect will be visible while **using keyboard only**.
+By default, using an `outline="focus"` style means we need _polite focus_ for an outline. The **focus** effect will be visible while **using the keyboard only**.
 
 ## Add some motion
 
@@ -228,7 +228,7 @@ Our button is ready, but what if we need to add more buttons to our application.
 
 ## Use built-ins instead!
 
-In real application we suggest you use a built-in [nu-btn](../../reference/elements/nu-btn.md) element as it has all needed attributes by default and includes few more perks for accessibility.
+In the real application we suggest you use a built-in [nu-btn](../../reference/elements/nu-btn.md) element as it has all needed attributes by default and includes few more perks for accessibility.
 
 ```html
 <split/>
@@ -237,7 +237,7 @@ In real application we suggest you use a built-in [nu-btn](../../reference/eleme
 
 Pretty easy, isn't it? And **Numl** has dozens of elements with different defaults for various scenarios.
 
-If you want to change a look of default button you can use style attributes as we did it with **nu-el** element above.
+If you want to change a look of the default button you can use style attributes as we did it with the **nu-el** element above.
 
 You can always create a new custom element with different defaults using **JavaScript API**.
 
@@ -257,6 +257,6 @@ You can learn more about specific styling attribute by looking at the **Referenc
 * [mark](../../reference/attributes/mark.md)
 * [inset](../../reference/attributes/inset.md)
 
-Each page will give you detailed description of attribute, syntax overview, examples and links, where you can find more examples.
+Each page will give you a detailed description of an attribute, syntax overview, examples, and links, where you can find more examples.
 
 You can also open pages of elements like [nu-btn](../../reference/elements/nu-btn.md) and [nu-attrs](../../reference/elements/nu-attrs.md) to learn more about their default values, behaviors, and check out examples of their usage.

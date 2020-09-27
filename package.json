@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "npm run build-preview && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "npm run build-preview && nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "deploy": "rm -rf .cache && npm run generate && mv dist/index.html dist/landing.html && rsync -ruv dist/* cloud:/usr/share/nginx/numl.design/"
+    "deploy": "rm -rf .cache && npm run generate && mv dist/index.html dist/landing.html && rsync -ruv dist/* cloud:/usr/share/nginx/numl.design/",
+    "build-preview": "parcel build --target browser --out-dir static/preview/ --out-file index.html --public-url . static/preview.html"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
@@ -39,8 +40,10 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "lockr": "^0.8.5",
     "markdown-toc": "^1.2.0",
     "numl": "^1.0.0-beta.2",
+    "parcel": "^1.12.4",
     "prettier": "^2.0.5",
     "rehype-parse": "^7.0.1",
     "remarkable": "^2.0.1",

@@ -6,12 +6,13 @@
       main-width="--content-width - 2gp - (2 * --sidebar-width)"
       grid-gap="8x||4x"
       transition="120ms"
+      topbar-offset="8.75x|||6.75x"
     />
     <nu-attrs for="list" position="inside" />
 
     <nu-block
       border="bottom"
-      padding="1x 0"
+      padding="1.5x 0|||.5x 0"
       place="fixed top"
       width="100vw"
       z="above"
@@ -35,7 +36,7 @@
               Numl<nu-btn padding="1x right" clear :value="section">
                 <nu-el>.<nu-value list>Storybook</nu-value></nu-el>
                 <nu-dropdownicon />
-                <nu-popuplistbox size="md" border="0" gap="0" place="top -1x">
+                <nu-popuplistbox size="md" gap="0" place="top -1x">
                   <nu-option value="storybook">Storybook</nu-option>
                   <nu-option value="handbook">Handbook</nu-option>
                   <nu-option value="reference">Reference</nu-option>
@@ -46,49 +47,63 @@
         </nu-block>
 
         <nu-block grow="1" show="y|||n">
-          <nu-inputgroup radius fill="^root #subtle :dark[#input]" border="0">
-            <nu-icon name="search" opacity=".5" />
-            <nu-search
-              grow="1"
-              fill="#clear"
-              placeholder="Search (Press '/' to focus)"
-            />
-          </nu-inputgroup>
+          <SearchBar :section="section" hotkey />
         </nu-block>
 
         <nu-pane
           content="space-between"
           width="--sidebar-width|||auto"
           size="lg"
+          gap="1x"
         >
           <nu-block size="lg||sm">v1.0.0-beta.2</nu-block>
 
-          <nu-pane show="y|||n">
-            <nu-attrs for="btn" color="text :hover.focus[special]" />
-            <nu-btn to="!https://github.com/tenphi/numl" padding clear>
+          <nu-pane gap="0">
+            <nu-attrs for="btn" color="text :hover[special]" />
+            <nu-btn
+              toggle
+              padding
+              clear
+              use-hotkey="s"
+              :value="showSettings"
+              @tap="toggleSettings"
+            >
+              <nu-icon name="color-palette-outline" />
+            </nu-btn>
+            <nu-btn
+              show="y|||n"
+              to="!https://github.com/tenphi/numl"
+              padding
+              clear
+              use-hotkey="g"
+            >
               <nu-icon name="github-outline" />
             </nu-btn>
-            <nu-btn to="!https://twitter.com/numldesign" padding clear>
-              <nu-icon name="twitter-outline" />
+            <!--            <nu-btn-->
+            <!--              to="!https://twitter.com/numldesign"-->
+            <!--              padding-->
+            <!--              clear-->
+            <!--              use-hotkey="Control+t"-->
+            <!--            >-->
+            <!--              <nu-icon name="twitter-outline" />-->
+            <!--            </nu-btn>-->
+            <nu-btn
+              toggle
+              inset="n"
+              show="n|||y"
+              clear
+              padding
+              color="text :hover[special]"
+              @input="toggleNav"
+            >
+              <nu-icon name="^ menu-outline :pressed[close]" />
             </nu-btn>
           </nu-pane>
-
-          <nu-btn
-            toggle
-            inset="n"
-            show="n|||y"
-            clear
-            padding
-            color="text :hover.focus[special]"
-            @input="toggleNav"
-          >
-            <nu-icon name="^ menu-outline :pressed[close]" />
-          </nu-btn>
         </nu-pane>
       </nu-pane>
     </nu-block>
 
-    <nu-spacer height="7.5x" />
+    <nu-spacer height="--topbar-offset" />
 
     <nu-grid
       space="around"
@@ -99,27 +114,46 @@
     >
       <nu-block
         fill="#page-bg"
-        place="static|||fixed top 7.75x"
+        place="static|||fixed top --topbar-offset"
         width="auto|||100%"
         height="auto|||stretch"
         z="no|||front"
         :show="showNav ? 'y' : 'y|||n'"
       >
+        <nu-block
+          show="n|||y"
+          space="around"
+          width="--content-width"
+          padding="2x 0"
+        >
+          <SearchBar :section="section" />
+        </nu-block>
         <nu-nav
           label="Main"
           display="flex"
           flow="column"
           items="stretch"
           gap="0"
-          place="sticky top 7.75x"
+          place="sticky top --topbar-offset"
           overflow="hidden auto"
-          height="max (100vh - 7.75x)"
-          padding="4x 0|||4x 1cp"
+          height="max (100vh - --topbar-offset)"
+          padding="4x 0|||0x 1cp 4x"
         >
+          <nu-h2
+            show="n|||y"
+            size="sm"
+            text="up b"
+            color="#text.60"
+            padding="0 0 1x 1x"
+          >
+            Pages
+          </nu-h2>
           <nu-btn
             v-for="(page, i) in pages"
             :key="i"
-            :to="`/${section}/${page.slug}`"
+            :to="`/${section}${
+              page.slug !== 'introduction' ? `/${page.slug}` : ''
+            }`"
             padding=".5x 1x"
             color="text :current.hover.focus[special]"
             fill="#clear"
@@ -127,6 +161,7 @@
             inset="no"
             border="0"
             content="start"
+            use-current
           >
             {{ page.title }}
           </nu-btn>
@@ -134,7 +169,7 @@
       </nu-block>
 
       <nu-flex gap="1gp" flow="row|||column-reverse">
-        <nu-block padding="4x 0" grow="1">
+        <nu-block padding="4x 0 12x" grow="1">
           <slot></slot>
         </nu-block>
 
@@ -144,9 +179,9 @@
             flow="column"
             items="stretch"
             gap="0"
-            place="sticky top 7.75x"
+            place="sticky top --topbar-offset"
             overflow="hidden auto"
-            height="max (100vh - 7.75x)"
+            height="max (100vh - --topbar-offset)"
             padding="3x 0|||4x 0 0"
             move="-1x 0"
           >
@@ -169,6 +204,7 @@
               transition="all"
               fill="#clear"
               z="above"
+              use-current
               :size="navSizes[heading.lvl]"
               :opacity="`${heading.lvl > 2 ? 0.8 : 1} :current[1]`"
             >
@@ -179,6 +215,29 @@
         </nu-block>
       </nu-flex>
     </nu-grid>
+
+    <nu-region
+      label="Settings"
+      display="flex"
+      flow="column"
+      items="stretch"
+      gap="1x"
+      place="fixed top right --topbar-offset 0"
+      overflow="hidden auto"
+      height="100vh - --topbar-offset"
+      width="initial 40x 100vw"
+      radius="0"
+      shadow
+      fill="^root #subtle :dark[#bg]"
+      padding="2x 3x"
+      z="front"
+      move=":hidden[100% 0]"
+      transition="move, opacity"
+      interactive="yes :hidden[no]"
+      :hidden="!showSettings"
+    >
+      <Settings />
+    </nu-region>
 
     <nu-block border="top" padding="2x 0">
       <nu-block space="around" width="--content-width">
@@ -225,9 +284,12 @@
 
 <script>
 import WindowService from '@/services/window';
+import SearchBar from '@/components/global/SearchBar';
+import Theme from '@/services/theme';
 
 export default {
   name: 'MarkdownPage',
+  components: { SearchBar },
   props: {
     section: String,
     pages: Array,
@@ -235,7 +297,6 @@ export default {
   },
   data() {
     return {
-      window: WindowService,
       navSizes: {
         1: 'lg',
         2: 'md',
@@ -245,6 +306,8 @@ export default {
         6: 'xs',
       },
       showNav: false,
+      showSettings: false,
+      Theme,
     };
   },
   mounted() {
@@ -252,7 +315,7 @@ export default {
 
     if (hash) {
       setTimeout(() => {
-        this.window.scrollIntoView(this.nuIdSelector(hash), true);
+        WindowService.scrollIntoView(this.nuIdSelector(hash), true);
       }, 100);
     }
   },
@@ -263,6 +326,9 @@ export default {
     toggleNav() {
       this.showNav = !this.showNav;
     },
+    toggleSettings() {
+      this.showSettings = !this.showSettings;
+    },
   },
 };
 </script>
@@ -270,5 +336,12 @@ export default {
 <style>
 .nuxt-content > *:not(:last-child) {
   margin-bottom: calc(var(--nu-gap) * 2);
+}
+.nuxt-content-container > textarea {
+  color: var(--nu-text-color);
+  background-color: var(--nu-bg-color);
+  padding: var(--nu-gap);
+  border: var(--nu-border-width) solid var(--nu-border-color);
+  border-radius: var(--nu-border-radius);
 }
 </style>

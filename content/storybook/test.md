@@ -1,6 +1,6 @@
 ---
 title: Test page
-description: Description
+description: Test description
 ---
 
 Test content.

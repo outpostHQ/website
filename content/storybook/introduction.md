@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Description
+description: A smooth dive into the fundamentals and syntax
 ---
 
 Nice to see you here! Let's learn more about **Numl**, look at the examples and try it by ourselves!
