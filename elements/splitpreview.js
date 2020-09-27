@@ -52,8 +52,8 @@ if (typeof window !== 'undefined') {
           this.nuPreview = this.nuContent.replace(/#\[\[|!\[\[|]]#|]]!/g, '');
 
           // <nu-icon name="eye-outline" place="center-top left 2x" radius="round" padding=".5x 1x" size="xs" border fill="#bg"></nu-icon>
-          container.innerHTML = `<nu-grid
-  radius shadow fill="#bg"
+          container.innerHTML = `<nu-grid id="split-preview"
+  radius shadow fill="#bg" opacity="0" transition="opacity"
   columns="1pr 1pr||||1pr" gap="1bw" items="stretch" content="stretch" box="y" fill="#special-bg">
   <nu-flow place="relative" gap box="y" fill="#bg" radius="1x 0 0 1x">
     <nu-code padding="2x" overflow="auto" grow="1" height="max 49.5x||||max 30x"><textarea>${this.nuContent}</textarea></nu-code>
@@ -63,7 +63,7 @@ if (typeof window !== 'undefined') {
       ${this.nuPreview}
     </nu-block>
     <nu-pane gap place="right center-bottom 2x">
-      <nu-attrs for="btn" radius="round" padding shadow fill="bg"></nu-attrs>
+      <nu-attrs for="btn" radius="round" padding shadow="yes :hover[#shadow.60]" fill="bg"></nu-attrs>
       <nu-btn clear>
         <nu-icon name="copy-outline"></nu-icon>
       </nu-btn>
@@ -79,6 +79,12 @@ if (typeof window !== 'undefined') {
     </nu-pane>
   </nu-flow>
 </nu-grid><nu-spacer height="2x"></nu-spacer>`;
+
+          setTimeout(() => {
+            container
+              .querySelector('[nu-id="split-preview"]')
+              .removeAttribute('opacity');
+          }, 100);
         });
       }
 
