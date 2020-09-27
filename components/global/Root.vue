@@ -28,6 +28,7 @@
 import Vue from 'vue';
 import ContrastIcon from '@/assets/icons/contrast.svg';
 import Theme from '@/services/theme';
+import '@/elements/splitpreview';
 
 Vue.config.ignoredElements = [/^nu-/];
 

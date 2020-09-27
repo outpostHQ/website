@@ -32,6 +32,12 @@ export default async function Markdown(fileContent) {
   md.use(linkifyPlugin);
 
   // Compile markdown from file content to JSON
+  fileContent = fileContent
+    .replace(/```html\n<Preview\/>\n/gi, '```nu-preview\n')
+    .replace(/```html\n<Split\/>\n/gi, '```nu-splitpreview\n')
+    .replace(/```html\n<Repl\/>\n/gi, '```nu-repl\n')
+    .replace(/\.md\)/g, ')');
+
   const content = md.render(fileContent);
   const body = {
     type: 'root',

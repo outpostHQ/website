@@ -2,6 +2,7 @@
   <nu-flow fill="#page-bg">
     <nu-props
       page-bg-color="^root #bg :dark[#subtle]"
+      second-bg-color="^root #subtle :dark[#bg]"
       sidebar-width="32x||26x"
       main-width="--content-width - 2gp - (2 * --sidebar-width)"
       grid-gap="8x||4x"
@@ -25,7 +26,7 @@
         content="space-between"
       >
         <nu-block id="logo">
-          <nu-pane text="nowrap" width="--sidebar-width">
+          <nu-pane text="nowrap" width="--sidebar-width" gap="1x">
             <nu-svg
               src="/images/nude-logo-small.svg"
               height="4x"
@@ -56,7 +57,9 @@
           size="lg"
           gap="1x"
         >
-          <nu-block size="lg||sm">v1.0.0-beta.2</nu-block>
+          <nu-block size="lg||sm" show="y|||n">
+            {{ version }}
+          </nu-block>
 
           <nu-pane gap="0">
             <nu-attrs for="btn" color="text :hover[special]" />
@@ -228,7 +231,7 @@
       width="initial 40x 100vw"
       radius="0"
       shadow
-      fill="^root #subtle :dark[#bg]"
+      fill="#second-bg"
       padding="2x 3x"
       z="front"
       move=":hidden[100% 0]"
@@ -308,6 +311,7 @@ export default {
       showNav: false,
       showSettings: false,
       Theme,
+      version: '',
     };
   },
   mounted() {
@@ -318,6 +322,8 @@ export default {
         WindowService.scrollIntoView(this.nuIdSelector(hash), true);
       }, 100);
     }
+
+    this.version = window.Nude.version;
   },
   methods: {
     nuIdSelector(id) {
