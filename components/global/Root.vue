@@ -9,9 +9,24 @@
       id="main-theme"
       :hue="Theme.hue"
       :saturation="Theme.saturation"
-      :pastel="Theme.pastel ? '' : null"
+      :pastel="Theme.pastel"
+    />
+    <nu-theme
+      name="secondary"
+      :hue="Theme.subtleHue"
+      :saturation="Theme.saturation"
+      :pastel="Theme.pastel"
     />
     <nu-props
+      subtle-color="--secondary-subtle-color"
+      shadow-color="--secondary-shadow-color"
+      border-color="--secondary-border-color"
+      special-shadow-color="--secondary-special-shadow-color"
+      page-bg-color="^root #bg :dark[#subtle]"
+      second-bg-color="^root #subtle :dark[#bg]"
+      diff-color="#second-bg"
+      topbar-offset="8.75x|||6.75x"
+      sidebar-width="32x||26x"
       max-content-width="100rem - (--content-padding * 2)"
       grid-gap="3x"
       content-padding="6x||3x|6x|3x"
@@ -20,7 +35,134 @@
       content-width="12sp||||2sp"
     />
 
+    <nu-block
+      v-if="siteSection"
+      border="bottom"
+      padding="1.5x 0|||.5x 0"
+      place="fixed top"
+      width="100vw"
+      z="10001"
+      fill="#page-bg"
+    >
+      <nu-props grid-gap="8x||4x" />
+      <nu-pane
+        gap="1gp"
+        width="--content-width"
+        space="around"
+        content="space-between"
+      >
+        <nu-block id="logo">
+          <nu-pane text="nowrap" width="--sidebar-width" gap="1x">
+            <nu-svg
+              src="/images/nude-logo-small.svg"
+              height="4x"
+              width="min 4x"
+              color="text-soft"
+            />
+            <nu-h2 size="xl">
+              Numl<nu-btn
+                padding="1x right"
+                clear
+                :value="siteSection"
+                @input="changeSection"
+              >
+                <nu-el>.<nu-value list>Storybook</nu-value></nu-el>
+                <nu-dropdownicon />
+                <nu-popuplistbox size="md" gap="0" place="top -1x">
+                  <nu-option value="storybook">Storybook</nu-option>
+                  <nu-option value="handbook">Handbook</nu-option>
+                  <nu-option value="reference">Reference</nu-option>
+                  <nu-option value="repl">REPL</nu-option>
+                </nu-popuplistbox>
+              </nu-btn>
+            </nu-h2>
+          </nu-pane>
+        </nu-block>
+
+        <nu-block grow="1" show="y|||n">
+          <SearchBar hotkey />
+        </nu-block>
+
+        <nu-pane
+          content="space-between"
+          width="--sidebar-width|||auto"
+          size="lg"
+          gap="1x"
+        >
+          <nu-block size="lg||sm" show="y|||n">
+            {{ version }}
+          </nu-block>
+
+          <nu-pane gap="0">
+            <nu-attrs for="btn" color="text :hover[special]" />
+            <nu-btn
+              toggle
+              padding
+              clear
+              use-hotkey="s"
+              :checked="showSettings"
+              @tap="toggleSettings"
+            >
+              <nu-icon name="color-palette-outline" />
+            </nu-btn>
+            <nu-btn
+              show="y|||n"
+              to="!https://github.com/tenphi/numl"
+              padding
+              clear
+              use-hotkey="g"
+            >
+              <nu-icon name="github-outline" />
+            </nu-btn>
+            <!--            <nu-btn-->
+            <!--              to="!https://twitter.com/numldesign"-->
+            <!--              padding-->
+            <!--              clear-->
+            <!--              use-hotkey="Control+t"-->
+            <!--            >-->
+            <!--              <nu-icon name="twitter-outline" />-->
+            <!--            </nu-btn>-->
+            <nu-btn
+              toggle
+              inset="n"
+              show="n|||y"
+              clear
+              padding
+              color="text :hover[special]"
+              :checked="App.showNav"
+              @input="toggleNav"
+            >
+              <nu-icon name="^ menu-outline :pressed[close]" />
+            </nu-btn>
+          </nu-pane>
+        </nu-pane>
+      </nu-pane>
+    </nu-block>
+
     <slot></slot>
+
+    <nu-region
+      label="Settings"
+      display="flex"
+      flow="column"
+      items="stretch"
+      gap="1x"
+      place="fixed top right --topbar-offset 0"
+      overflow="hidden auto"
+      height="100vh - --topbar-offset"
+      width="initial 40x 100vw"
+      radius="0"
+      shadow
+      fill="#second-bg"
+      padding="2x 3x"
+      z="front"
+      move=":hidden[100% 0]"
+      transition="move, opacity"
+      interactive="yes :hidden[no]"
+      :hidden="!showSettings"
+    >
+      <Settings />
+    </nu-region>
   </nu-root>
 </template>
 
@@ -28,7 +170,11 @@
 import Vue from 'vue';
 import ContrastIcon from '@/assets/icons/contrast.svg';
 import Theme from '@/services/theme';
+import App from '@/services/app';
 import '@/elements/splitpreview';
+import requireNude from '@/helpers/require-nude';
+import { SECTION_MAP } from '@/helpers/config';
+import initDraggable from '@/behaviors/movable';
 
 Vue.config.ignoredElements = [/^nu-/];
 
@@ -42,7 +188,7 @@ function spanWidth(num) {
   } * var(--nu-grid-gap)))`;
 }
 
-function initNude() {
+async function initNude() {
   const { Nude } = window;
 
   Nude.icons.setLoader((name) => {
@@ -97,6 +243,8 @@ function initNude() {
     },
   });
 
+  await initDraggable(Nude);
+
   Nude.init();
 }
 
@@ -117,11 +265,34 @@ export default {
   data() {
     return {
       Theme,
+      App,
+      version: '',
+      showSettings: false,
     };
   },
-  mounted() {
-    const { Nude } = window;
+  computed: {
+    siteSection() {
+      return this.$route.path.split('/')[1];
+    },
+    sections() {
+      if (this.siteSection) {
+        return SECTION_MAP[this.siteSection] || [];
+      } else {
+        return [];
+      }
+    },
+  },
+  watch: {
+    '$route.path'() {
+      this.App.showNav = false;
+    },
+  },
+  async mounted() {
+    const Nude = await requireNude();
+
     const { routing } = Nude;
+
+    this.version = Nude.version;
 
     routing.setRouter((url, openNewTab) => {
       // skip outside links and links that open in new tabs
@@ -139,6 +310,19 @@ export default {
 
       return false;
     });
+  },
+  methods: {
+    toggleNav() {
+      App.showNav = !App.showNav;
+      this.showSettings = false;
+    },
+    toggleSettings() {
+      this.showSettings = !this.showSettings;
+      App.showNav = false;
+    },
+    changeSection(event) {
+      this.$router.push(`/${event.detail}`);
+    },
   },
 };
 </script>

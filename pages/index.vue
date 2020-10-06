@@ -1,5 +1,6 @@
 <template>
   <nu-block>
+    <nu-theme hue="272" saturation="70" />
     <nu-props h1-font-size="2.5rem|||2rem" h1-line-height="3rem|||2.5rem" />
     <nu-attrs for="description" opacity=".8" />
     <nu-attrs for="grid" items="start stretch" gap="1gp" />
@@ -38,7 +39,7 @@
             <nu-icon name="github"></nu-icon>
             Github
             <nu-icon name="star"></nu-icon>
-            178
+            {{ githubStars }}
           </nu-btn>
           <nu-btn clear to="!https://twitter.com/numldesign">
             <nu-icon name="twitter"></nu-icon>
@@ -443,6 +444,7 @@
 import RuntimeTheming from '@/components/landing/RuntimeTheming';
 import SiteBlock from '@/components/global/SiteBlock';
 import Snippet from '@/components/global/Snippet';
+import Github from '@/helpers/github';
 
 export default {
   components: { Snippet, SiteBlock, RuntimeTheming },
@@ -450,6 +452,7 @@ export default {
     const dev = process.client && location.hostname === 'localhost';
 
     return {
+      githubStars: '...',
       nudeElementsLabel: `<nu-el color="text">nu</nu-el>de e<nu-el color="text">l</nu-el>e<nu-el color="text">m</nu-el>ents`,
       dev,
       syntaxSnippet: `
@@ -488,6 +491,9 @@ export default {
         -10
       )} ${saturation} special), hue(${hue(10)} ${saturation} special))`;
     },
+  },
+  mounted() {
+    Github.getStars('tenphi/numl').then((stars) => (this.githubStars = stars));
   },
 };
 </script>

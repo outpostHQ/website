@@ -10,13 +10,15 @@ function updateSlug() {
   WindowService.slug = location.pathname.split('/').slice(-1)[0];
 }
 
-function scrollIntoView(selector, instant) {
-  const el = document.querySelector(selector);
+function scrollIntoView(selector, instant, options = {}) {
+  const el =
+    typeof selector === 'string' ? document.querySelector(selector) : selector;
 
   if (el) {
     el.scrollIntoView({
       behavior: instant ? 'smooth' : 'auto',
       block: 'start',
+      ...options,
     });
   }
 }

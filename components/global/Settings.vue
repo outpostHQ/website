@@ -5,7 +5,10 @@
     <nu-flow padding="1x 0" gap>
       <nu-attrs for="btn" padding=".5x 1x" />
 
-      <nu-label>Hue</nu-label>
+      <nu-pane content="space-between">
+        <nu-label>Primary Hue</nu-label>
+        <nu-el>{{ Theme.hue }}</nu-el>
+      </nu-pane>
       <nu-slider
         min="0"
         max="359"
@@ -13,7 +16,23 @@
         :value="Theme.hue"
         @input="Theme.set({ hue: $event.detail })"
       />
-      <nu-label>Saturation</nu-label>
+
+      <nu-pane content="space-between">
+        <nu-label>Secondary Hue</nu-label>
+        <nu-el>{{ Theme.subtleHue }}</nu-el>
+      </nu-pane>
+      <nu-slider
+        min="0"
+        max="359"
+        image="linear(to right, hue(0 s), hue(90 s), hue(180 s), hue(270 s), hue(0 s))"
+        :value="Theme.subtleHue"
+        @input="Theme.set({ subtleHue: $event.detail })"
+      />
+
+      <nu-pane content="space-between">
+        <nu-label>Saturation</nu-label>
+        <nu-el>{{ Theme.saturation }}</nu-el>
+      </nu-pane>
       <nu-slider
         :value="Theme.saturation"
         min="0"
@@ -21,6 +40,7 @@
         :image="`linear(to right, hue(${Theme.hue} 0 s), hue(${Theme.hue} 100 s))`"
         @input="Theme.set({ saturation: $event.detail })"
       />
+
       <nu-pane>
         <nu-label>Pastel</nu-label>
         <nu-checkbox

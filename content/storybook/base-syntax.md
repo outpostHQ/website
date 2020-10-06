@@ -228,7 +228,7 @@ Our button is ready, but what if we need to add more buttons to our application.
 
 ## Use built-ins instead!
 
-In the real application we suggest you use a built-in [nu-btn](../../reference/elements/nu-btn.md) element as it has all needed attributes by default and includes few more perks for accessibility.
+In the real application, we suggest you use a built-in [nu-btn](../../reference/elements/nu-btn.md) element as it has all needed attributes by default and includes few more perks for accessibility.
 
 ```html
 <split/>

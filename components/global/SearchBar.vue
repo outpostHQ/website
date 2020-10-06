@@ -17,10 +17,12 @@
         :use-hotkey="hotkey ? '/' : null"
         :value="value"
         @input="value = $event.detail"
-      />
+      >
+        <input @blur="onBlur" @focus="onFocus" />
+      </nu-search>
     </nu-inputgroup>
     <nu-card
-      v-show="results.length"
+      v-show="isActive"
       place="outside-bottom"
       width="100%"
       radius="1r"
@@ -32,7 +34,7 @@
     >
       <nu-flow
         v-for="(result, i) of results"
-        :key="result.slug"
+        :key="result.path"
         width="100%"
         padding="1x 2x"
         mark="hover :current[y]"
@@ -44,7 +46,7 @@
         @click="goTo(i)"
       >
         <nu-block text="b" size="lg">
-          {{ result.title }}
+          {{ result.fullTitle }}
         </nu-block>
         <nu-block v-if="result.description" size="sm" padding="left">
           {{ result.description }}
@@ -55,10 +57,32 @@
 </template>
 
 <script>
+import { SECTION_MAP } from '@/helpers/config';
+import { preparePage } from '@/helpers/prepare-page';
+
+const ALL_SECTIONS = [];
+
+Object.keys(SECTION_MAP).forEach((siteSection) => {
+  SECTION_MAP[siteSection].forEach((section) => {
+    ALL_SECTIONS.push(`${siteSection}/${section.slug}`);
+  });
+
+  ALL_SECTIONS.push(siteSection);
+});
+
+function uniqueResults(results) {
+  return results.filter((res, i) => {
+    const otherResult = results.find((res2) => res.path === res2.path);
+
+    return results.indexOf(otherResult) === i;
+  });
+}
+
 export default {
   name: 'SearchBar',
   props: {
-    section: String,
+    siteSection: String,
+    sections: Array,
     hotkey: Boolean,
   },
   data() {
@@ -66,16 +90,48 @@ export default {
       value: '',
       results: [],
       index: 0,
+      focused: false,
     };
+  },
+  computed: {
+    isActive() {
+      return this.value.trim().length >= 2 && this.focused;
+    },
   },
   watch: {
     async value(val) {
       val = val.trim();
 
-      if (val.length >= 3) {
-        this.results = await this.$content(this.section)
-          .search('text', val)
-          .fetch();
+      if (this.isActive) {
+        this.results = uniqueResults(
+          (
+            await Promise.all(
+              ALL_SECTIONS.map((name) => {
+                return this.$content(name)
+                  .search('title', val)
+                  .fetch()
+                  .then((results) => results.map((page) => preparePage(page)));
+              })
+            )
+          )
+            .concat(
+              await Promise.all(
+                ALL_SECTIONS.map((name) => {
+                  return this.$content(name)
+                    .search('text', val)
+                    .fetch()
+                    .then((results) =>
+                      results.map((page) => preparePage(page))
+                    );
+                })
+              )
+            )
+            .reduce((list, results) => {
+              list.push(...results.map(preparePage));
+
+              return list;
+            }, [])
+        );
       } else {
         this.results = [];
       }
@@ -122,15 +178,19 @@ export default {
 
       this.$router.push(path);
 
-      if (path === window.location.pathname) {
-        this.clear();
-      }
+      this.clear();
     },
     clear() {
       this.value = '';
       this.results = [];
       this.index = 0;
       this.$refs.input.nuRef.blur();
+    },
+    onBlur() {
+      this.focused = false;
+    },
+    onFocus() {
+      this.focused = true;
     },
   },
 };

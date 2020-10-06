@@ -1,12 +1,14 @@
 import Lockr from 'lockr';
+import GlobalEvents from './global-events';
 
 const htmlEl = document.documentElement;
 const dataset = htmlEl.dataset;
-const SCHEME_OPTIONS = ['auto', 'light', 'dark'];
-const CONTRAST_OPTIONS = ['auto', 'low', 'high'];
+export const SCHEME_OPTIONS = ['auto', 'light', 'dark'];
+export const CONTRAST_OPTIONS = ['auto', 'low', 'high'];
 const DEFAULT_SETTINGS = {
-  hue: 272,
-  saturation: 70,
+  hue: 300,
+  subtleHue: 248,
+  saturation: 75,
   pastel: false,
   scheme: 'auto',
   contrast: 'auto',
@@ -45,6 +47,12 @@ const Theme = {
           if (!(hue >= 0 && hue < 360)) return;
 
           break;
+        case 'subtleHue':
+          hue = parseInt(value);
+
+          if (!(hue >= 0 && hue < 360)) return;
+
+          break;
         case 'saturation':
           saturation = parseInt(value);
 
@@ -63,6 +71,8 @@ const Theme = {
       this.isDefaultSettings = areSettingsDefault();
 
       Lockr.set(`settings:${key}`, value);
+
+      GlobalEvents.$emit('theme:change', this);
     });
   },
 };
@@ -80,12 +90,12 @@ function areSettingsDefault() {
   );
 }
 
-Theme.set({
-  hue: Lockr.get('settings:hue') || 272,
-  saturation: Lockr.get('settings:saturation') || '70',
-  pastel: Lockr.get('settings:pastel') || false,
-  scheme: Lockr.get('settings:scheme') || 'auto',
-  contrast: Lockr.get('settings:contrast') || 'auto',
-});
+Theme.set(
+  Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
+    map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
+
+    return map;
+  }, {})
+);
 
 export default Theme;

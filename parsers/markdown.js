@@ -22,7 +22,7 @@ function parseHTML(content) {
   });
 }
 
-export default async function Markdown(fileContent) {
+export default async function Markdown(fileContent, other, other2) {
   const md = new Remarkable('full', {
     typographer: true,
   });
@@ -47,6 +47,18 @@ export default async function Markdown(fileContent) {
   const data = md.meta;
   // Generate toc from body
   const toc = tocParser(fileContent).json;
+
+  data.htmlDescription = data.description
+    ? md.render(data.description)
+    : data.description;
+
+  if (data.title) {
+    data.title = removeMD(data.title);
+  }
+
+  if (data.description) {
+    data.description = removeMD(data.description);
+  }
 
   return {
     ...data,

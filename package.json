@@ -33,7 +33,10 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
+    "@shopify/draggable": "^1.0.0-beta.8",
     "babel-eslint": "^10.1.0",
+    "clipboard-copy": "^3.1.0",
+    "codemirror": "^5.58.1",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
@@ -51,6 +54,7 @@
     "remarkable-meta": "^1.0.1",
     "remarkable-numl": "^0.1.5",
     "remove-markdown": "^0.3.0",
-    "unified": "^9.1.0"
+    "unified": "^9.1.0",
+    "vue-codemirror": "^4.0.6"
   }
 }
