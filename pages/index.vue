@@ -9,7 +9,7 @@
       <Topbar />
       <SiteBlock
         badge="design system · framework · language"
-        heading="Complete solution for&nbsp;creating modern web&nbsp;interfaces"
+        heading="Simplified UI Framework\nfor\s modern web\s interfaces"
         description="An open-source Library of Web&nbsp;Components and a&nbsp;Runtime&nbsp;CSS&nbsp;Framework for rapidly building UI that follows your&nbsp;Design&nbsp;System."
         padding="10x 0||8x 0|4x 0 8x"
         level="1"
@@ -360,7 +360,7 @@
         <Snippet :code="`<nu-btn>My button</nu-btn>`" />
         <nu-block>
           See our
-          <nu-link to="/guide/what-is-numl">Guide</nu-link>
+          <nu-link to="/handbook">Handbook</nu-link>
           for more details and other&nbsp;ways to&nbsp;install&nbsp;Numl.
         </nu-block>
       </nu-flex>
@@ -420,8 +420,8 @@
         <nu-pane content="space-between" gap="1gp" flow="row|||column">
           <nu-nav gap="3x">
             <nu-link to="/storybook">Storybook</nu-link>
-            <nu-link to="/guide">Guide</nu-link>
-            <nu-link to="/repl">REPL</nu-link>
+            <nu-link to="/handbook">Handbook</nu-link>
+            <!--            <nu-link to="/repl">REPL</nu-link>-->
             <nu-link to="/reference">API Reference</nu-link>
           </nu-nav>
           <nu-flow gap color="white" text="right|||center">

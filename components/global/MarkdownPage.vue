@@ -7,6 +7,7 @@
     />
     <nu-attrs for="list" position="inside" />
     <nu-attrs for="cd" fill="^root diff :dark[#dark]" shadow=".5" />
+    <nu-attrs for="code" size="md" />
 
     <nu-spacer height="--topbar-offset" />
 
@@ -54,23 +55,27 @@
           >
             Pages
           </nu-h2>
-          <nu-btn
-            v-for="(itemPage, i) in pages"
-            :key="i"
-            :to="`/${section}${
-              itemPage.slug !== 'introduction' ? `/${itemPage.slug}` : ''
-            }`"
-            padding=".5x 1x"
-            color="text :current.hover.focus[special]"
-            fill="#clear"
-            mark="no :current[y]"
-            inset="no"
-            border="0"
-            content="start"
-            use-current
-          >
-            {{ itemPage.menuTitle || itemPage.title }}
-          </nu-btn>
+          <template v-for="(itemPage, i) in pages">
+            <nu-btn
+              v-if="!itemPage.hidden || App.isDev"
+              :key="i"
+              :to="`/${section}${
+                itemPage.slug !== 'introduction' ? `/${itemPage.slug}` : ''
+              }`"
+              :is-current="`/${section}/${itemPage.slug}` === routePath"
+              padding=".5x 1x"
+              color="text :current.hover.focus[special]"
+              fill="#clear"
+              mark="no :current[y]"
+              inset="no"
+              border="0"
+              content="start"
+              :opacity="itemPage.hidden ? '.66' : '1'"
+              use-current
+            >
+              {{ itemPage.menuTitle || itemPage.title }}
+            </nu-btn>
+          </template>
 
           <template v-for="sec in sections">
             <nu-h2
@@ -81,22 +86,29 @@
               padding="2x 0 0 1x"
             >
               {{ sec.title }}
+              -
+              {{ sec.size }}
             </nu-h2>
-            <nu-btn
-              v-for="(itemPage, i) in sec.pages"
-              :key="`${sec.title}${i}`"
-              :to="`/${section}/${sec.slug}/${itemPage.slug}`"
-              padding=".5x 1x"
-              color="text :current.hover.focus[special]"
-              fill="#clear"
-              mark="no :current[y]"
-              inset="no"
-              border="0"
-              content="start"
-              use-current
-            >
-              {{ itemPage.menuTitle || itemPage.title }}
-            </nu-btn>
+            <template v-for="(itemPage, i) in sec.pages">
+              <nu-btn
+                v-if="!itemPage.hidden || App.isDev"
+                :key="`${sec.title}${i}`"
+                :to="`/${section}/${sec.slug}/${itemPage.slug}`"
+                :is-current="
+                  `/${section}/${sec.slug}/${itemPage.slug}` === routePath
+                "
+                padding=".5x 1x"
+                color="text :current.hover.focus[special]"
+                fill="#clear"
+                mark="no :current[y]"
+                inset="no"
+                border="0"
+                content="start"
+                :opacity="itemPage.hidden ? '.66' : '1'"
+              >
+                {{ itemPage.menuTitle || itemPage.title }}
+              </nu-btn>
+            </template>
           </template>
         </nu-nav>
       </nu-block>
@@ -108,7 +120,7 @@
         content="start stretch"
       >
         <nu-block padding="4x 0 12x" grow="1" order="1|||2">
-          <nu-article gap>
+          <nu-article gap size="lg||||md">
             <template v-if="page.title">
               <nu-flow gap>
                 <nu-h1>
@@ -129,12 +141,13 @@
             <TableOfContents show="n|||y" :items="toc" space="1x left" />
 
             <nu-block>
-              <nu-attrs
-                for="heading"
-                space="8x top"
-                padding="!(8x + 1em) top"
-              />
               <nuxt-content :document="page" />
+
+              <!--              <template v-if="page.type === 'element'">-->
+              <!--                <nu-line />-->
+
+              <!--                <nu-h2>Default styles</nu-h2>-->
+              <!--              </template>-->
             </nu-block>
           </nu-article>
         </nu-block>
@@ -213,11 +226,15 @@ export default {
     return {
       Theme,
       App,
+      routePath: '',
     };
   },
   watch: {
     'App.showNav'() {
       setTimeout(() => this.scrollToCurrent());
+    },
+    '$route.path'() {
+      this.routePath = this.$route.path;
     },
   },
   mounted() {
@@ -230,6 +247,7 @@ export default {
     }
 
     this.scrollToCurrent();
+    this.routePath = this.$route.path;
   },
   methods: {
     nuIdSelector(id) {
@@ -280,8 +298,12 @@ export default {
 .nuxt-content-container > textarea {
   color: var(--nu-text-color);
   background-color: var(--nu-bg-color);
-  padding: var(--nu-gap);
+  padding: var(--nu-gap) calc(var(--nu-gap) * 2);
   border: var(--nu-border-width) solid var(--nu-border-color);
   border-radius: var(--nu-border-radius);
+  font-size: 17px;
+  line-height: 27px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
 }
 </style>

@@ -47,6 +47,9 @@ export default function (prefix) {
             sectionObj.pages = sectionPages.map((page) =>
               preparePage(page, sectionSlug)
             );
+            sectionObj.size = sectionObj.pages.filter(
+              (page) => !page.hidden
+            ).length;
 
             if (!sectionObj.title) {
               sectionObj.title = sectionSlug;

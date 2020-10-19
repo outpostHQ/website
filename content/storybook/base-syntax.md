@@ -247,15 +247,15 @@ Our introduction is almost over. We hope you enjoyed it. It was a simple example
 
 You can learn more about specific styling attribute by looking at the **Reference Section**. In the example above we used the following attributes:
 
-* [radius](../../reference/attributes/radius.md)
-* [size](../../reference/attributes/size.md)
-* [border](../../reference/attributes/border.md)
-* [text](../../reference/attributes/text.md)
-* [outline](../../reference/attributes/outline.md)
-* [transition](../../reference/attributes/transition.md)
-* [cursor](../../reference/attributes/cursor.md)
-* [mark](../../reference/attributes/mark.md)
-* [inset](../../reference/attributes/inset.md)
+* [radius](../../reference/styles/radius.md)
+* [size](../../reference/styles/size.md)
+* [border](../../reference/styles/border.md)
+* [text](../../reference/styles/text.md)
+* [outline](../../reference/styles/outline.md)
+* [transition](../../reference/styles/transition.md)
+* [cursor](../../reference/styles/cursor.md)
+* [mark](../../reference/styles/mark.md)
+* [inset](../../reference/styles/inset.md)
 
 Each page will give you a detailed description of an attribute, syntax overview, examples, and links, where you can find more examples.
 

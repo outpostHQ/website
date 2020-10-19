@@ -9,12 +9,20 @@ export const SECTION_MAP = {
       slug: 'elements',
     },
     {
+      title: 'Behaviors',
+      slug: 'behaviors',
+    },
+    {
       title: 'Style attributes',
       slug: 'styles',
     },
     {
       title: 'Utility attributes',
       slug: 'utilities',
+    },
+    {
+      title: 'Functions',
+      slug: 'functions',
     },
   ],
   storybook: [
@@ -57,7 +65,133 @@ export const SECTION_MAP = {
 };
 
 /*
-How to extract elements data from browser:
+How to extract all behaviors in runtime:
+
+JSON.stringify(Object.keys(Nude.behaviors.map).map(name => {
+   return name;
+}));
+ */
+
+export const BEHAVIORS = [
+  'focus',
+  'hover',
+  'listbox',
+  'option',
+  'active',
+  'fixate',
+  'orient',
+  'popup',
+  'control',
+  'radiogroup',
+  'action',
+  'label',
+  'code',
+  'markdown',
+  'datetime',
+  'number',
+  'slider',
+  'numinput',
+  'input',
+  'textarea',
+  'fileinput',
+  'icon',
+  'svg',
+  'image',
+  'debug',
+  'debugger',
+  'form',
+  'validator',
+  'group',
+  'tooltip',
+  'progressbar',
+  'value',
+  'datepicker',
+  'dateinput',
+  'inputgroup',
+  'menu',
+  'menuitem',
+  'offset',
+  'appear',
+  'hotkey',
+  'current',
+  'movable',
+];
+
+/*
+How to extract all styles in runtime:
+
+JSON.stringify(Object.keys(Nude.styles).map(name => {
+   return name;
+}));
+ */
+
+export const STYLES = [
+  'width',
+  'height',
+  'sizing',
+  'radius',
+  'padding',
+  'overflow',
+  'space',
+  'border',
+  'shadow',
+  'flow',
+  'gap',
+  'order',
+  'flex',
+  'grow',
+  'shrink',
+  'basis',
+  'content',
+  'items',
+  'areas',
+  'auto-flow',
+  'columns',
+  'rows',
+  'column',
+  'row',
+  'area',
+  'contain',
+  'place',
+  'z',
+  'interactive',
+  'color',
+  'fill',
+  'filter',
+  'backdrop',
+  'image',
+  'transform',
+  'scale',
+  'rotate',
+  'move',
+  'text',
+  'cursor',
+  'size',
+  'hide',
+  'show',
+  'opacity',
+  'transition',
+  'scrollbar',
+  'before',
+  'after',
+  'inset',
+  'outline',
+  'mark',
+  'expand',
+  'fade',
+  'drop',
+  'origin',
+  'selectable',
+  'box',
+  'line-clamp',
+  'snap',
+  'snapping',
+  'font',
+  'clip',
+];
+
+/*
+How to extract elements data in runtime:
 
 JSON.stringify(Object.values(Nude.elements).map(el => {
    return {

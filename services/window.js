@@ -1,13 +1,19 @@
-window.addEventListener('hashchange', () => {
-  updateHash();
-});
+if (process.client) {
+  window.addEventListener('hashchange', () => {
+    updateHash();
+  });
+}
 
 function updateHash() {
-  WindowService.hash = location.hash.replace(/^#/, '');
+  if (process.client) {
+    WindowService.hash = location.hash.replace(/^#/, '');
+  }
 }
 
 function updateSlug() {
-  WindowService.slug = location.pathname.split('/').slice(-1)[0];
+  if (process.client) {
+    WindowService.slug = location.pathname.split('/').slice(-1)[0];
+  }
 }
 
 function scrollIntoView(selector, instant, options = {}) {

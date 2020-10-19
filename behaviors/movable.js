@@ -5,7 +5,6 @@ const EVENT_MAP = {
   touchend: 'onMoveEnd',
   contextmenu: 'onMoveEnd',
 };
-const HTML = document.documentElement;
 
 export default function (Nude) {
   const MovableBehavior = class extends Nude.Behavior {
@@ -63,7 +62,7 @@ export default function (Nude) {
         window.addEventListener(event, this[handler], { passive: true });
       });
 
-      HTML.style['user-select'] = 'none';
+      document.documentElement.style['user-select'] = 'none';
     }
 
     onMoving(evt) {
@@ -80,7 +79,7 @@ export default function (Nude) {
           window.removeEventListener(event, this[handler]);
         });
 
-        delete HTML.style['user-select'];
+        delete document.documentElement.style['user-select'];
       }
     }
 

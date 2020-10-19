@@ -6,7 +6,7 @@
       <nu-attrs for="btn" padding=".5x 1x" />
 
       <nu-pane content="space-between">
-        <nu-label>Primary Hue</nu-label>
+        <nu-label>Accent Hue</nu-label>
         <nu-el>{{ Theme.hue }}</nu-el>
       </nu-pane>
       <nu-slider
@@ -18,7 +18,7 @@
       />
 
       <nu-pane content="space-between">
-        <nu-label>Secondary Hue</nu-label>
+        <nu-label>Base Hue</nu-label>
         <nu-el>{{ Theme.subtleHue }}</nu-el>
       </nu-pane>
       <nu-slider

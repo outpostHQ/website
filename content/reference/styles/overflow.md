@@ -6,7 +6,7 @@ Use this style to change overflow behavior.
 y | yes | n | no | scroll | auto | visible | hidden
 ```
 
-`"yes"` is same as `"visible"`. `"no"` is same as `"hidden"`.
+`yes` is the same as `visible`. `no` is the same as `hidden`.
 
 ## CSS References
 

@@ -1,3 +1,8 @@
+---
+title: effect
+description: Utility attribute to change toggle effect for the element.
+---
+
 Use **effect** utility property to change toggle visibility effect for the element.
 
 Currently, there is only one possible: `"collapse"`.

@@ -1,8 +1,6 @@
 import Lockr from 'lockr';
 import GlobalEvents from './global-events';
 
-const htmlEl = document.documentElement;
-const dataset = htmlEl.dataset;
 export const SCHEME_OPTIONS = ['auto', 'light', 'dark'];
 export const CONTRAST_OPTIONS = ['auto', 'low', 'high'];
 const DEFAULT_SETTINGS = {
@@ -19,6 +17,8 @@ const Theme = {
   ...DEFAULT_SETTINGS,
   isDefaultSettings: true,
   set(settings) {
+    const dataset = process.client ? document.documentElement.dataset : {};
+
     if (!settings || typeof settings !== 'object') {
       this.set(DEFAULT_SETTINGS);
 
@@ -70,7 +70,9 @@ const Theme = {
       this[key] = value;
       this.isDefaultSettings = areSettingsDefault();
 
-      Lockr.set(`settings:${key}`, value);
+      if (process.client) {
+        Lockr.set(`settings:${key}`, value);
+      }
 
       GlobalEvents.$emit('theme:change', this);
     });
@@ -92,10 +94,22 @@ function areSettingsDefault() {
 
 Theme.set(
   Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
-    map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
+    map[key] = DEFAULT_SETTINGS[key];
 
     return map;
   }, {})
 );
+
+if (process.client) {
+  setTimeout(() => {
+    Theme.set(
+      Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
+        map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
+
+        return map;
+      }, {})
+    );
+  });
+}
 
 export default Theme;

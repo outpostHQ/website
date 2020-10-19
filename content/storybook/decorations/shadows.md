@@ -1,6 +1,6 @@
 ## Outer shadow
 
-Outer shadow with default size and intensity using [shadow](../../reference/attributes/shadow.md) style.
+Outer shadow with default size and intensity using [shadow](../../reference/styles/shadow.md) style.
 
 ```html
 <split/>
@@ -50,7 +50,7 @@ Hover over card to see the transition effect.
 
 ## Inner shadow
 
-Inner shadow with default size and intensity using [inset](../../reference/attributes/inset.md) style.
+Inner shadow with default size and intensity using [inset](../../reference/styles/inset.md) style.
 
 ```html
 <split/>

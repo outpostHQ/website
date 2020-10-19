@@ -1,4 +1,4 @@
-Decoration element. Use it instead of [gap](../attributes/gap.md) where it's more suitable. Don't overuse this element.
+Decoration element. Use it instead of [gap](../styles/gap.md) where it's more suitable. Don't overuse this element.
 
 ```html
 <split/>

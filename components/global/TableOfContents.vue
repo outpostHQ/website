@@ -32,6 +32,17 @@
       <nu-props :offset="`${heading.lvl - 2} * 1x`" />
       {{ heading.content }}
     </nu-btn>
+    <nu-block show="y|||n">
+      <nu-spacer size="4x" />
+      <nu-block padding="0 1x" size="sm">
+        Help us to improve this page by
+        <nu-link
+          :to="`!https://github.com/numldesign/website/edit/master/content${$route.path}.md`"
+        >
+          sending a pull request
+        </nu-link>
+      </nu-block>
+    </nu-block>
   </nu-block>
 </template>
 
@@ -48,9 +59,9 @@ export default {
         1: 'lg',
         2: 'md',
         3: 'sm',
-        4: 'xs',
-        5: 'xs',
-        6: 'xs',
+        4: 'sm',
+        5: 'sm',
+        6: 'sm',
       },
     };
   },

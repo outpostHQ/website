@@ -18,7 +18,7 @@
       gap="2x"
     >
       <nu-props
-        heading-width="8sp|8sp|10sp|--content-width"
+        heading-width="6sp|8sp|10sp|--content-width"
         max-width="50rem"
       />
       <nu-badge

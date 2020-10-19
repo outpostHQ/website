@@ -18,7 +18,7 @@ Use [nu-flex](../../reference/elements/nu-flex.md).
 
 ## With gap
 
-Use [gap](../../reference/attributes/gap.md) style. Default value is `1x`.
+Use [gap](../../reference/styles/gap.md) style. Default value is `1x`.
 
 ```html
 <split/>
@@ -31,7 +31,7 @@ Use [gap](../../reference/attributes/gap.md) style. Default value is `1x`.
 
 ## With wrapping
 
-Use [flow](../../reference/attributes/flow.md) style with `wrap` modifier.
+Use [flow](../../reference/styles/flow.md) style with `wrap` modifier.
 
 Use first the value of `gap` style to set a vertical gap, and the second to set a horizontal gap.
 
@@ -50,7 +50,7 @@ Use first the value of `gap` style to set a vertical gap, and the second to set 
 
 ### Content positioning
 
-Use [content](../../reference/attributes/content.md) style with `"space-between"`, `"space-around"`, `"space-evenly"`, `"center"`, `"flex-start"`, `"flex-end"` and `"stretch"` modifiers.
+Use [content](../../reference/styles/content.md) style with `"space-between"`, `"space-around"`, `"space-evenly"`, `"center"`, `"flex-start"`, `"flex-end"` and `"stretch"` modifiers.
 
 ```html
 <split/>
@@ -63,7 +63,7 @@ Use [content](../../reference/attributes/content.md) style with `"space-between"
 
 ### Items positioning
 
-Use [items](../../reference/attributes/items.md) style with `"flex-start"`, `"flex-end"`, `"center"` and `"stretch"` modifiers.
+Use [items](../../reference/styles/items.md) style with `"flex-start"`, `"flex-end"`, `"center"` and `"stretch"` modifiers.
 
 ```html
 <split/>

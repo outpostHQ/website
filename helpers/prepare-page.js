@@ -11,13 +11,23 @@ export function preparePage(page) {
   let menuTitle = page.menuTitle;
 
   switch (section) {
+    case 'behaviors':
+      title = `${page.slug}`;
+      menuTitle = `${page.slug}`;
+      page.type = 'behavior';
+      break;
+    case 'functions':
+      title = `${page.slug}()`;
+      menuTitle = `${page.slug}()`;
+      page.type = 'function';
+      break;
     case 'styles':
-      title = `[${page.slug}] – style attribute`;
+      title = `${page.slug}`;
       menuTitle = `[${page.slug}]`;
       page.type = 'style attribute';
       break;
     case 'utilities':
-      title = `[${page.slug}] – utility attribute`;
+      title = `${page.slug}`;
       menuTitle = `[${page.slug}]`;
       page.type = 'utility attribute';
       break;
@@ -44,7 +54,9 @@ export function preparePage(page) {
     page.menuTitle = menuTitle;
   }
 
-  page.fullTitle = `${capitalize(siteSection)} – ${page.title}`;
+  page.fullTitle = `${capitalize(siteSection)} – ${page.title}${
+    page.type ? ` – ${page.type}` : ''
+  }`;
 
   if (!page.description) {
     page.description =

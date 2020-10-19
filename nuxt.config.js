@@ -1,4 +1,6 @@
+import fs from 'fs';
 import Markdown from './parsers/markdown';
+import { SECTION_MAP } from './helpers/config';
 
 const DEV = process.env.NODE_ENV !== 'production';
 
@@ -7,7 +9,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'spa',
+  mode: 'universal',
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -23,8 +25,7 @@ export default {
       'data-nu-icons': 'eva',
       'data-nu-prevent': '',
     },
-    title:
-      'Numl Design – A complete solution for creating modern web interfaces',
+    title: 'Numl Design – A simplified UI Framework for modern web interfaces',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -91,7 +92,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/global.css'],
+  css: [
+    '~/assets/global.css',
+    'codemirror/lib/codemirror.css',
+    'codemirror/theme/cobalt.css',
+    'codemirror/addon/hint/show-hint.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -99,6 +105,7 @@ export default {
   plugins: [
     '~/plugins/scheme-icon/index.client.js',
     '~/plugins/helpers/index.js',
+    { src: '~/plugins/nuxt-codemirror/index.js', ssr: false },
   ],
   /*
    ** Auto import components
@@ -147,12 +154,37 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-  // generate: {
-  //   routes() {
-  //     return [{
-  //       route: '/storybook/test',
-  //
-  //     }];
-  //   },
-  // },
+  generate: {
+    crawler: true,
+    routes() {
+      const routes = Object.keys(SECTION_MAP).reduce((routes, siteSection) => {
+        const sections = SECTION_MAP[siteSection];
+
+        routes.push({
+          route: `/${siteSection}`,
+        });
+
+        sections.forEach((section) => {
+          if (section.slug === 'introduction') return;
+
+          const files = fs.readdirSync(
+            `./content/${siteSection}/${section.slug}`
+          );
+
+          files.forEach((file) => {
+            routes.push({
+              route: `/${siteSection}/${section.slug}/${file.replace(
+                '.md',
+                ''
+              )}`,
+            });
+          });
+        });
+
+        return routes;
+      }, []);
+
+      return routes;
+    },
+  },
 };

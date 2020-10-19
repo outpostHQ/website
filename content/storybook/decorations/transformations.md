@@ -1,6 +1,6 @@
 ## Move
 
-Use [move](../../reference/attributes/move.md) property.
+Use [move](../../reference/styles/move.md) property.
 
 ```html
 <split/>
@@ -11,7 +11,7 @@ Use [move](../../reference/attributes/move.md) property.
 
 ## Scale
 
-Use [scale](../../reference/attributes/scale.md) property.
+Use [scale](../../reference/styles/scale.md) property.
 
 ```html
 <split/>
@@ -23,7 +23,7 @@ Use [scale](../../reference/attributes/scale.md) property.
 
 ## Rotate
 
-Use [rotate](../../reference/attributes/rotate.md) property.
+Use [rotate](../../reference/styles/rotate.md) property.
 
 ```html
 <split/>
@@ -50,7 +50,7 @@ Use all properties together!
 
 ## Complex
 
-Use [transform](../../reference/attributes/transform.md) property.
+Use [transform](../../reference/styles/transform.md) property.
 
 ```html
 <split/>

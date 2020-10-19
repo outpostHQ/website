@@ -1,4 +1,4 @@
-Use [outline](../../reference/attributes/outline.md) style property.
+Use [outline](../../reference/styles/outline.md) style property.
 
 Remove `intrusive` modifier from examples to use **polite** focus mode where outline is only visibly when user navigate via keyboard.
 

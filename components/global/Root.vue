@@ -89,9 +89,7 @@
           size="lg"
           gap="1x"
         >
-          <nu-block size="lg||sm" show="y|||n">
-            {{ version }}
-          </nu-block>
+          <nu-block size="lg||sm" show="y|||n"> v{{ version }} </nu-block>
 
           <nu-pane gap="0">
             <nu-attrs for="btn" color="text :hover[special]" />
@@ -171,7 +169,7 @@ import Vue from 'vue';
 import ContrastIcon from '@/assets/icons/contrast.svg';
 import Theme from '@/services/theme';
 import App from '@/services/app';
-import '@/elements/splitpreview';
+import SplitPreviewLoader from '@/elements/splitpreview';
 import requireNude from '@/helpers/require-nude';
 import { SECTION_MAP } from '@/helpers/config';
 import initDraggable from '@/behaviors/movable';
@@ -236,6 +234,12 @@ async function initNude() {
     },
   });
 
+  Nude.assign('nu-cd', {
+    behaviors: {
+      code: null,
+    },
+  });
+
   Nude.assign('nu-btn', {
     styles: {
       border:
@@ -245,19 +249,11 @@ async function initNude() {
 
   await initDraggable(Nude);
 
-  Nude.init();
-}
+  const NuSplitPreview = await SplitPreviewLoader();
 
-if (process.client) {
-  setTimeout(() => {
-    if (window.Nude) {
-      initNude();
-    } else {
-      window.addEventListener('nudeReady', () => {
-        initNude();
-      });
-    }
-  });
+  customElements.define(NuSplitPreview.nuTag, NuSplitPreview);
+
+  Nude.init();
 }
 
 export default {
@@ -284,11 +280,14 @@ export default {
   },
   watch: {
     '$route.path'() {
-      this.App.showNav = false;
+      App.showNav = false;
+      App.previewMarkup = '';
     },
   },
   async mounted() {
     const Nude = await requireNude();
+
+    await initNude();
 
     const { routing } = Nude;
 

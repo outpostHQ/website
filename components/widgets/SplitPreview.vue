@@ -1,5 +1,5 @@
 <template>
-  <nu-flow :opacity="loaded ? '1' : '0'" transition="opacity">
+  <nu-flow :opacity="loaded ? '1' : '0'" transition="opacity" size="md">
     <nu-props diff-color="#main-bg"></nu-props>
     <nu-spacer height="1x"></nu-spacer>
     <nu-grid
@@ -26,6 +26,7 @@
           overflow="auto"
           grow="1"
           radius="1x 0 0 1x||||1x 1x 0 0"
+          size="md"
         >
           <textarea ref="textarea"></textarea>
         </nu-code>

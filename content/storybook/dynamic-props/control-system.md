@@ -1,6 +1,6 @@
 ## Toggle visibility
 
-Toggle [hidden](../../reference/attributes/hidden.md) attribute.
+Toggle [hidden](../../reference/styles/hidden.md) attribute.
 
 ```html
 <split/>
@@ -19,7 +19,7 @@ Toggle [hidden](../../reference/attributes/hidden.md) attribute.
 
 ## Toggle attribute
 
-Toggle [special](../../reference/attributes/special.md) attribute.
+Toggle [special](../../reference/utilities/special.md) attribute.
 
 ```html
 <split/>
@@ -59,7 +59,7 @@ Change opacity of the image.
     #[[control="root[--opacity]"]]#></nu-slider>
 
   <nu-block box>
-    <nu-svg opacity="--opacity" src="/img/icon.svg"></nu-svg>
+    <nu-svg opacity="--opacity" src="/images/icon.svg"></nu-svg>
   </nu-block>
 </nu-flow>
 ```

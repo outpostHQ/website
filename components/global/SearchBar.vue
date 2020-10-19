@@ -23,7 +23,7 @@
     </nu-inputgroup>
     <nu-card
       v-show="isActive"
-      place="outside-bottom"
+      place="outside-bottom -1px"
       width="100%"
       radius="1r"
       shadow
@@ -32,6 +32,10 @@
       height="max 20"
       z="front"
     >
+      <nu-block v-if="!results.length && !loading" padding="0 1x">
+        No results found
+      </nu-block>
+      <nu-block v-if="loading" padding="0 1x">Loading...</nu-block>
       <nu-flow
         v-for="(result, i) of results"
         :key="result.path"
@@ -91,6 +95,8 @@ export default {
       results: [],
       index: 0,
       focused: false,
+      inc: 0,
+      loading: false,
     };
   },
   computed: {
@@ -102,8 +108,14 @@ export default {
     async value(val) {
       val = val.trim();
 
+      this.inc += 1;
+
+      const cache = this.inc;
+
       if (this.isActive) {
-        this.results = uniqueResults(
+        this.loading = true;
+
+        const results = uniqueResults(
           (
             await Promise.all(
               ALL_SECTIONS.map((name) => {
@@ -132,6 +144,11 @@ export default {
               return list;
             }, [])
         );
+
+        if (this.inc === cache) {
+          this.results = results;
+          this.loading = false;
+        }
       } else {
         this.results = [];
       }

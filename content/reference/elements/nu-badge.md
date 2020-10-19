@@ -1,5 +1,6 @@
 ---
 description: Element to highlight some parts of the interface. Suitable for tags and statuses.
+type: element
 ---
 
 Add `role="status` if you use badge as a status.

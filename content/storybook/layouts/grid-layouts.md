@@ -18,7 +18,7 @@ By default **Grid** layout has a single column.
 
 ## With more columns
 
-Use [columns](../../reference/attributes/columns.md) style according to specification. [MDN Examples](!https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns).
+Use [columns](../../reference/styles/columns.md) style according to specification. [MDN Examples](!https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns).
 
 ```html
 <split/>
@@ -31,7 +31,7 @@ Use [columns](../../reference/attributes/columns.md) style according to specific
 
 ## With gap
 
-Use [gap](../../reference/attributes/gap.md) style. Default value is `1x`.
+Use [gap](../../reference/styles/gap.md) style. Default value is `1x`.
 
 ```html
 <split/>
@@ -44,7 +44,7 @@ Use [gap](../../reference/attributes/gap.md) style. Default value is `1x`.
 
 ## Row flow
 
-Use [flow](../../reference/attributes/flow.md) style to set different flow. Use [rows](../../reference/attributes/rows.md) to set number of rows.
+Use [flow](../../reference/styles/flow.md) style to set different flow. Use [rows](../../reference/styles/rows.md) to set number of rows.
 
 ```html
 <split/>
@@ -113,7 +113,7 @@ Also, you can just use **minimum width** for each grid item to achive the same e
 
 ### Content positioning
 
-Use [content](../../reference/attributes/content.md) style with `"space-between"`, `"space-around"`, `"space-evenly"`, `"center"` and `"stretch"` modifiers.
+Use [content](../../reference/styles/content.md) style with `"space-between"`, `"space-around"`, `"space-evenly"`, `"center"` and `"stretch"` modifiers.
 
 ```html
 <split/>
@@ -128,7 +128,7 @@ Use [content](../../reference/attributes/content.md) style with `"space-between"
 
 ### Items positioning
 
-Use [items](../../reference/attributes/items.md) style with `"start"`, `"end"`, `"center"` and `"stretch"` modifiers.
+Use [items](../../reference/styles/items.md) style with `"start"`, `"end"`, `"center"` and `"stretch"` modifiers.
 
 ```html
 <split/>

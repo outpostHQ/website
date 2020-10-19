@@ -7,6 +7,7 @@ import removeMD from 'remove-markdown';
 import unified from 'unified';
 import jsonCompiler from '@nuxt/content/parsers/markdown/compilers/json';
 import parse from 'rehype-parse';
+import { ELEMENTS } from '../helpers/config';
 
 function parseHTML(content) {
   return new Promise((resolve, reject) => {
@@ -38,13 +39,80 @@ export default async function Markdown(fileContent, other, other2) {
     .replace(/```html\n<Repl\/>\n/gi, '```nu-repl\n')
     .replace(/\.md\)/g, ')');
 
-  const content = md.render(fileContent);
+  let content = md.render(fileContent);
+
+  // Retrieve data from MD file
+  const data = md.meta;
+
+  if (data.type === 'behavior') {
+    const relatedElements = ELEMENTS.filter((el) =>
+      Object.keys(el.behaviors).includes(data.title)
+    );
+
+    if (relatedElements.length) {
+      fileContent += `
+
+## Related elements
+
+This behavior is used by default in the following elements:
+
+${relatedElements
+  .map((el) => `* [${el.tag}](/reference/elements/${el.tag})`)
+  .join('\n')}`;
+    }
+  }
+
+  if (data.type === 'element') {
+    const definition = ELEMENTS.find((el) => el.tag === data.title);
+
+    if (definition) {
+      fileContent += `
+
+## Defaults`;
+
+      if (Object.keys(definition.behaviors).length) {
+        fileContent += `
+
+### Behaviors
+|Behavior|Params|
+|----|----|
+${Object.entries(definition.behaviors)
+  .map(
+    ([behavior, params]) =>
+      `|[${behavior}](/reference/behaviors/${behavior})|${
+        params === true ? '–' : `\`${JSON.stringify(params)}\``
+      }|`
+  )
+  .join('\n')}`;
+      }
+
+      if (Object.keys(definition.styles).length) {
+        fileContent += `
+
+### Styles
+|Style|Value|
+|----|----|
+${Object.entries(definition.styles)
+  .map(
+    ([style, value]) =>
+      `|[${style}](/reference/styles/${style})|\`"${value}"\`|`
+  )
+  .join('\n')}`;
+      }
+    }
+  }
+
+  content = md
+    .render(fileContent)
+    .replace(
+      /(<nu-h.) padding="1em top"/g,
+      (s, s1) => `${s1} space="8x top" padding="!(8x + 1em) top"`
+    );
+
   const body = {
     type: 'root',
     children: (await parseHTML(content)).children[0].children[1].children,
   };
-  // Retrieve data from MD file
-  const data = md.meta;
   // Generate toc from body
   const toc = tocParser(fileContent).json;
 

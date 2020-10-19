@@ -1,6 +1,6 @@
 ## Change text color
 
-Use [color](../../reference/attributes/color.md) property to set text (base) color.
+Use [color](../../reference/styles/color.md) property to set text (base) color.
 
 ```html
 <split/>
@@ -16,7 +16,7 @@ Set transparency for the color using the following syntax:
 
 ## Fill element with color
 
-Use [fill](../../reference/attributes/fill.md) property to fill element with color.
+Use [fill](../../reference/styles/fill.md) property to fill element with color.
 
 ```html
 <split/>

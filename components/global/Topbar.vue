@@ -13,9 +13,9 @@
       <nu-pane size="lg" gap="0|||1x">
         <nu-attrs for="btn" padding="1x 2x|||1x" />
         <nu-attrs for="icon" show="y||||n" />
-        <nu-btn clear to="/guide/getting-started">
+        <nu-btn clear to="/handbook">
           <nu-icon name="book" />
-          Guide
+          Handbook
         </nu-btn>
         <nu-btn clear to="/storybook">
           <nu-icon name="layout" />
