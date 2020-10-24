@@ -155,9 +155,11 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-  proxy: {
-    '/api': { target: 'http://localhost:3030', ws: false },
-  },
+  proxy: DEV
+    ? {
+        '/api': { target: 'http://localhost:3030', ws: false },
+      }
+    : {},
   generate: {
     crawler: true,
     routes() {
