@@ -23,10 +23,9 @@
     }
   },
   "dependencies": {
-    "@nuxt/content": "^1.5.0",
-    "@nuxtjs/axios": "^5.12.0",
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "nuxt": "^2.14.0",
+    "@nuxt/content": "^1.10.0",
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/pwa": "3.2.2",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   },
@@ -34,6 +33,7 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/proxy": "^2.0.1",
     "@shopify/draggable": "^1.0.0-beta.8",
     "axios": "^0.20.0",
     "babel-eslint": "^10.1.0",
@@ -49,6 +49,7 @@
     "lz-string": "^1.4.4",
     "markdown-toc": "^1.2.0",
     "numl": "^1.0.0-beta.2",
+    "nuxt": "^2.14.7",
     "parcel": "^1.12.4",
     "prettier": "^2.0.5",
     "rehype-parse": "^7.0.1",

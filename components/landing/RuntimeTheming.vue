@@ -5,7 +5,7 @@
     description="Numl provides an innovative theming system that can&nbsp;be&nbsp;customized\n in&nbsp;runtime at&nbsp;any&nbsp;level you&nbsp;need."
   >
     <nu-block>
-      <nu-attrs for="btn" color="text :pressed[special]" />
+      <nu-attrs for="btn" color="text :pressed[special]" padding="1x 2x|||1x" />
       <nu-btngroup
         size="lg"
         :value="themeSection"
@@ -71,8 +71,7 @@
             <nu-h3>Modes</nu-h3>
 
             <nu-description>
-              Switching between dark and light mode is as easy as changing the
-              background color of the design system.
+              Numl has built-in support for Dark Scheme and High Contrast Mode.
             </nu-description>
 
             <nu-region>
@@ -88,8 +87,9 @@
               </nu-pane>
 
               <nu-description>
-                Switching between dark and light mode is as easy as changing the
-                background color of the design system.
+                Make your users happy with Dark Scheme that is perfect for
+                low-light conditions with sufficient contrast and adaptive
+                colors.
               </nu-description>
             </nu-region>
 
@@ -105,8 +105,8 @@
                 />
               </nu-pane>
               <nu-description>
-                Switching between dark and light mode is as easy as changing the
-                background color of the design system.
+                Increase the contrast of your site to help people with low
+                vision.
               </nu-description>
             </nu-region>
           </nu-flex>

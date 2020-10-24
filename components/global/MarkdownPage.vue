@@ -43,7 +43,7 @@
           place="sticky top --topbar-offset"
           overflow="hidden auto"
           height="max (100vh - --topbar-offset)|||max (100vh - --topbar-offset - 9x)"
-          padding="4x 0|||0x 1cp 4x"
+          padding="4x 1x 4x 0|||0 1cp 4x"
           space="1x left"
         >
           <nu-h2
@@ -152,7 +152,7 @@
           </nu-article>
         </nu-block>
 
-        <nu-block order="2|||1">
+        <nu-block order="2|||1" show="y|||n">
           <nu-block
             v-if="toc.length >= 2"
             display="flex"
@@ -164,7 +164,6 @@
             height="max (100vh - --topbar-offset)"
             padding="3x 0|||4x 0 0"
             move="-1x 0"
-            show="y|||n"
           >
             <TableOfContents :items="toc" spy />
           </nu-block>

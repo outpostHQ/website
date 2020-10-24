@@ -23,12 +23,30 @@
     <nu-props error-color="hue(12 70)"></nu-props>
 
     <nu-flex
+      flow="column"
       width="max --content-width"
       space="around"
       content="stretch"
       padding="--topbar-offset top"
       height="100%"
     >
+      <nu-pane padding>
+        <nu-attrs for="btn" padding=".5x 1x" />
+        <nu-btn @tap="save">
+          <nu-icon :name="saved ? 'checkmark-outline' : 'save-outline'" />
+          Save
+        </nu-btn>
+        <nu-btn @tap="copyReplLink">
+          <nu-icon :name="copied ? 'checkmark-outline' : 'share-outline'" />
+          Share
+        </nu-btn>
+        <nu-el :hidden="!copied" transition="opacity" opacity="1 :hidden[0]">
+          Link is copied to the clipboard.
+        </nu-el>
+        <nu-el :hidden="!saved" transition="opacity" opacity="1 :hidden[0]">
+          The snippet is saved.
+        </nu-el>
+      </nu-pane>
       <no-ssr>
         <codemirror
           ref="editor"
@@ -37,7 +55,7 @@
         ></codemirror>
       </no-ssr>
     </nu-flex>
-    <PreviewWindow />
+    <PreviewWindow ref="preview" />
   </nu-block>
 </template>
 
@@ -96,19 +114,31 @@ export default {
       saved: false,
       currentEmbed: false,
       App,
+      savedMarkup: '',
     };
   },
   computed: {
     encodedData() {
       const ref = this.$refs.preview;
 
-      if (!ref) return {};
+      if (!ref) return '';
 
       return ref.encodedData;
     },
+    isDirty() {
+      return this.savedMarkup !== App.previewMarkup;
+    },
   },
   watch: {
-    currentMarkup() {},
+    currentMarkup() {
+      if (this.timerId) {
+        clearTimeout(this.timerId);
+      }
+
+      this.timerId = setTimeout(() => {
+        this.updatePreview();
+      }, 800);
+    },
   },
   mounted() {
     setTimeout(async () => {
@@ -123,6 +153,7 @@ export default {
           this.currentEmbed = false;
         } else {
           let data;
+          let successParsing = false;
 
           if (hash) {
             try {
@@ -132,6 +163,7 @@ export default {
                 data = JSON.parse(
                   LZString.decompressFromEncodedURIComponent(hash)
                 );
+                successParsing = true;
               } catch (e2) {
                 // do nothing
               }
@@ -142,7 +174,9 @@ export default {
             this.currentEmbed = data.embed || false;
 
             setTimeout(() => {
-              this.save();
+              if (!successParsing) {
+                this.save();
+              }
             }, 100);
           }
         }
@@ -161,7 +195,9 @@ export default {
   },
   methods: {
     updatePreview() {
-      App.previewMarkup = this.currentMarkup || ' ';
+      App.previewMarkup =
+        (this.currentMarkup && this.currentMarkup.trim()) || ' ';
+      this.savedMarkup = App.previewMarkup;
     },
     toggleMode() {
       this.mode = this.mode === 'editor' ? 'preview' : 'editor';
@@ -180,28 +216,44 @@ export default {
       // return check;
     },
     copyReplLink() {
-      copy(`https://numl.design/repl#${this.encodedData}`);
-
-      this.copied = true;
-
-      setTimeout(() => {
-        this.copied = false;
-      }, 2000);
-    },
-    async save() {
       this.updatePreview();
 
+      setTimeout(async () => {
+        const hash = await this.save(true);
+
+        await copy(`https://numl.design/repl#${hash}`);
+
+        this.saved = false;
+        this.copied = true;
+
+        setTimeout(() => {
+          this.copied = false;
+        }, 2000);
+      }, 300);
+    },
+    async save(withoutHash) {
+      this.updatePreview();
+
+      let hash;
+
       try {
-        window.location.hash = await Snippets.save(this.currentMarkup);
+        hash = await Snippets.save(this.currentMarkup);
       } catch (e) {
-        window.location.hash = this.encodedData;
+        hash = this.encodedData;
       }
 
-      this.saved = true;
+      if (withoutHash !== true) {
+        window.location.hash = hash;
 
-      setTimeout(() => {
-        this.saved = false;
-      }, 2000);
+        this.copied = false;
+        this.saved = true;
+
+        setTimeout(() => {
+          this.saved = false;
+        }, 2000);
+      }
+
+      return hash;
     },
   },
 };

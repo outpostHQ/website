@@ -43,6 +43,9 @@
         </nu-link>
       </nu-block>
     </nu-block>
+    <nu-spacer show="n|||y" size="2x" />
+    <nu-line show="n|||y" />
+    <nu-spacer show="n|||y" size="2x" />
   </nu-block>
 </template>
 

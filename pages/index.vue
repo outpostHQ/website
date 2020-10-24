@@ -9,7 +9,7 @@
       <Topbar />
       <SiteBlock
         badge="design system · framework · language"
-        heading="Simplified UI Framework\nfor\s modern web\s interfaces"
+        heading="Universal UI Framework\nfor\s modern web\s interfaces"
         description="An open-source Library of Web&nbsp;Components and a&nbsp;Runtime&nbsp;CSS&nbsp;Framework for rapidly building UI that follows your&nbsp;Design&nbsp;System."
         padding="10x 0||8x 0|4x 0 8x"
         level="1"
@@ -117,7 +117,7 @@
           color="text :hover.focus[special]"
         />
         <nu-region as="feature">
-          <nu-cardbtn clear to="/storybook/typography/base-formatting">
+          <nu-cardbtn clear to="!/storybook/typography/base-formatting">
             <nu-props
               special-color="hue(170 special pastel)"
               special-bg-color="hue(170 special pastel)"
@@ -156,7 +156,7 @@
         </nu-region>
 
         <nu-region as="feature">
-          <nu-cardbtn clear to="/reference/attributes/responsive">
+          <nu-cardbtn clear to="!/reference/attributes/responsive">
             <nu-props
               special-color="hue(250 special pastel)"
               special-bg-color="hue(250 special pastel)"
@@ -226,7 +226,7 @@
         </nu-region>
 
         <nu-region as="feature">
-          <nu-cardbtn clear to="/storybook/dynamic-props/states">
+          <nu-cardbtn clear to="!/storybook/dynamic-props/states">
             <nu-props
               special-color="hue(290 special pastel)"
               special-bg-color="hue(290 special pastel)"
@@ -327,8 +327,8 @@
           <nu-description>
             Numl is focused on providing the best possible Developer Experience.
             It has lots of built-in helpers and solutions for routine UI
-            development and its atomic approach is convenient for maintaining
-            and refactoring.
+            development and its atomic approach is convenient for customization,
+            maintaining, and refactoring.
           </nu-description>
         </nu-card>
       </nu-grid>

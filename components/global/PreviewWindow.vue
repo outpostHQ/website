@@ -5,7 +5,7 @@
     flow="column"
     width="320rp 40vw 100vw"
     height="240rp 40vh 100vh"
-    place="fixed top left (--topbar-offset + 1x)"
+    place="fixed top right (--topbar-offset + 1x)"
     z="max"
     cursor="pointer"
     border="y :moving[#special]"
@@ -53,7 +53,7 @@
       </nu-el>
     </nu-pane>
     <nu-flex flow="column" box="y" grow="1">
-      <PreviewEmbed :markup="markup" />
+      <PreviewEmbed ref="embed" :markup="App.previewMarkup" />
       <nu-block place="cover" show="^card n :moving[y]" />
     </nu-flex>
   </nu-card>
@@ -72,6 +72,13 @@ export default {
   computed: {
     markup() {
       return App.previewMarkup;
+    },
+    encodedData() {
+      const ref = this.$refs.embed;
+
+      if (!ref) return '';
+
+      return ref.encodedData;
     },
   },
   methods: {

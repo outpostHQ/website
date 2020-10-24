@@ -25,7 +25,7 @@ export default {
       'data-nu-icons': 'eva',
       'data-nu-prevent': '',
     },
-    title: 'Numl Design – A simplified UI Framework for modern web interfaces',
+    title: 'Numl Design – Universal UI Framework for Modern Web Interfaces',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -134,6 +134,7 @@ export default {
     // '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/proxy',
   ],
   /*
    ** Axios module configuration
@@ -154,6 +155,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  proxy: {
+    '/api': { target: 'http://localhost:3030', ws: false },
+  },
   generate: {
     crawler: true,
     routes() {
