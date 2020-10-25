@@ -86,8 +86,6 @@
               padding="2x 0 0 1x"
             >
               {{ sec.title }}
-              -
-              {{ sec.size }}
             </nu-h2>
             <template v-for="(itemPage, i) in sec.pages">
               <nu-btn
@@ -121,6 +119,7 @@
       >
         <nu-block padding="4x 0 12x" grow="1" order="1|||2">
           <nu-article gap size="lg||||md">
+            <nu-attrs for="table" size="md" />
             <template v-if="page.title">
               <nu-flow gap>
                 <nu-h1>

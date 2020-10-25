@@ -204,7 +204,9 @@ export default {
       this.$refs.input.nuRef.blur();
     },
     onBlur() {
-      this.focused = false;
+      setTimeout(() => {
+        this.focused = false;
+      }, 100);
     },
     onFocus() {
       this.focused = true;

@@ -6,11 +6,6 @@ const DEV = process.env.NODE_ENV !== 'production';
 
 export default {
   /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: 'universal',
-  /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
@@ -135,6 +130,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/proxy',
+    '@nuxtjs/sitemap',
   ],
   /*
    ** Axios module configuration
@@ -192,5 +188,8 @@ export default {
 
       return routes;
     },
+  },
+  sitemap: {
+    hostname: 'https://numl.design',
   },
 };

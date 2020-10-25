@@ -1,4 +1,22 @@
 export const SECTION_MAP = {
+  handbook: [
+    {
+      title: 'Basics',
+      slug: 'basics',
+    },
+    {
+      title: 'Features',
+      slug: 'features',
+    },
+    {
+      title: 'Framework',
+      slug: 'framework',
+    },
+    {
+      title: 'Integration',
+      slug: 'integration',
+    },
+  ],
   reference: [
     {
       title: 'Definitions',

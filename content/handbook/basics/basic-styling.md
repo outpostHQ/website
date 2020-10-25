@@ -1,114 +1,9 @@
 ---
-title: Learn Numl basics in 15 minutes
-menuTitle: Basics in 15 minutes
+title: Basic styling with Numl
+menuTitle: Basic styling
 menuIndex: 20
-description: This is a quick introduction to the Numl syntax and capabilities. Learning will be really fast for those who already know modern CSS (Basics, Flex & Grid layouts, Custom Properties). Take just 15 minutes of your time and you can start creating high-quality and accessible interfaces using Numl. 
+description: This is a quick introduction to Numl styling. Learning will be really fast for those who already know modern CSS (Basics, Flex & Grid layouts, Custom Properties). Take just 15 minutes of your time and you can start creating high-quality and accessible interfaces using Numl. 
 ---
-
-## Basic concepts
-
-First of all, we need to get a basic understanding of how it works.
-
-### Custom Elements
-
-Numl is providing so-called HTML Custom Elements that is the part of [Web Components](!https://developer.mozilla.org/en-US/docs/Web/Web_Components) – standard for creating reusable pieces of UI.
-
-While using Numl you don't have to use native HTML tags (with few exceptions). Also, you don't have to write CSS to style your elements. Just use custom tags and needed attributes.
-
-### Styling via attributes
-
-Styling via attributes is pretty straightforward. It may seem a little old fashioned at first, but we assure you that you won't have any trouble with that.
-
-```html
-<split/>
-<nu-card padding=".5rem 1rem">
-  Simple card
-</nu-card>
-```
-
-This combination of element, attribute, and attribute value will generate the following CSS:
-
-```css
-nu-card[padding=".5rem 1rem"] {
-  padding: .5rem 1rem;
-}
-```
-
-### Modifiers
-
-Many style attributes accept not only values but also modifiers, which makes styling easier. For example, you can use directional modifiers to apply the style to the specific side of the element. Use **color modifier** (`#` plus the name of the color) to change the color of the style.
-
-```html
-<split/>
-<nu-block
-  border="1ow left #special"
-  padding="1x left">
-  Block
-</nu-block>
-```
-
-### Custom units
-
-In addition to CSS units (like `px`, `rem`...), Numl has its own set of custom units: 
-
-|Unit|Description|Default value|
-|----|----|----|
-|`x`|default gap|.5rem|
-|`r`|default border radius|.5rem|
-|`bw`|default border width|1px|
-|`ow`|default outline width|1rem / 16 * 3|
-|`rp`|rem pixel|1rem / 16|
-
-This example...
-
-```html
-<nu-card padding="1x 2x">
-  Simple card
-</nu-card>
-```
-
-...will generate the following CSS style:
-
-```css
-padding: var(--nu-gap) calc(var(--nu-gap) * 2);
-```
-
-You can add your own custom units using Numl Javascript API.
-
-### Behaviors
-
-In Numl there are many behaviors that can be injected into any element. Some elements have built-in behaviors like `button` or `listbox`. There are behaviors for various tasks: accessibility, syntax highlighting, markdown conversion, hotkey management, and more... And yes, you can make your own behaviors with ease.
-
-Behavior can be injected using the following syntax:
-
-```html
-<split/>
-<nu-btn use-hotkey="o" to="!/">
-  Click me
-</nu-block>
-```
-
-> Click the button or press ==o== to open this site in a new tab.
-
-### Widgets
-
-There are lots of widget elements in Numl. They can receive `value` (sometimes also `checked` property) and emit the `input` event with a changed value. All widgets are implemented using **Behaviors**.
-
-```html
-<split/>
-<nu-flow gap="2x">
-  <nu-btn>Button</nu-btn>
-  <nu-radiogroup value="0" gap>
-    <nu-radio value="0"></nu-radio>
-    <nu-radio value="1"></nu-radio>
-  </nu-radiogroup>
-  <nu-slider></nu-slider>
-  <nu-checkbox></nu-checkbox>
-  <nu-input placeholder="Input"></nu-input>
-  <nu-switch></nu-switch>
-</nu-flow>
-```
-
 
 ## Typography
 
@@ -279,10 +174,10 @@ You can also apply modifiers to your theme to make it more suitable for the spec
 </nu-card>
 ```
 
-You can create named themes and mix them using [nu-props](../reference/definitions/nu-props.md) definition. To learn more see the full reference of [nu-theme](../reference/definitions/nu-theme.md) definition and [theme](../reference/styles/theme.md) style attribute.
+You can create named themes and mix them using [nu-props](../reference/definitions/nu-props.md) definition. To learn more see our [Themes Section](../features/themes.md) or the full references of [nu-theme](../reference/definitions/nu-theme.md) definition and [theme](../reference/styles/theme.md) style attribute.
 
 
-## Element styling
+## Block styling
 
 Almost everything you do with CSS can be accomplished using Numl.
 
@@ -348,3 +243,5 @@ Use [shadow](../reference/styles/shadow.md) style attribute to add outer shadows
   <nu-card inset="1x 1x 1ow #special-shadow">C</nu-card>
 </nu-pane>
 ```
+
+## Work in progress...
