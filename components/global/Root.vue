@@ -170,6 +170,7 @@ import ContrastIcon from '@/assets/icons/contrast.svg';
 import Theme from '@/services/theme';
 import App from '@/services/app';
 import SplitPreviewLoader from '@/elements/splitpreview';
+import PreviewLoader from '@/elements/preview';
 import requireNude from '@/helpers/require-nude';
 import { SECTION_MAP } from '@/helpers/config';
 import initDraggable from '@/behaviors/movable';
@@ -249,9 +250,13 @@ async function initNude() {
 
   await initDraggable(Nude);
 
-  const NuSplitPreview = await SplitPreviewLoader();
+  const [NuSplitPreview, NuPreview] = await Promise.all([
+    SplitPreviewLoader(),
+    PreviewLoader(),
+  ]);
 
   customElements.define(NuSplitPreview.nuTag, NuSplitPreview);
+  customElements.define(NuPreview.nuTag, NuPreview);
 
   Nude.init();
 }

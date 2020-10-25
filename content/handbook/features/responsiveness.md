@@ -11,65 +11,56 @@ description: "To make your site responsive with Numl is very simple. Any element
 
 So here we have three responsive zones and three corresponding value for the attribute:
 
-```preview
-<nu-gridtable columns="auto auto" border radius>
-  <nu-columnheader>Media query</nu-columnheader>
-  <nu-columnheader>Attribute value</nu-columnheader>
+|Media query|Attribute value|
+|----|----|
+|`(min-width: 980px)`|`"md"`|
+|`(max-width: 979px) and (min-width: 640px)`|`"md"`|
+|`(max-width: 639px)`|`"xs"`|
 
-  <nu-cell>(min-width: 980px)</nu-cell>
-  <nu-cell>"md"</nu-cell>
+So just in a few symbols, we created an element with responsive size. WOW! It would require a batch of lines in CSS and would be static while Numl implementation will let you dynamically change responsive points which are **impossible in plain CSS**.
 
-  <nu-cell>(max-width: 979px) and (min-width: 640px)</nu-cell>
-  <nu-cell>md</nu-cell>
+## How to skip attribute values
 
-  <nu-cell>(max-width: 639px)</nu-cell>
-  <nu-cell>xs</nu-cell>
-</nu-gridtable>
-```
+Sometimes there is no need to define all values for the attribute. And there are some tricks to archive that. Here is a few examples to understand that mechanic. All examples provided for responsive points from the first example.
 
-So just in few symbols we created element with responsive size. WOW! It would require a batch of lines in CSS and would be static while Numl implementation let you dynamically change responsive points which is **impossible in plain CSS**.
+## Various attribute values
 
-### How to skip attribute values
-
-Sometimes there is no need to define all values for the attribute. And there are some tricks to archive that. Here is few example to understand that mechanic. All examples provided for responsive points from the first example.
-
-#### Various attribute values
-
-```preview
+```html
+<preview/>
 <nu-gridtable columns="auto auto auto auto auto auto auto" border radius>
   <nu-attrs for="nu-cell" text="monospace"></nu-attrs>
-
+ 
   <nu-columnheader>Window \ Attribute</nu-columnheader>
-  <nu-columnheader>"xl"</nu-columnheader>
-  <nu-columnheader>"xl|md"</nu-columnheader>
-  <nu-columnheader>"||xs"</nu-columnheader>
-  <nu-columnheader>"xl||xs"</nu-columnheader>
-  <nu-columnheader>"xl| |sm"</nu-columnheader>
-  <nu-columnheader>"xl|md|sm"</nu-columnheader>
+  <nu-columnheader><nu-cd>"xl"</nu-cd></nu-columnheader>
+  <nu-columnheader><nu-cd>"xl|md"</nu-cd></nu-columnheader>
+  <nu-columnheader><nu-cd>"||xs"</nu-cd></nu-columnheader>
+  <nu-columnheader><nu-cd>"xl||xs"</nu-cd></nu-columnheader>
+  <nu-columnheader><nu-cd>"xl| |sm"</nu-cd></nu-columnheader>
+  <nu-columnheader><nu-cd>"xl|md|sm"</nu-cd></nu-columnheader>
 
-  <nu-cell>> 980px</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>""</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>"xl"</nu-cell>
+  <nu-cell><nu-cd>> 980px</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>""</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
 
-  <nu-cell>> 979px AND > 640px</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>"md"</nu-cell>
-  <nu-cell>""</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>""</nu-cell>
-  <nu-cell>"md"</nu-cell>
+  <nu-cell><nu-cd>> 979px AND > 640px</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"md"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>""</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>""</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"md"</nu-cd></nu-cell>
 
-  <nu-cell>< 639px</nu-cell>
-  <nu-cell>"xl"</nu-cell>
-  <nu-cell>"md"</nu-cell>
-  <nu-cell>"xs"</nu-cell>
-  <nu-cell>"xs"</nu-cell>
-  <nu-cell>"xs"</nu-cell>
-  <nu-cell>"xs"</nu-cell>
+  <nu-cell><nu-cd>< 639px</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xl"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"md"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
+  <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
 </nu-gridtable>
 ```
 

@@ -120,6 +120,7 @@
         <nu-block padding="4x 0 12x" grow="1" order="1|||2">
           <nu-article gap size="lg||||md">
             <nu-attrs for="table" size="md" />
+            <nu-attrs for="gridtable" size="md" />
             <template v-if="page.title">
               <nu-flow gap>
                 <nu-h1>

@@ -1,5 +1,3 @@
-import Vue from 'vue';
-import SplitPreview from '@/components/widgets/SplitPreview.vue';
 import requireNude from '@/helpers/require-nude';
 
 const Loader = () => {
@@ -7,7 +5,7 @@ const Loader = () => {
     return requireNude().then((Nude) => {
       return class NuSplitPreview extends window.Nude.elements.NuElement {
         static get nuTag() {
-          return 'nu-splitpreview';
+          return 'nu-preview';
         }
 
         static get nuStyles() {
@@ -17,13 +15,7 @@ const Loader = () => {
         }
 
         static nuCSS({ tag, css }) {
-          return [
-            ...css,
-
-            `${tag} > pre, ${tag} > textarea {
-          display: none;
-        }`,
-          ];
+          return [...css, `${tag} > pre, ${tag} > textarea { display: none; }`];
         }
 
         nuConnected() {
@@ -61,15 +53,7 @@ const Loader = () => {
         }
 
         nuRenderContents() {
-          this.nuComponent = new Vue({
-            render: (h) =>
-              h(SplitPreview, {
-                props: {
-                  snippet: this.nuContent,
-                  markup: this.nuPreview,
-                },
-              }),
-          }).$mount(this.nuContainer);
+          this.nuContainer.innerHTML = this.nuPreview;
         }
       };
     });
