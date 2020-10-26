@@ -10,9 +10,14 @@
       <nu-el show="y|||n">
         {{ capitalize(Theme.scheme) }}
       </nu-el>
-      <nu-tooltip text="nowrap">
-        Scheme: {{ capitalize(Theme.scheme) }}
-      </nu-tooltip>
+      <nu-block
+        text="nowrap b"
+        show="n|||y"
+        size="xs"
+        place="outside-bottom -1px"
+      >
+        {{ capitalize(Theme.scheme) }}
+      </nu-block>
     </nu-btn>
 
     <nu-btn
@@ -29,9 +34,14 @@
       <nu-el show="y|||n">
         {{ capitalize(Theme.contrast) }}
       </nu-el>
-      <nu-tooltip text="nowrap">
-        Contrast Mode: {{ capitalize(Theme.contrast) }}
-      </nu-tooltip>
+      <nu-block
+        text="nowrap b"
+        show="n|||y"
+        size="xs"
+        place="outside-bottom -1px"
+      >
+        {{ capitalize(Theme.contrast) }}
+      </nu-block>
     </nu-btn>
   </nu-pane>
 </template>

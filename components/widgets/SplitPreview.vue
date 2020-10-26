@@ -57,8 +57,11 @@
             shadow="yes :hover[#shadow.60]"
             fill="bg"
           ></nu-attrs>
-          <nu-btn clear>
-            <nu-icon name="copy-outline"></nu-icon>
+          <nu-btn clear @tap="copy">
+            <nu-icon :name="copied ? 'checkmark-outline' : 'copy-outline'" />
+            <nu-tooltip :show="copied ? 'y' : 'n'">
+              Copied!
+            </nu-tooltip>
           </nu-btn>
           <nu-btn clear>
             <nu-icon name="edit-2-outline"></nu-icon>
@@ -86,7 +89,9 @@
 </template>
 
 <script>
+import copy from 'clipboard-copy';
 import App from '@/services/app';
+import { getSharableLink } from '@/services/preview';
 
 export default {
   name: 'SplitPreview',
@@ -97,6 +102,7 @@ export default {
   data() {
     return {
       loaded: false,
+      copied: false,
     };
   },
   mounted() {
@@ -109,6 +115,17 @@ export default {
   methods: {
     showPreviewWindow() {
       App.previewMarkup = this.markup;
+    },
+    copy() {
+      const link = getSharableLink(this.markup);
+
+      copy(link);
+
+      this.copied = true;
+
+      setTimeout(() => {
+        this.copied = false;
+      }, 2000);
     },
   },
 };

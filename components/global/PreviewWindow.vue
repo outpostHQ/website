@@ -4,7 +4,7 @@
     display="flex"
     flow="column"
     width="320rp 40vw 100vw"
-    height="240rp 40vh 100vh"
+    height="240rp 60vh 100vh"
     place="fixed top right (--topbar-offset + 1x)"
     z="max"
     cursor="pointer"

@@ -30,7 +30,7 @@
       :opacity="`${heading.lvl > 2 ? 0.8 : 1} :current[1]`"
     >
       <nu-props :offset="`${heading.lvl - 2} * 1x`" />
-      {{ heading.content }}
+      <nu-el text="ellipsis">{{ heading.content }}</nu-el>
     </nu-btn>
     <nu-block show="y|||n">
       <nu-spacer size="4x" />

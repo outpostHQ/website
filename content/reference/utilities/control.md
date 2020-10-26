@@ -1,5 +1,5 @@
 ---
-title: Utility attribute [control]
+title: control
 description: Use control utility property to active Control System. This allows widgets to control other elements.
 ---
 

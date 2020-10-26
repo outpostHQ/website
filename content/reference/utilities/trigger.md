@@ -1,4 +1,7 @@
-Use **trigger** property to change behavior of *Control System*. If the widget has this property then whenever its value is changed (or set) it will trigger control action.
+---
+title: trigger
+description: "Use **trigger** property to change the behavior of *Control System*. If the widget has this property then whenever its value is changed (or set) it will trigger control action. Even in the initial state."
+---
 
 ## Usage
 
@@ -15,7 +18,7 @@ Control without trigger:
 </nu-pane>
 ```
 
-The user action (click on the button) is required to activate control action.
+The user action (click on the button) is required to activate the control action.
 
 Control with trigger:
 

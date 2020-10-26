@@ -220,10 +220,10 @@ Use [border](../reference/styles/border.md) style attribute to create physical/v
 |`border="3px #f39"`|`border: 3px solid #f39`|
 |`border="hue(320) left right"`|`border-left: 1px rgb(216, 0, 186); border-right: 1px rgb(216, 0, 186);`|
 |`border="3px #f39 outside left"`|`box-shadow: -3px 0 0 #f39`|
-|`border=""` or `border="1r"`|`border-radius: var(--nu-radius)`|
-|`border="2rem"`|`border-radius: 2rem`|
-|`border="round"`|`border-radius: 9999rem`|
-|`border="ellipse"`|`border-radius: 50%`|
+|`radius=""` or `radius="1r"`|`border-radius: var(--nu-radius)`|
+|`radius="2rem"`|`border-radius: 2rem`|
+|`radius="round"`|`border-radius: 9999rem`|
+|`radius="ellipse"`|`border-radius: 50%`|
 
 ### Shadows
 

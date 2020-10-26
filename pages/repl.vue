@@ -32,11 +32,11 @@
     >
       <nu-pane padding>
         <nu-attrs for="btn" padding=".5x 1x" />
-        <nu-btn @tap="save">
+        <nu-btn :disabled="saveDisabled" @tap="save">
           <nu-icon :name="saved ? 'checkmark-outline' : 'save-outline'" />
           Save
         </nu-btn>
-        <nu-btn @tap="copyReplLink">
+        <nu-btn :disabled="saveDisabled" @tap="copyReplLink">
           <nu-icon :name="copied ? 'checkmark-outline' : 'share-outline'" />
           Share
         </nu-btn>
@@ -64,6 +64,7 @@ import LZString from 'lz-string';
 import copy from 'clipboard-copy';
 import Snippets from '@/services/snippets';
 import App from '@/services/app';
+import { getStoreHash } from '@/services/preview';
 
 // window.Repl = {
 //   convertToEmbedded() {
@@ -128,6 +129,9 @@ export default {
     isDirty() {
       return this.savedMarkup !== App.previewMarkup;
     },
+    saveDisabled() {
+      return !this.currentMarkup || !this.currentMarkup.trim();
+    },
   },
   watch: {
     currentMarkup() {
@@ -143,7 +147,7 @@ export default {
   mounted() {
     setTimeout(async () => {
       if (this.markup) {
-        this.currentMarkup = this.markup;
+        this.currentMarkup = this.markup || '';
         this.currentEmbed = !!this.embed;
       } else {
         const hash = window.location.hash.slice(1);
@@ -170,7 +174,7 @@ export default {
               // do nothing
             }
 
-            this.currentMarkup = data.markup;
+            this.currentMarkup = data.markup || '';
             this.currentEmbed = data.embed || false;
 
             setTimeout(() => {
@@ -216,6 +220,8 @@ export default {
       // return check;
     },
     copyReplLink() {
+      if (this.saveDisabled) return;
+
       this.updatePreview();
 
       setTimeout(async () => {
@@ -232,6 +238,8 @@ export default {
       }, 300);
     },
     async save(withoutHash) {
+      if (this.saveDisabled) return;
+
       this.updatePreview();
 
       let hash;
@@ -239,7 +247,7 @@ export default {
       try {
         hash = await Snippets.save(this.currentMarkup);
       } catch (e) {
-        hash = this.encodedData;
+        hash = getStoreHash(this.currentMarkup);
       }
 
       if (withoutHash !== true) {
