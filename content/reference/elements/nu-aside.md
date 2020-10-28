@@ -1,4 +1,8 @@
-A **semantic** element. Represents a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.
+---
+title: nu-aside
+type: element
+description: "A **semantic** element. Represents a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes."
+---
 
 ```html
 <split/>

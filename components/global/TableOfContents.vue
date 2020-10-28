@@ -1,7 +1,7 @@
 <template>
   <nu-block display="flex" flow="column" items="stretch">
     <nu-h2
-      v-if="items.length >= 2"
+      v-if="items.length >= 1"
       size="sm"
       text="up b"
       color="#text.60"

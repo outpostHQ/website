@@ -121,8 +121,12 @@
             <nu-attrs for="gridtable" size="md" />
             <template v-if="page.title">
               <nu-flow gap>
-                <nu-pane content="space-between">
-                  <nu-h1>
+                <nu-pane
+                  content="space-between"
+                  flow="row||||column-reverse"
+                  items="start"
+                >
+                  <nu-h1 size="h1||||h2">
                     {{ formatTitle(page) }}
                   </nu-h1>
                   <nu-btn
