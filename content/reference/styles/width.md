@@ -1,4 +1,9 @@
-Use this style to set width of the element. Also you can set minimum and maximum width.
+---
+title: width
+type: style attribute
+description: "Use this style to set the width of the element. Also, you can set minimum and maximum width."
+githubLink: https://github.com/tenphi/numl/blob/master/src/helpers.js#L152
+---
 
 ## Syntax
 

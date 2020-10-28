@@ -1,5 +1,9 @@
 import { capitalize } from '@/helpers';
 
+function getGithubLink(file) {
+  return `https://github.com/tenphi/numl/blob/master/src/${file}`;
+}
+
 export function preparePage(page) {
   const siteSection = page.path.split('/')[1];
   const section = page.path.split('/')[2];
@@ -15,6 +19,7 @@ export function preparePage(page) {
       title = `${page.slug}`;
       menuTitle = `${page.slug}`;
       page.type = 'behavior';
+      page.githubLink = getGithubLink(`behaviors/${page.slug}.js`);
       break;
     case 'functions':
       title = `${page.slug}()`;
@@ -25,6 +30,10 @@ export function preparePage(page) {
       title = `${page.slug}`;
       menuTitle = `[${page.slug}]`;
       page.type = 'style attribute';
+
+      if (!('githubLink' in page)) {
+        page.githubLink = getGithubLink(`styles/${page.slug}.js`);
+      }
       break;
     case 'utilities':
       title = `${page.slug}`;
@@ -35,11 +44,22 @@ export function preparePage(page) {
       title = page.slug;
       menuTitle = `<${page.slug}/>`;
       page.type = 'element';
+      if (!('githubLink' in page)) {
+        page.githubLink = getGithubLink(
+          `elements/${page.slug.replace('nu-', '')}.js`
+        );
+      }
       break;
     case 'definitions':
       title = page.slug;
       menuTitle = `<${page.slug}/>`;
       page.type = 'definition';
+
+      if (!('githubLink' in page)) {
+        page.githubLink = getGithubLink(
+          `definitions/${page.slug.replace('nu-', '')}.js`
+        );
+      }
       break;
     default:
       title = capitalize(page.slug).replace(/-/g, ' ');

@@ -33,7 +33,7 @@
           <nu-attrs for="btn" padding=".25em .5em"></nu-attrs>
           <nu-btn clear to="!https://www.npmjs.com/package/numl">
             <nu-icon name="cube"></nu-icon>
-            v1.0.0-beta.1
+            {{ App.version }}
           </nu-btn>
           <nu-btn clear to="!https://github.com/tenphi/numl">
             <nu-icon name="github"></nu-icon>
@@ -360,7 +360,7 @@
         <Snippet :code="`<nu-btn>My button</nu-btn>`" />
         <nu-block>
           See our
-          <nu-link to="/handbook">Handbook</nu-link>
+          <nu-link to="/handbook/getting-started">Handbook</nu-link>
           for more details and other&nbsp;ways to&nbsp;install&nbsp;Numl.
         </nu-block>
       </nu-flex>
@@ -445,6 +445,7 @@ import RuntimeTheming from '@/components/landing/RuntimeTheming';
 import SiteBlock from '@/components/global/SiteBlock';
 import Snippet from '@/components/global/Snippet';
 import Github from '@/helpers/github';
+import App from '@/services/app';
 
 export default {
   components: { Snippet, SiteBlock, RuntimeTheming },
@@ -452,6 +453,7 @@ export default {
     const dev = process.client && location.hostname === 'localhost';
 
     return {
+      App,
       githubStars: '...',
       nudeElementsLabel: `<nu-el color="text">nu</nu-el>de e<nu-el color="text">l</nu-el>e<nu-el color="text">m</nu-el>ents`,
       dev,

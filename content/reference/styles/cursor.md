@@ -1,4 +1,9 @@
-Use this style to set the type of cursor, if any, to show when the mouse pointer is over an element.
+---
+title: cursor
+type: style attribute
+description: "Use this style to set the type of cursor, if any, to show when the mouse pointer is over an element."
+githubLink: false
+---
 
 ## Syntax
 

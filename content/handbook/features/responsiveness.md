@@ -13,7 +13,7 @@ So here we have three responsive zones and three corresponding value for the att
 
 |Media query|Attribute value|
 |----|----|
-|`(min-width: 980px)`|`"md"`|
+|`(min-width: 980px)`|`"xl"`|
 |`(max-width: 979px) and (min-width: 640px)`|`"md"`|
 |`(max-width: 639px)`|`"xs"`|
 

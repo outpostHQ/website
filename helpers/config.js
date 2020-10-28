@@ -176,7 +176,7 @@ export const STYLES = [
   'color',
   'fill',
   'filter',
-  'backdrop',
+  'backdrop-filter',
   'image',
   'transform',
   'scale',

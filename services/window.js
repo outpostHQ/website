@@ -23,7 +23,7 @@ function scrollIntoView(selector, instant, options = {}) {
   if (el) {
     el.scrollIntoView({
       behavior: instant ? 'smooth' : 'auto',
-      block: 'start',
+      block: 'nearest',
       ...options,
     });
   }

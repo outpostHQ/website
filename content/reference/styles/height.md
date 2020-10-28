@@ -1,4 +1,9 @@
-Use this style to set height of the element. Also you can set minimum and maximum height.
+---
+title: height
+type: style attribute
+description: "Use this style to set the height of the element. Also, you can set minimum and maximum height."
+githubLink: https://github.com/tenphi/numl/blob/master/src/helpers.js#L152
+---
 
 ## Syntax
 

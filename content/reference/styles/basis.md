@@ -1,4 +1,9 @@
-The **basis** style sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+---
+title: basis
+type: style attribute
+description: The **basis** style sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+githubLink: false
+---
 
 ## Syntax
 

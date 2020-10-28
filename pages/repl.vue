@@ -30,7 +30,7 @@
       padding="--topbar-offset top"
       height="100%"
     >
-      <nu-pane padding>
+      <nu-pane padding box="y">
         <nu-attrs for="btn" padding=".5x 1x" />
         <nu-btn :disabled="saveDisabled" @tap="save">
           <nu-icon :name="saved ? 'checkmark-outline' : 'save-outline'" />
@@ -40,10 +40,36 @@
           <nu-icon :name="copied ? 'checkmark-outline' : 'share-outline'" />
           Share
         </nu-btn>
-        <nu-el :hidden="!copied" transition="opacity" opacity="1 :hidden[0]">
+        <nu-btn v-if="!Preview.shown" @tap="Preview.shown = true">
+          <nu-icon name="eye-outline" />
+          Preview
+        </nu-btn>
+        <nu-el
+          :hidden="!copied"
+          transition="opacity"
+          opacity="1 :hidden[0]"
+          text="nowrap ellipsis||||nowrap b"
+          place="||||outside-top 1x"
+          fill="#clear||||bg"
+          border="n||||y"
+          padding="||||.5x"
+          size="md||||xs"
+          z="||||max"
+        >
           Link is copied to the clipboard.
         </nu-el>
-        <nu-el :hidden="!saved" transition="opacity" opacity="1 :hidden[0]">
+        <nu-el
+          :hidden="!saved"
+          transition="opacity"
+          opacity="1 :hidden[0]"
+          text="nowrap ellipsis||||nowrap b"
+          place="||||outside-top 1x"
+          fill="#clear||||bg"
+          border="n||||y"
+          padding="||||.5x"
+          size="md||||xs"
+          z="||||max"
+        >
           The snippet is saved.
         </nu-el>
       </nu-pane>
@@ -63,7 +89,7 @@
 import LZString from 'lz-string';
 import copy from 'clipboard-copy';
 import Snippets from '@/services/snippets';
-import App from '@/services/app';
+import Preview from '@/services/preview';
 import { getStoreHash } from '@/services/preview';
 
 // window.Repl = {
@@ -110,11 +136,10 @@ export default {
       },
       valid: true,
       timerId: null,
-      previewMarkup: null,
       copied: false,
       saved: false,
       currentEmbed: false,
-      App,
+      Preview,
       savedMarkup: '',
     };
   },
@@ -127,7 +152,7 @@ export default {
       return ref.encodedData;
     },
     isDirty() {
-      return this.savedMarkup !== App.previewMarkup;
+      return this.savedMarkup !== Preview.markup;
     },
     saveDisabled() {
       return !this.currentMarkup || !this.currentMarkup.trim();
@@ -177,6 +202,8 @@ export default {
             this.currentMarkup = data.markup || '';
             this.currentEmbed = data.embed || false;
 
+            this.updatePreview(true);
+
             setTimeout(() => {
               if (!successParsing) {
                 this.save();
@@ -187,7 +214,7 @@ export default {
 
         if (!this.checkMarkup()) return;
 
-        this.updatePreview();
+        this.updatePreview(true);
       }
 
       setTimeout(() => {
@@ -198,10 +225,11 @@ export default {
     });
   },
   methods: {
-    updatePreview() {
-      App.previewMarkup =
-        (this.currentMarkup && this.currentMarkup.trim()) || ' ';
-      this.savedMarkup = App.previewMarkup;
+    updatePreview(force) {
+      Preview[force ? 'show' : 'change'](
+        (this.currentMarkup && this.currentMarkup.trim()) || ' '
+      );
+      this.savedMarkup = Preview.markup;
     },
     toggleMode() {
       this.mode = this.mode === 'editor' ? 'preview' : 'editor';
@@ -271,8 +299,10 @@ export default {
 .vue-codemirror {
   display: flex;
   flex-flow: column;
-  width: 100%;
+  width: calc(100% + 2 * var(--nu-content-padding));
   flex-grow: 1;
+  margin-left: calc(-1 * var(--nu-content-padding));
+  margin-right: calc(-1 * var(--nu-content-padding));
 }
 
 .CodeMirror {

@@ -53,12 +53,14 @@
       >
         <nu-block id="logo">
           <nu-pane text="nowrap" width="--sidebar-width" gap="1x">
-            <nu-svg
-              src="/images/nude-logo-small.svg"
-              height="4x"
-              width="min 4x"
-              color="text-soft"
-            />
+            <nu-btn clear color="text :hover.focus[special]" padding="0" to="/">
+              <nu-svg
+                src="/images/nude-logo-small.svg"
+                height="4x"
+                width="min 4x"
+                color="text-soft"
+              />
+            </nu-btn>
             <nu-h2 size="xl">
               Numl<nu-btn
                 padding="1x right"
@@ -89,7 +91,7 @@
           size="lg"
           gap="1x"
         >
-          <nu-block size="lg||sm" show="y|||n"> v{{ version }} </nu-block>
+          <nu-block size="lg||sm" show="y|||n"> v{{ App.version }} </nu-block>
 
           <nu-pane gap="0">
             <nu-attrs for="btn" color="text :hover[special]" />
@@ -169,6 +171,7 @@ import Vue from 'vue';
 import ContrastIcon from '@/assets/icons/contrast.svg';
 import Theme from '@/services/theme';
 import App from '@/services/app';
+import Preview from '@/services/preview';
 import SplitPreviewLoader from '@/elements/splitpreview';
 import PreviewLoader from '@/elements/preview';
 import requireNude from '@/helpers/require-nude';
@@ -267,7 +270,7 @@ export default {
     return {
       Theme,
       App,
-      version: '',
+
       showSettings: false,
     };
   },
@@ -286,7 +289,8 @@ export default {
   watch: {
     '$route.path'() {
       App.showNav = false;
-      App.previewMarkup = '';
+      this.showSettings = false;
+      Preview.hide();
     },
   },
   async mounted() {
@@ -296,7 +300,7 @@ export default {
 
     const { routing } = Nude;
 
-    this.version = Nude.version;
+    App.version = Nude.version;
 
     routing.setRouter((url, openNewTab) => {
       // skip outside links and links that open in new tabs
@@ -314,6 +318,8 @@ export default {
 
       return false;
     });
+
+    App.isDev = location.host.includes('localhost');
   },
   methods: {
     toggleNav() {

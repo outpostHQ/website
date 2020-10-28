@@ -1,4 +1,9 @@
-Use this style to define the line names and track sizing functions of the grid columns.
+---
+title: columns
+type: style attribute
+description: "Use this style to define the line names and track sizing functions of the grid columns."
+githubLink: false
+---
 
 ## Syntax
 

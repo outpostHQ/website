@@ -1,6 +1,7 @@
 ---
-title: Base syntax
+title: Syntax
 description: An in-depth look at the syntax of the language
+menuIndex: 40
 ---
 
 **Numl** is based on the so-called **Atomic approach**. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows ==any value== you provide. You can even use custom units like ==x== (default gap) for short.

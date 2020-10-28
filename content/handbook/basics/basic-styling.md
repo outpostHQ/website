@@ -9,7 +9,7 @@ description: This is a quick introduction to Numl styling. Learning will be real
 
 There are two style attributes that are in charge of typography in Numl: [`text`](../reference/styles/text.md) and [`size`](../reference/styles/size.md).
 
-Use `size` style to change the font size and the line-height of the text. Use `text` attribute to change any other text property like alignment or font-weight. Let's take a look at how it works...
+Use `size` style to change the font size and the line-height of the text. Use the `text` attribute to change any other text property like alignment or font-weight. Let's take a look at how it works...
 
 ### Font size and line-height
 
@@ -23,7 +23,7 @@ There are several presents: `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`. Also, th
 <nu-el size="md">Md</nu-el>
 <nu-el size="lg">Lg</nu-el>
 <nu-el size="xl">Xl</nu-el>
-<nu-el size="xxl"Xxl></nu-el>
+<nu-el size="xxl">Xxl</nu-el>
 <nu-el size="h1">H1</nu-el>
 ```
 
@@ -51,7 +51,7 @@ You can change default presents according to your Design System. See the [full r
 
 ### Text properties
 
-You can change almost any text property using `text` style attribute. Combine various modifiers and functions to get the specific text look.
+You can change almost any text property using the `text` style attribute. Combine various modifiers and functions to get the specific text look.
 
 ```html
 <split/>

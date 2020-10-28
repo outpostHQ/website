@@ -63,13 +63,13 @@
               Copied!
             </nu-tooltip>
           </nu-btn>
-          <nu-btn clear>
+          <nu-btn clear :to="`!/repl#${storeHash}`">
             <nu-icon name="edit-2-outline"></nu-icon>
           </nu-btn>
           <nu-btn clear @tap="showPreviewWindow">
             <nu-icon name="browser-outline"></nu-icon>
           </nu-btn>
-          <nu-btn clear>
+          <nu-btn clear :to="`!/preview#${storeHash}`">
             <nu-icon name="external-link-outline"></nu-icon>
           </nu-btn>
         </nu-pane>
@@ -90,8 +90,8 @@
 
 <script>
 import copy from 'clipboard-copy';
-import App from '@/services/app';
-import { getSharableLink } from '@/services/preview';
+import Preview from '@/services/preview';
+import { getSharableLink, getStoreHash } from '@/services/preview';
 
 export default {
   name: 'SplitPreview',
@@ -103,7 +103,13 @@ export default {
     return {
       loaded: false,
       copied: false,
+      Preview,
     };
+  },
+  computed: {
+    storeHash() {
+      return getStoreHash(this.snippet);
+    },
   },
   mounted() {
     this.$refs.textarea.textContent = this.snippet;
@@ -114,7 +120,7 @@ export default {
   },
   methods: {
     showPreviewWindow() {
-      App.previewMarkup = this.markup;
+      Preview.show(this.markup);
     },
     copy() {
       const link = getSharableLink(this.markup);

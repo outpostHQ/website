@@ -14,7 +14,6 @@ export function getStoreHash(markup, options) {
 }
 
 /**
- * Get
  * @param {String} markup
  * @param {Object} [options]
  * @return {string}
@@ -24,3 +23,21 @@ export function getSharableLink(markup, options) {
 
   return `https://numl.design/repl#${hash}`;
 }
+
+const Preview = {
+  markup: '',
+  shown: false,
+  show(markup) {
+    this.markup = markup;
+    this.shown = true;
+  },
+  change(markup) {
+    this.markup = markup;
+  },
+  hide() {
+    this.shown = false;
+    this.markup = '';
+  },
+};
+
+export default Preview;

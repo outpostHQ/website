@@ -1,4 +1,9 @@
-The **grow** property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+---
+title: shrink
+type: style attribute
+description: "The **grow** property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink."
+githubLink: false
+---
 
 In use, flex-shrink is used alongside the other flex properties [grow](./grow.md) and [basis](./basis.md), and normally defined using the [flex](./flex.md) shorthand.
 

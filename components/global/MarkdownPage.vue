@@ -62,7 +62,7 @@
               :to="`/${section}${
                 itemPage.slug !== 'introduction' ? `/${itemPage.slug}` : ''
               }`"
-              :is-current="`/${section}/${itemPage.slug}` === routePath"
+              :is-current="isCurrentPage(itemPage)"
               padding=".5x 1x"
               color="text :current.hover.focus[special]"
               fill="#clear"
@@ -92,9 +92,7 @@
                 v-if="!itemPage.hidden || App.isDev"
                 :key="`${sec.title}${i}`"
                 :to="`/${section}/${sec.slug}/${itemPage.slug}`"
-                :is-current="
-                  `/${section}/${sec.slug}/${itemPage.slug}` === routePath
-                "
+                :is-current="isCurrentPage(itemPage)"
                 padding=".5x 1x"
                 color="text :current.hover.focus[special]"
                 fill="#clear"
@@ -123,9 +121,24 @@
             <nu-attrs for="gridtable" size="md" />
             <template v-if="page.title">
               <nu-flow gap>
-                <nu-h1>
-                  {{ formatTitle(page) }}
-                </nu-h1>
+                <nu-pane content="space-between">
+                  <nu-h1>
+                    {{ formatTitle(page) }}
+                  </nu-h1>
+                  <nu-btn
+                    v-if="page.githubLink"
+                    clear
+                    border="#special.50"
+                    size="md|||sm"
+                    padding=".5x 1x"
+                    :to="`!${page.githubLink}`"
+                  >
+                    <nu-icon
+                      name="^btn github-outline :hover.focus[external-link-outline]"
+                    />
+                    Source Code
+                  </nu-btn>
+                </nu-pane>
                 <nu-badge v-if="page.type" special>
                   {{ page.type }}
                 </nu-badge>
@@ -148,6 +161,68 @@
 
               <!--                <nu-h2>Default styles</nu-h2>-->
               <!--              </template>-->
+            </nu-block>
+
+            <nu-spacer size="6x" />
+
+            <nu-block>
+              <nu-grid
+                columns="1pr 1pr|||||1pr"
+                flow="row wrap"
+                gap="2x|||||1x"
+              >
+                <nu-attrs for="icon" size="5x" />
+
+                <nu-btn
+                  v-if="previousPage"
+                  clear
+                  border="#special.50"
+                  columns="auto 1pr"
+                  :to="previousPage.path"
+                  padding="1x 2x 1x 1x"
+                  order="2"
+                >
+                  <nu-icon name="chevron-left" />
+                  <nu-flow text="right">
+                    <nu-block text="ellipsis">{{
+                      previousPage.menuTitle
+                    }}</nu-block>
+                    <nu-block size="sm xs" text="b ellipsis">
+                      {{
+                        previousPage.sectionTitle
+                          ? `${capitalize(previousPage.sectionTitle)} –`
+                          : ''
+                      }}
+                      {{ capitalize(section) }}
+                    </nu-block>
+                  </nu-flow>
+                </nu-btn>
+
+                <nu-btn
+                  v-if="nextPage"
+                  clear
+                  border="#special.50"
+                  columns="1pr auto"
+                  :to="nextPage.path"
+                  padding="1x 1x 1x 2x"
+                  order="2|||||1"
+                >
+                  <nu-flow text="left">
+                    <nu-block text="ellipsis">{{
+                      nextPage.menuTitle
+                    }}</nu-block>
+                    <nu-block size="sm xs" text="b ellipsis">
+                      {{
+                        nextPage.sectionTitle
+                          ? `${capitalize(nextPage.sectionTitle)} –`
+                          : ''
+                      }}
+                      {{ capitalize(section) }}
+                    </nu-block>
+                  </nu-flow>
+                  <nu-icon name="chevron-right" />
+                </nu-btn>
+              </nu-grid>
             </nu-block>
           </nu-article>
         </nu-block>
@@ -176,13 +251,23 @@
         <nu-pane content="space-between" box="y">
           <InlineSettings />
 
-          <nu-svg
-            src="/images/nude-logo-small.svg"
-            place="inside"
-            height="4x"
-            width="min 4x"
-            color="text-soft"
-          />
+          <nu-btn clear to="#root">
+            <nu-svg
+              src="/images/nude-logo-small.svg"
+              height="4x"
+              width="min 4x"
+              color="text-soft"
+              opacity="^btn 1 :hover.focus[0]"
+              transition="opacity"
+            />
+            <nu-icon
+              name="chevron-up"
+              place="inside"
+              size="6x"
+              opacity="^btn 0 :hover.focus[1]"
+              transition="opacity"
+            />
+          </nu-btn>
 
           <nu-btn
             to="!https://github.com/numldesign/website"
@@ -228,12 +313,53 @@ export default {
       routePath: '',
     };
   },
+  computed: {
+    allPages() {
+      const pages = [...this.pages];
+
+      this.sections.forEach((section) => {
+        pages.push(
+          ...(section.pages || [])
+            .filter((page) => !page.hidden)
+            .map((page) => {
+              page.sectionTitle = section.title;
+
+              return { ...page };
+            })
+        );
+      });
+
+      return pages;
+    },
+    previousPage() {
+      const pages = [...this.allPages].reverse();
+
+      return pages.find((pg, i) => {
+        const page = pages[i - 1];
+
+        return (
+          page && page.path.replace(/\/introduction$/, '') === this.routePath
+        );
+      });
+    },
+    nextPage() {
+      const pages = [...this.allPages];
+
+      return pages.find((pg, i) => {
+        const page = pages[i - 1];
+
+        return (
+          page && page.path.replace(/\/introduction$/, '') === this.routePath
+        );
+      });
+    },
+  },
   watch: {
     'App.showNav'() {
       setTimeout(() => this.scrollToCurrent());
     },
     '$route.path'() {
-      this.routePath = this.$route.path;
+      this.updateRoutePath();
     },
   },
   mounted() {
@@ -246,9 +372,12 @@ export default {
     }
 
     this.scrollToCurrent();
-    this.routePath = this.$route.path;
+    this.updateRoutePath();
   },
   methods: {
+    updateRoutePath() {
+      this.routePath = this.$route.path.replace(/\/$/, '');
+    },
     nuIdSelector(id) {
       return `[nu-id="${id}"]`;
     },
@@ -272,6 +401,16 @@ export default {
         default:
           return page.title;
       }
+    },
+    capitalize,
+    isCurrentPage(page) {
+      let path = page.path;
+
+      if (path.endsWith('/introduction')) {
+        path = path.slice(0, -13);
+      }
+
+      return path === this.routePath;
     },
   },
   head() {

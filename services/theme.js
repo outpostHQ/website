@@ -16,7 +16,7 @@ const DEFAULT_SETTINGS = {
 const Theme = {
   ...DEFAULT_SETTINGS,
   isDefaultSettings: true,
-  set(settings) {
+  set(settings, dontSave) {
     const dataset = process.client ? document.documentElement.dataset : {};
 
     if (!settings || typeof settings !== 'object') {
@@ -70,7 +70,7 @@ const Theme = {
       this[key] = value;
       this.isDefaultSettings = areSettingsDefault();
 
-      if (process.client) {
+      if (process.client && !dontSave) {
         Lockr.set(`settings:${key}`, value);
       }
 
@@ -97,7 +97,8 @@ Theme.set(
     map[key] = DEFAULT_SETTINGS[key];
 
     return map;
-  }, {})
+  }, {}),
+  true
 );
 
 if (process.client) {

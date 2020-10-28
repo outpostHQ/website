@@ -32,8 +32,8 @@ export default {
     ],
     script: [
       {
-        // src: 'https://cdn.skypack.dev/numl@1.0.0-beta.2',
-        src: '/numl/index.js',
+        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.6',
+        // src: '/numl/index.js',
         type: 'module',
       },
     ].concat(
@@ -164,6 +164,16 @@ export default {
 
         routes.push({
           route: `/${siteSection}`,
+        });
+
+        const files = fs.readdirSync(`./content/${siteSection}`);
+
+        files.forEach((file) => {
+          if (file.endsWith('.md') && file !== 'introduction.md') {
+            routes.push({
+              route: `/${siteSection}/${file.replace('.md', '')}`,
+            });
+          }
         });
 
         sections.forEach((section) => {

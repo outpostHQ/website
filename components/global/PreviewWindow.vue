@@ -1,6 +1,6 @@
 <template>
   <nu-card
-    v-if="markup"
+    v-if="Preview.shown"
     display="flex"
     flow="column"
     width="320rp 40vw 100vw"
@@ -53,25 +53,25 @@
       </nu-el>
     </nu-pane>
     <nu-flex flow="column" box="y" grow="1">
-      <PreviewEmbed ref="embed" :markup="App.previewMarkup" />
+      <PreviewEmbed ref="embed" :markup="Preview.markup" />
       <nu-block place="cover" show="^card n :moving[y]" />
     </nu-flex>
   </nu-card>
 </template>
 
 <script>
-import App from '@/services/app';
+import Preview from '@/services/preview';
 
 export default {
   name: 'PreviewWindow',
   data() {
     return {
-      App,
+      Preview,
     };
   },
   computed: {
     markup() {
-      return App.previewMarkup;
+      return Preview.markup;
     },
     encodedData() {
       const ref = this.$refs.embed;
@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     close() {
-      App.previewMarkup = '';
+      Preview.hide();
     },
     minimize() {},
     maximize() {},

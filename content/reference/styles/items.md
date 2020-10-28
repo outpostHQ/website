@@ -1,4 +1,9 @@
-Use this style to place items inside **Flex** or **Grid** layouts.
+---
+title: items
+type: style attribute
+description: "Use this style to place items inside **Flex** or **Grid** layouts."
+githubLink: false
+---
 
 ## Syntax
 

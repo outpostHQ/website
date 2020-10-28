@@ -1,4 +1,9 @@
-Use this style to set the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order.
+---
+title: order
+type: style attribute
+description: "Use this style to set the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order."
+githubLink: false
+---
 
 ## Syntax
 

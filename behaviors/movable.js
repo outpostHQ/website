@@ -78,9 +78,9 @@ export default function (Nude) {
         Object.entries(EVENT_MAP).forEach(([event, handler]) => {
           window.removeEventListener(event, this[handler]);
         });
-
-        delete document.documentElement.style['user-select'];
       }
+
+      document.documentElement.style['user-select'] = '';
     }
 
     setCoords(evt) {

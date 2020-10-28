@@ -63,6 +63,7 @@
 <script>
 import { SECTION_MAP } from '@/helpers/config';
 import { preparePage } from '@/helpers/prepare-page';
+import WindowService from '@/services/window';
 
 const ALL_SECTIONS = [];
 
@@ -161,7 +162,7 @@ export default {
         const current = this.$refs.root.querySelector('[is-current]');
 
         if (current) {
-          current.scrollIntoView();
+          WindowService.scrollIntoView(current, true);
         }
       });
     },

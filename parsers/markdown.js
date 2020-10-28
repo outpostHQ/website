@@ -2,6 +2,7 @@ import { Remarkable } from 'remarkable';
 import { linkify as linkifyPlugin } from 'remarkable/linkify';
 import numlPlugin from 'remarkable-numl';
 import metaPlugin from 'remarkable-meta';
+import emojiPlugin from 'remarkable-emoji';
 import tocParser from 'markdown-toc';
 import removeMD from 'remove-markdown';
 import unified from 'unified';
@@ -28,6 +29,7 @@ export default async function Markdown(fileContent, other, other2) {
     typographer: true,
   });
 
+  md.use(emojiPlugin);
   md.use(numlPlugin);
   md.use(metaPlugin);
   md.use(linkifyPlugin);
