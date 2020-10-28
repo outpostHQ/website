@@ -91,7 +91,7 @@
           size="lg"
           gap="1x"
         >
-          <nu-block size="lg||sm" show="y|||n"> v{{ App.version }} </nu-block>
+          <nu-block size="lg||sm" show="y|||n"> {{ App.version }} </nu-block>
 
           <nu-pane gap="0">
             <nu-attrs for="btn" color="text :hover[special]" />
@@ -300,7 +300,7 @@ export default {
 
     const { routing } = Nude;
 
-    App.version = Nude.version;
+    App.version = `v${Nude.version}`;
 
     routing.setRouter((url, openNewTab) => {
       // skip outside links and links that open in new tabs
