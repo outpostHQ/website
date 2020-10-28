@@ -1,7 +1,7 @@
 const App = {
   showNav: false,
   isDev: false,
-  numlVersion: '',
+  version: '',
 };
 
 export default App;
