@@ -1,6 +1,6 @@
 ---
 title: Datepicker
-description: How to create datepicker using Numl
+description: How to create a datepicker using Numl
 ---
 
 ## Basic mode

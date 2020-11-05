@@ -69,7 +69,7 @@
           <nu-btn clear @tap="showPreviewWindow">
             <nu-icon name="browser-outline"></nu-icon>
           </nu-btn>
-          <nu-btn clear :to="`!/preview#${storeHash}`">
+          <nu-btn clear :to="`!/preview/#${storeHash}`">
             <nu-icon name="external-link-outline"></nu-icon>
           </nu-btn>
         </nu-pane>
