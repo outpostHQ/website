@@ -85,7 +85,7 @@ There are many semantic elements for typography in Numl:
   <nu-mark>Marked text</nu-mark>, 
   <nu-badge>Badge</nu-badge>, 
   <nu-badge special>Special badge</nu-badge>, 
-  <nu-link to="!https://github.com/tenphi/numl">Link</nu-link>, 
+  <nu-link to="!https://github.com/numldesign/numl">Link</nu-link>, 
   <nu-strong>Strong</nu-strong>, 
   <nu-em>Emphasis</nu-em>, 
   <nu-sub>Subscript</nu-sub>, 
@@ -93,15 +93,15 @@ There are many semantic elements for typography in Numl:
 </nu-description>
 ```
 
-Learn more: [nu-heading](../reference/elements/nu-heading.md),
-[nu-description](../reference/elements/nu-description.md),
-[nu-mark](../reference/elements/nu-mark.md),
-[nu-badge](../reference/elements/nu-badge.md),
-[nu-link](../reference/elements/nu-link.md),
-[nu-strong](../reference/elements/nu-strong.md),
-[nu-em](../reference/elements/nu-em.md),
-[nu-sub](../reference/elements/nu-sub.md),
-[nu-sup](../reference/elements/nu-sup.md)
+Learn more: [nu-heading](../../reference/elements/nu-heading.md),
+[nu-description](../../reference/elements/nu-description.md),
+[nu-mark](../../reference/elements/nu-mark.md),
+[nu-badge](../../reference/elements/nu-badge.md),
+[nu-link](../../reference/elements/nu-link.md),
+[nu-strong](../../reference/elements/nu-strong.md),
+[nu-em](../../reference/elements/nu-em.md),
+[nu-sub](../../reference/elements/nu-sub.md),
+[nu-sup](../../reference/elements/nu-sup.md)
 
 
 ## Color management

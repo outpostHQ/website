@@ -21,7 +21,7 @@
           <nu-icon name="layout" />
           Storybook
         </nu-btn>
-        <nu-btn clear to="!https://github.com/tenphi/numl">
+        <nu-btn clear to="!https://github.com/numldesign/numl">
           <nu-icon name="github" />
           Github
         </nu-btn>

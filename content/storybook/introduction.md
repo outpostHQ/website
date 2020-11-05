@@ -19,9 +19,8 @@ You can switch between sections using the selector on the top-left of the page.
 
 In case you are curious about how it was built or want to help us:
 
-* [Numl Repo](!https://github.com/tenphi/numl) - Built with Rollup.
-* [Numl Landing](!https://github.com/tenphi/numl.design) - Built with Parcel.
-* [Numl Storybook Repo](!https://github.com/tenphi/numl-storybook) - Powered by Vue.js. Built with Webpack.
+* [Numl Repo](!https://github.com/numldesign/numl) - Built with Rollup.
+* [Numl Website](!https://github.com/numldesign/website) - Built with Nuxt and Vue.
 
 ### Social
 

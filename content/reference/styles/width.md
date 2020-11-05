@@ -2,7 +2,7 @@
 title: width
 type: style attribute
 description: "Use this style to set the width of the element. Also, you can set minimum and maximum width."
-githubLink: https://github.com/tenphi/numl/blob/master/src/helpers.js#L152
+githubLink: https://github.com/numldesign/numl/blob/master/src/helpers.js#L152
 ---
 
 ## Syntax

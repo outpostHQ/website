@@ -146,6 +146,9 @@
                 <nu-badge v-if="page.type" special>
                   {{ page.type }}
                 </nu-badge>
+                <nu-badge v-if="page.experimental" special>
+                  experimental
+                </nu-badge>
                 <nu-spacer />
                 <nu-block
                   v-if="page.description"

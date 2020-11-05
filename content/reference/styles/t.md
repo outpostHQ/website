@@ -1,4 +1,8 @@
-The **t** utility property sets the inner text content of the element but it works like style property. It means you can make text responsive or bind it to the state.
+---
+title: t
+description: "The **t** utility property sets the inner text content of the element but it works like style property. It means you can make text responsive or bind it to the state."
+experimental: true
+---
 
 ```html
 <split/>

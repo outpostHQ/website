@@ -1,7 +1,7 @@
 import { capitalize } from '@/helpers';
 
 function getGithubLink(file) {
-  return `https://github.com/tenphi/numl/blob/master/src/${file}`;
+  return `https://github.com/numldesign/numl/blob/master/src/${file}`;
 }
 
 export function preparePage(page) {

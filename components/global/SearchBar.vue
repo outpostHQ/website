@@ -146,7 +146,7 @@ export default {
             }, [])
         );
 
-        if (this.inc === cache) {
+        if (this.inc === cache && this.value === val) {
           this.results = results;
           this.loading = false;
         }

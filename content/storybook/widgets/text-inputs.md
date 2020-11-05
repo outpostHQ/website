@@ -15,15 +15,13 @@
 
 ```html
 <split/>
-<nu-group border radius width="15em" fill="input">
-  <nu-icon name="user" width="2.5em"></nu-icon>
-  <nu-input border="0" grow="1" label="Input with icon">
-
-  </nu-input>
-  <nu-btn border="left">
-    <nu-icon name="x" label="Circle"></nu-icon>
+<nu-inputgroup border radius width="15em" fill="input">
+  <nu-icon name="person-outline" width="2.5em"></nu-icon>
+  <nu-input border="0" placeholder="Input with icon"></nu-input>
+  <nu-btn border="left" padding="1x .5x">
+    <nu-icon name="close-outline" label="Circle"></nu-icon>
   </nu-btn>
-</nu-group>
+</nu-inputgroup>
 ```
 
 ==@TODO==

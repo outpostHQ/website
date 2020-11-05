@@ -10,6 +10,15 @@ Numl is providing so-called HTML Custom Elements that is the part of [Web Compon
 
 While using Numl you don't have to use native HTML tags (with few exceptions). Also, you don't have to write CSS to style your elements. Just use custom tags and specific attributes.
 
+### Definitions
+
+Some of the elements called **definitions** that don't represent actual elements. Instead, they are used to define some properties of the parent element. There are only a few definitions:
+
+* [nu-theme](../../reference/definitions/nu-theme.md) - to define theme.
+* [nu-attrs](../../reference/definitions/nu-attrs.md) - to define attributes (including styles) for specific elements in the context.
+* [nu-props](../../reference/definitions/nu-props.md) - to define custom properties.
+* [nu-base](../../reference/definitions/nu-base.md) - to define base font size of the website.
+
 ## Styling
 
 Styling via attributes is pretty straightforward. It may seem a little old fashioned at first, but we assure you that you won't have any trouble with that.
@@ -27,6 +36,33 @@ This combination of element, attribute, and attribute value will generate the fo
 nu-card[padding=".5rem 1rem"] {
   padding: .5rem 1rem;
 }
+```
+
+### Properties
+
+Define [Custom Properties](!https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in the context of the element using [nu-props](../../reference/definitions/nu-props.md) or plain CSS. Then use it inside style values:
+
+```html
+<split/>
+<nu-block>
+  <nu-props grid-gap="3x"></nu-props>
+  <nu-grid gap="--grid-gap" columns="1fr 1fr">
+    <nu-card>A</nu-card>
+    <nu-card>B</nu-card>
+  </nu-grid>
+</nu-block>
+```
+
+Define colors using [nu-props](../../reference/definitions/nu-props.md) and `-color` suffix to allow transparency syntax:
+
+```html
+<split/>
+<nu-block>
+  <nu-props my-color="hue(10)"></nu-props>
+  <nu-card fill="#my.10">
+    Card
+  </nu-card>
+</nu-block>
 ```
 
 ### Modifiers

@@ -90,8 +90,7 @@
 
 <script>
 import copy from 'clipboard-copy';
-import Preview from '@/services/preview';
-import { getSharableLink, getStoreHash } from '@/services/preview';
+import Preview, { getSharableLink, getStoreHash } from '@/services/preview';
 
 export default {
   name: 'SplitPreview',

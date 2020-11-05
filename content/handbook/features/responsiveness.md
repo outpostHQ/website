@@ -27,9 +27,8 @@ Sometimes there is no need to define all values for the attribute. And there are
 
 ```html
 <preview/>
-<nu-gridtable columns="auto auto auto auto auto auto auto" border radius>
-  <nu-attrs for="nu-cell" text="monospace"></nu-attrs>
- 
+<nu-gridtable columns="auto auto auto auto auto auto auto">
+  <nu-attrs for="cell" text="monospace nowrap" shadow="0 1bw 0 #border"></nu-attrs>
   <nu-columnheader>Window \ Attribute</nu-columnheader>
   <nu-columnheader><nu-cd>"xl"</nu-cd></nu-columnheader>
   <nu-columnheader><nu-cd>"xl|md"</nu-cd></nu-columnheader>

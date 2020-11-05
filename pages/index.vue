@@ -35,7 +35,7 @@
             <nu-icon name="cube"></nu-icon>
             {{ App.version }}
           </nu-btn>
-          <nu-btn clear to="!https://github.com/tenphi/numl">
+          <nu-btn clear to="!https://github.com/numldesign/numl">
             <nu-icon name="github"></nu-icon>
             Github
             <nu-icon name="star"></nu-icon>
@@ -345,7 +345,7 @@
       description="Add the following code to your page"
       fill="subtle"
     >
-      <Snippet :code="startSnippet" />
+      <Snippet v-if="App.version" :code="startSnippet" />
       <nu-flex
         width="max --content-width"
         gap="2x"
@@ -385,7 +385,7 @@
           color="special"
           shadow="no :hover[yes]"
         />
-        <nu-btn to="!https://github.com/tenphi/numl">
+        <nu-btn to="!https://github.com/numldesign/numl">
           <nu-icon name="github-outline"></nu-icon>
           Github
         </nu-btn>
@@ -476,11 +476,13 @@ export default {
   fill="bg :focus[special-bg]">
   Focus on me
 </nu-btn>`,
-      startSnippet: `
-<script src="https://cdn.skypack.dev/numl@1.0.0-beta.1" type="module" />`,
     };
   },
   computed: {
+    startSnippet() {
+      return `
+<script src="https://cdn.skypack.dev/numl@${App.version}" type="module" />`;
+    },
     gradient() {
       const hue = (mod) => {
         return (272 + 360 + mod) % 360;
@@ -495,7 +497,9 @@ export default {
     },
   },
   mounted() {
-    Github.getStars('tenphi/numl').then((stars) => (this.githubStars = stars));
+    Github.getStars('numldesign/numl').then(
+      (stars) => (this.githubStars = stars)
+    );
   },
 };
 </script>

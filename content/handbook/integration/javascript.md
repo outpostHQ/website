@@ -1,5 +1,5 @@
 ---
-title: Plain Javascript
+title: Plain Javascript integration
 description: Integration guide for plain Javascript.
 menuIndex: 10
 ---
@@ -74,6 +74,7 @@ import { icons } from 'numl';
 icons.setLoader((iconName) => {
   return import('some-icon-library')
     .then(icons => {
+      // return a string that contains SVG
       return icons[iconName];
     });
 });

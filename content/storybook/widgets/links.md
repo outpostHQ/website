@@ -16,7 +16,7 @@ Use `to` attribute to specify **href**.
 ```html
 <split/>
 <nu-link
-  to="https://github.com/tenphi/numl">
+  to="https://github.com/numldesign/numl">
   Visit our repository
 </nu-link>
 ```
@@ -28,7 +28,7 @@ Use `!` prefix for `to` attribute.
 ```html
 <split/>
 <nu-link
-  to="!https://github.com/tenphi/numl">
+  to="!https://github.com/numldesign/numl">
   Visit our repository
 </nu-link>
 ```

@@ -40,7 +40,7 @@
           <nu-icon :name="copied ? 'checkmark-outline' : 'share-outline'" />
           Share
         </nu-btn>
-        <nu-btn v-if="!Preview.shown" @tap="Preview.shown = true">
+        <nu-btn v-if="!Preview.shown" @tap="Preview.show(currentMarkup)">
           <nu-icon name="eye-outline" />
           Preview
         </nu-btn>
@@ -53,7 +53,7 @@
           fill="#clear||||bg"
           border="n||||y"
           padding="||||.5x"
-          size="md||||xs"
+          size="md xs||||xs"
           z="||||max"
         >
           Link is copied to the clipboard.
@@ -67,7 +67,7 @@
           fill="#clear||||bg"
           border="n||||y"
           padding="||||.5x"
-          size="md||||xs"
+          size="md xs||||xs"
           z="||||max"
         >
           The snippet is saved.
@@ -89,8 +89,7 @@
 import LZString from 'lz-string';
 import copy from 'clipboard-copy';
 import Snippets from '@/services/snippets';
-import Preview from '@/services/preview';
-import { getStoreHash } from '@/services/preview';
+import Preview, { getStoreHash } from '@/services/preview';
 
 // window.Repl = {
 //   convertToEmbedded() {

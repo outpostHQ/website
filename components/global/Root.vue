@@ -107,7 +107,7 @@
             </nu-btn>
             <nu-btn
               show="y|||n"
-              to="!https://github.com/tenphi/numl"
+              to="!https://github.com/numldesign/numl"
               padding
               clear
               use-hotkey="g"

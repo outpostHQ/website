@@ -39,6 +39,8 @@ Bind event handlers as you do it with other Svelte Components.
 <nu-input on:input={(event) => onInput(event.detail)}></nu-input>
 ```
 
-## Real-world examples (repositories)
+## Real-world examples
 
-* [Numl Playground](!https://github.com/tenphi/numl/blob/master/components/playground.svelte).
+### Repositories
+
+* [Numl Playground](!https://github.com/numldesign/numl/blob/master/components/playground.svelte).
