@@ -7,7 +7,7 @@ description: How to create datepicker using Numl
 
 ```html
 <split/>
-<nu-card width="min-content" height="40x">
+<nu-card width="min-content">
   <nu-datepicker></nu-datepicker>
 </nu-card>
 ```
@@ -16,7 +16,7 @@ description: How to create datepicker using Numl
 
 ```html
 <split/>
-<nu-card width="min-content" height="44x">
+<nu-card width="min-content">
   <nu-datepicker mode="range"></nu-datepicker>
 </nu-card>
 ```
