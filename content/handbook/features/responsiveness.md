@@ -27,6 +27,7 @@ Sometimes there is no need to define all values for the attribute. And there are
 
 ```html
 <preview/>
+<nu-block overflow="auto" width="max 100%">
 <nu-gridtable columns="auto auto auto auto auto auto auto">
   <nu-attrs for="cell" text="monospace nowrap" shadow="0 1bw 0 #border"></nu-attrs>
   <nu-columnheader>Window \ Attribute</nu-columnheader>
@@ -61,6 +62,7 @@ Sometimes there is no need to define all values for the attribute. And there are
   <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
   <nu-cell><nu-cd>"xs"</nu-cd></nu-cell>
 </nu-gridtable>
+</nu-block>
 ```
 
 ## Tips
