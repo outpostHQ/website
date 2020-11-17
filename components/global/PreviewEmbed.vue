@@ -52,7 +52,7 @@ export default {
     iframeStyles() {
       return {
         display: 'block',
-        transition: 'height var(--nu-transition) linear',
+        transition: 'height var(--transition) linear',
         'max-width': '100%',
         height: this.repl ? '100%' : '58px',
         'flex-grow': 1,

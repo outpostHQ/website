@@ -216,11 +216,11 @@ Use [border](../reference/styles/border.md) style attribute to create physical/v
 
 |Numl attribute|CSS style|
 |----|----|
-|`border=""`|`border: var(--nu-border-width) solid var(--nu-border-color)`|
+|`border=""`|`border: var(--border-width) solid var(--border-color)`|
 |`border="3px #f39"`|`border: 3px solid #f39`|
 |`border="hue(320) left right"`|`border-left: 1px rgb(216, 0, 186); border-right: 1px rgb(216, 0, 186);`|
 |`border="3px #f39 outside left"`|`box-shadow: -3px 0 0 #f39`|
-|`radius=""` or `radius="1r"`|`border-radius: var(--nu-radius)`|
+|`radius=""` or `radius="1r"`|`border-radius: var(--radius)`|
 |`radius="2rem"`|`border-radius: 2rem`|
 |`radius="round"`|`border-radius: 9999rem`|
 |`radius="ellipse"`|`border-radius: 50%`|

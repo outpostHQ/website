@@ -11,7 +11,7 @@ description: Example of flex layout usage in Numl
 
   <nu-block>Place content:</nu-block>
   <nu-pane>
-    <nu-btn toggle value="stretch" control="flex[--align-content]" trigger>
+    <nu-btn toggle value="stretch" control="flex[@align-content]" trigger>
       <nu-pane>
         <nu-strong>Align:</nu-strong>
         <nu-value list></nu-value>
@@ -28,7 +28,7 @@ description: Example of flex layout usage in Numl
     </nu-btn>
     <nu-btn
 			id="justify-content"
-			toggle value="stretch" control="flex[--justify-content]" trigger>
+			toggle value="stretch" control="flex[@justify-content]" trigger>
       <nu-pane>
         <nu-strong>Justify:</nu-strong>
         <nu-value list></nu-value>
@@ -47,7 +47,7 @@ description: Example of flex layout usage in Numl
 
   <nu-block>Place items:</nu-block>
   <nu-pane>
-    <nu-btn toggle value="stretch" control="flex[--align-items]" trigger>
+    <nu-btn toggle value="stretch" control="flex[@align-items]" trigger>
       <nu-pane>
         <nu-strong>Align:</nu-strong>
         <nu-value list></nu-value>
@@ -76,8 +76,8 @@ description: Example of flex layout usage in Numl
     padding="2x" radius="3x" border fill="border">
     <nu-flex
             id="flex" gap="2x" height="30" flow="row wrap"
-      content="--align-content --justify-content"
-      items="--align-items">
+      content="@align-content @justify-content"
+      items="@align-items">
       <nu-attrs id="flex-attrs" for="card" height="min 3" border="color(special)"></nu-attrs>
 
       <nu-card width="min 2"></nu-card>

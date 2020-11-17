@@ -11,8 +11,8 @@ You can use preset names, values or mix.
 If you use preset names (for example: `xs`) then you will get the following CSS:
 
 ```css
-font-size: var(--nu-xs-font-size);
-line-height: var(--nu-xs-line-height);
+font-size: var(--xs-font-size);
+line-height: var(--xs-line-height);
 ```
 
 So you can define your own preset with [nu-props](../decorators/nu-props.md) definition or plain CSS. For example:

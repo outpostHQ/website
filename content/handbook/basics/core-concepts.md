@@ -46,7 +46,7 @@ Define [Custom Properties](!https://developer.mozilla.org/en-US/docs/Web/CSS/--*
 <split/>
 <nu-block>
   <nu-props grid-gap="3x"></nu-props>
-  <nu-grid gap="--grid-gap" columns="1fr 1fr">
+  <nu-grid gap="@grid-gap" columns="1fr 1fr">
     <nu-card>A</nu-card>
     <nu-card>B</nu-card>
   </nu-grid>
@@ -101,7 +101,7 @@ This example...
 ...will generate the following CSS style:
 
 ```css
-padding: var(--nu-gap) calc(var(--nu-gap) * 2);
+padding: var(--gap) calc(var(--gap) * 2);
 ```
 
 You can add your own custom units using Numl Javascript API.
@@ -117,7 +117,7 @@ Some attributes accept a color modifier. For example, if you want to change the 
 </nu-card>
 ```
 
-This modifier will apply `--nu-special-color` value to the color of your border. Also, you can use classic hash colors and color functions (like `rgba`, `hsla` and etc). Use `hue()` color function to assign an Adaptive color.
+This modifier will apply `--special-color` value to the color of your border. Also, you can use classic hash colors and color functions (like `rgba`, `hsla` and etc). Use `hue()` color function to assign an Adaptive color.
 
 ```html
 <split/>

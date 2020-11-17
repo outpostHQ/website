@@ -9,7 +9,7 @@
       <Topbar />
       <SiteBlock
         badge="design system · framework · language"
-        heading="Universal UI Framework\nfor\s modern web\s interfaces"
+        heading="Universal UI language\nfor\s modern web\s interfaces"
         description="An open-source Library of Web&nbsp;Components and a&nbsp;Runtime&nbsp;CSS&nbsp;Framework for rapidly building UI that follows your&nbsp;Design&nbsp;System."
         padding="10x 0||8x 0|4x 0 8x"
         level="1"
@@ -64,7 +64,7 @@
       <nu-grid
         columns="1pr 1pr 1pr||1fr"
         space="around"
-        width="--content-width"
+        width="@content-width"
         gap="2gp 1gp"
       >
         <nu-attrs for="heading" />
@@ -266,7 +266,7 @@
     >
       <nu-grid
         columns="1pr 1pr|||1fr"
-        width="10sp||--content-width"
+        width="10sp||@content-width"
         text="left"
         items="stretch"
       >
@@ -346,12 +346,7 @@
       fill="subtle"
     >
       <Snippet v-if="App.version" :code="startSnippet" />
-      <nu-flex
-        width="max --content-width"
-        gap="2x"
-        flow="column"
-        items="center"
-      >
+      <nu-flex width="max @content-width" gap="2x" flow="column" items="center">
         <nu-block>
           That's all! Now you can use all elements
           and&nbsp;features&nbsp;of&nbsp;Numl!
@@ -413,7 +408,7 @@
       color="white"
       padding="5x 0 12x 0||5x 0 8x 0"
       items="start stretch"
-      width="--content-width"
+      width="@content-width"
     >
       <nu-attrs for="link" color="white" />
       <nu-footer width="100%">

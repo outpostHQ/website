@@ -44,10 +44,10 @@ Control custom property:
 <nu-flow gap id="root">
   <nu-slider
     min="0" max="1" value=".5" step="0.01" trigger
-    control="root[--opacity]"></nu-slider>
+    control="root[@opacity]"></nu-slider>
 
   <nu-block box>
-    <nu-svg opacity="--opacity" src="/img/icon.svg"></nu-svg>
+    <nu-svg opacity="@opacity" src="/img/icon.svg"></nu-svg>
   </nu-block>
 </nu-flow>
 ```

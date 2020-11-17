@@ -1,9 +1,10 @@
 With **nu-props** use can customize built-in properties and declare your own:
 
-* **gap** `--nu-gap` (default: `.5rem`) – Base indent (padding|gap).
-* **border-width** `--nu-border-width` (default: `1px`) – Base border width.
-* **radius** `--nu-radius` (default: `.5rem`) – Base border radius.
-* **transition** `--nu-transition` (default: `0.08s`) – Base transition time.
+* **gap** `--gap` (default: `.5rem`) – Base indent (padding|gap).
+* **border-width** `--border-width` (default: `1px`) – Base border width.
+* **outline-width** `--outline-width` (default: `calc(1rem / 16 * 3)`) – Base outline width.
+* **radius** `--radius` (default: `.5rem`) – Base border radius.
+* **transition** `--transition` (default: `0.08s`) – Base transition time.
 
 Example of declaration:
 

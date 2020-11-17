@@ -18,20 +18,20 @@
       :pastel="Theme.pastel"
     />
     <nu-props
-      subtle-color="--secondary-subtle-color"
-      shadow-color="--secondary-shadow-color"
-      border-color="--secondary-border-color"
-      special-shadow-color="--secondary-special-shadow-color"
+      subtle-color="@secondary-subtle-color"
+      shadow-color="@secondary-shadow-color"
+      border-color="@secondary-border-color"
+      special-shadow-color="@secondary-special-shadow-color"
       page-bg-color="^root #bg :dark[#subtle]"
       second-bg-color="^root #subtle :dark[#bg]"
       diff-color="#second-bg"
       topbar-offset="8.75x|||6.75x"
       sidebar-width="32x||26x"
-      max-content-width="100rem - (--content-padding * 2)"
+      max-content-width="100rem - (@content-padding * 2)"
       grid-gap="3x"
       content-padding="6x||3x|6x|3x"
       column-number="12||||2"
-      column-width="((--max-content-width - (--grid-gap * 11)) / 12)|((100vw - (--content-padding * 2) - (--grid-gap * (--column-number - 1))) / --column-number)"
+      column-width="((@max-content-width - (@grid-gap * 11)) / 12)|((100vw - (@content-padding * 2) - (@grid-gap * (@column-number - 1))) / @column-number)"
       content-width="12sp||||2sp"
     />
 
@@ -47,12 +47,12 @@
       <nu-props grid-gap="8x||4x" />
       <nu-pane
         gap="1gp"
-        width="--content-width"
+        width="@content-width"
         space="around"
         content="space-between"
       >
         <nu-block id="logo">
-          <nu-pane text="nowrap" width="--sidebar-width" gap="1x">
+          <nu-pane text="nowrap" width="@sidebar-width" gap="1x">
             <nu-btn clear color="text :hover.focus[special]" padding="0" to="/">
               <nu-svg
                 src="/images/nude-logo-small.svg"
@@ -87,11 +87,13 @@
 
         <nu-pane
           content="space-between"
-          width="--sidebar-width|||auto"
+          width="@sidebar-width|||auto"
           size="lg"
           gap="1x"
         >
-          <nu-block size="lg||sm" show="y|||n"> {{ App.version }} </nu-block>
+          <nu-block size="lg||sm" show="y|||n">
+            {{ App.version }}
+          </nu-block>
 
           <nu-pane gap="0">
             <nu-attrs for="btn" color="text :hover[special]" />
@@ -99,6 +101,7 @@
               toggle
               padding
               clear
+              color="special"
               use-hotkey="s"
               :checked="showSettings"
               @tap="toggleSettings"
@@ -147,9 +150,9 @@
       flow="column"
       items="stretch"
       gap="1x"
-      place="fixed top right --topbar-offset 0"
+      place="fixed top right @topbar-offset 0"
       overflow="hidden auto"
-      height="100vh - --topbar-offset"
+      height="100vh - @topbar-offset"
       width="initial 40x 100vw"
       radius="0"
       shadow
@@ -185,9 +188,7 @@ function loadIcon(url) {
 }
 
 function spanWidth(num) {
-  return `((${num} * var(--nu-column-width)) + (${
-    num - 1
-  } * var(--nu-grid-gap)))`;
+  return `((${num} * var(--column-width)) + (${num - 1} * var(--grid-gap)))`;
 }
 
 async function initNude() {
@@ -203,8 +204,8 @@ async function initNude() {
   });
 
   Nude.units.define('sp', spanWidth);
-  Nude.units.define('cp', 'var(--nu-content-padding)');
-  Nude.units.define('gp', 'var(--nu-grid-gap)');
+  Nude.units.define('cp', 'var(--content-padding)');
+  Nude.units.define('gp', 'var(--grid-gap)');
 
   Nude.assign('nu-list', {
     styles: {
@@ -270,7 +271,6 @@ export default {
     return {
       Theme,
       App,
-
       showSettings: false,
     };
   },
@@ -320,6 +320,8 @@ export default {
     });
 
     App.isDev = location.host.includes('localhost');
+
+    Theme.init();
   },
   methods: {
     toggleNav() {

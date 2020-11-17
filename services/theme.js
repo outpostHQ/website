@@ -77,6 +77,15 @@ const Theme = {
       GlobalEvents.$emit('theme:change', this);
     });
   },
+  init() {
+    Theme.set(
+      Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
+        map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
+
+        return map;
+      }, {})
+    );
+  },
 };
 
 function areSettingsDefault() {
@@ -100,17 +109,5 @@ Theme.set(
   }, {}),
   true
 );
-
-if (process.client) {
-  setTimeout(() => {
-    Theme.set(
-      Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
-        map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
-
-        return map;
-      }, {})
-    );
-  });
-}
 
 export default Theme;

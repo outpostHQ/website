@@ -8,9 +8,10 @@
   <nu-attrs
     for="label"
     place="top left 1x 2x" z="above" text="w5" origin="top left"
-    scale="^:focus[.75] :empty[1] .75"
-    move="^:focus[0] :empty[0 1.25x] 0"
-    color="^:focus[text-soft] :empty[text 50%] text-soft"
+    scale="^:focus[.75] :placeholder[1] .75"
+    move="^:focus[0] :placeholder[0 1.25x] 0"
+    color="^:focus[text-soft] :placeholder[text 50%] text-soft"
+    interactive="n"
     transition="theme, transform"></nu-attrs>
   <nu-form control="output[.value]" gap="1x">
     <nu-field>

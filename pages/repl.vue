@@ -24,10 +24,10 @@
 
     <nu-flex
       flow="column"
-      width="max --content-width"
+      width="max @content-width"
       space="around"
       content="stretch"
-      padding="--topbar-offset top"
+      padding="@topbar-offset top"
       height="100%"
     >
       <nu-pane padding box="y">
@@ -298,40 +298,39 @@ export default {
 .vue-codemirror {
   display: flex;
   flex-flow: column;
-  width: calc(100% + 2 * var(--nu-content-padding));
+  width: calc(100% + 2 * var(--content-padding));
   flex-grow: 1;
-  margin-left: calc(-1 * var(--nu-content-padding));
-  margin-right: calc(-1 * var(--nu-content-padding));
+  margin-left: calc(-1 * var(--content-padding));
+  margin-right: calc(-1 * var(--content-padding));
 }
 
 .CodeMirror {
-  background: var(--nu-main-bg-color);
-  color: var(--nu-main-text-color);
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
   flex-grow: 1;
 }
 
 .CodeMirror-scroll {
   box-sizing: content-box;
   height: calc(
-    100 * var(--nu-window-height) - 12.5 * var(--nu-gap) +
-      var(--nu-border-width)
+    100 * var(--window-height) - 12.5 * var(--gap) + var(--border-width)
   );
 }
 
 .cm-s-default .cm-header {
-  color: var(--nu-header-text-color);
+  color: var(--header-text-color);
 }
 
 .cm-s-default .cm-quote {
-  color: var(--nu-quote-text-color);
+  color: var(--quote-text-color);
 }
 
 .cm-negative {
-  color: var(--nu-negative-text-color);
+  color: var(--negative-text-color);
 }
 
 .cm-positive {
-  color: var(--nu-positive-text-color);
+  color: var(--positive-text-color);
 }
 
 .cm-header,
@@ -352,19 +351,19 @@ export default {
 }
 
 .cm-s-default .cm-keyword {
-  color: var(--nu-keyword-color);
+  color: var(--keyword-color);
 }
 
 .cm-s-default .cm-atom {
-  color: var(--nu-atom-color);
+  color: var(--atom-color);
 }
 
 .cm-s-default .cm-number {
-  color: var(--nu-number-color);
+  color: var(--number-color);
 }
 
 .cm-s-default .cm-def {
-  color: var(--nu-def-color);
+  color: var(--def-color);
 }
 
 .cm-s-default .cm-variable,
@@ -374,64 +373,64 @@ export default {
 }
 
 .cm-s-default .cm-variable-2 {
-  color: var(--nu-variable-color);
+  color: var(--variable-color);
 }
 
 .cm-s-default .cm-variable-3,
 .cm-s-default .cm-type {
-  color: var(--nu-type-color);
+  color: var(--type-color);
 }
 
 .cm-s-default .cm-comment {
-  color: var(--nu-comment-color);
+  color: var(--comment-color);
 }
 
 .cm-s-default .cm-string {
-  color: var(--nu-string-color);
+  color: var(--string-color);
 }
 
 .cm-s-default .cm-string-2 {
-  color: var(--nu-string-2-color);
+  color: var(--string-2-color);
 }
 
 .cm-s-default .cm-meta {
-  color: var(--nu-meta-color);
+  color: var(--meta-color);
 }
 
 .cm-s-default .cm-qualifier {
-  color: var(--nu-meta-color);
+  color: var(--meta-color);
 }
 
 .cm-s-default .cm-builtin {
-  color: var(--nu-builtin-color);
+  color: var(--builtin-color);
 }
 
 .cm-s-default .cm-bracket {
-  color: var(--nu-bracket-color);
+  color: var(--bracket-color);
 }
 
 .cm-s-default .cm-tag {
-  color: var(--nu-tag-color);
+  color: var(--tag-color);
 }
 
 .cm-s-default .cm-attribute {
-  color: var(--nu-attribute-color);
+  color: var(--attribute-color);
 }
 
 .cm-s-default .cm-hr {
-  color: var(--nu-hr-color);
+  color: var(--hr-color);
 }
 
 .cm-s-default .cm-link {
-  color: var(--nu-link-color);
+  color: var(--link-color);
 }
 
 .cm-s-default .cm-error {
-  color: var(--nu-cm-error-color);
+  color: var(--cm-error-color);
 }
 
 .cm-invalidchar {
-  color: var(--nu-cm-error-color);
+  color: var(--cm-error-color);
 }
 
 .CodeMirror-composing {
@@ -439,8 +438,8 @@ export default {
 }
 
 .CodeMirror-gutters {
-  border-right: 1px solid var(--nu-main-border-color);
-  background-color: var(--nu-main-subtle-color);
+  border-right: 1px solid var(--main-border-color);
+  background-color: var(--main-subtle-color);
   white-space: nowrap;
 }
 
@@ -456,7 +455,7 @@ export default {
 }
 
 .CodeMirror-guttermarker {
-  color: var(--nu-main-text-color);
+  color: var(--main-text-color);
 }
 
 .CodeMirror-guttermarker-subtle {
@@ -465,14 +464,14 @@ export default {
 
 .CodeMirror-selected {
   background: rgba(
-    var(--nu-main-outline-color-rgb, var(--nu-outline-color-rgb)),
+    var(--main-outline-color-rgb, var(--outline-color-rgb)),
     0.3
   );
 }
 
 .CodeMirror-focused .CodeMirror-selected {
   background: rgba(
-    var(--nu-main-outline-color-rgb, var(--nu-outline-color-rgb)),
+    var(--main-outline-color-rgb, var(--outline-color-rgb)),
     0.3
   );
 }
@@ -485,7 +484,7 @@ export default {
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
   background: rgba(
-    var(--nu-main-outline-color-rgb, var(--nu-outline-color-rgb)),
+    var(--main-outline-color-rgb, var(--outline-color-rgb)),
     0.3
   );
 }
@@ -494,32 +493,32 @@ export default {
 .CodeMirror-line > span::-moz-selection,
 .CodeMirror-line > span > span::-moz-selection {
   background: rgba(
-    var(--nu-main-outline-color-rgb, var(--nu-outline-color-rgb)),
+    var(--main-outline-color-rgb, var(--outline-color-rgb)),
     0.3
   );
 }
 
 .CodeMirror-cursor {
-  background: var(--nu-main-hover-color);
-  border-left: 1px solid var(--nu-main-text-color);
+  background: var(--main-hover-color);
+  border-left: 1px solid var(--main-text-color);
 }
 
 .CodeMirror-hscrollbar::-webkit-scrollbar,
 .CodeMirror-vscrollbar::-webkit-scrollbar {
-  width: var(--nu-gap);
-  height: var(--nu-gap);
+  width: var(--gap);
+  height: var(--gap);
 }
 
 .CodeMirror-hscrollbar::-webkit-scrollbar-track,
 .CodeMirror-vscrollbar::-webkit-scrollbar-track {
-  background-color: var(--nu-local-bg-color, var(--nu-subtle-color));
+  background-color: var(--local-bg-color, var(--subtle-color));
 }
 
 .CodeMirror-hscrollbar::-webkit-scrollbar-thumb,
 .CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(var(--nu-text-color-rgb), 0.5);
-  border-radius: var(--nu-radius);
-  border: var(--nu-border-width) solid var(--nu-subtle-color);
+  background-color: rgba(var(--text-color-rgb), 0.5);
+  border-radius: var(--radius);
+  border: var(--border-width) solid var(--subtle-color);
 }
 
 .CodeMirror-hscrollbar::-webkit-scrollbar-corner,
@@ -530,7 +529,7 @@ export default {
 .CodeMirror-hscrollbar,
 .CodeMirror-vscrollbar {
   scrollbar-width: thin;
-  scrollbar-color: var(--nu-subtle-color) rgba(var(--nu-text-color-rgb), 0.5);
+  scrollbar-color: var(--subtle-color) rgba(var(--text-color-rgb), 0.5);
 }
 
 .CodeMirror-scrollbar-filler {
@@ -538,6 +537,6 @@ export default {
 }
 
 .CodeMirror-activeline-background {
-  background: var(--nu-subtle-color);
+  background: var(--subtle-color);
 }
 </style>

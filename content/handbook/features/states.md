@@ -5,7 +5,7 @@ description: Style to state binding explained.
 
 ## Label based on state
 
-Framework automatically generates CSS based on states without style overlapping.
+The framework automatically generates CSS based on states without style overlapping.
 
 ```html
 <split/>

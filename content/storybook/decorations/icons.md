@@ -9,7 +9,6 @@ By default Numl uses [Feather Icons](https://github.com/feathericons/feather) fo
   <nu-icon name="alert-triangle-outline"></nu-icon>
   <nu-icon name="message-square-outline"></nu-icon>
   <nu-icon name="menu-outline"></nu-icon>
-  Text to align
 </nu-block>
 ```
 

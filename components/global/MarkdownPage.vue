@@ -438,14 +438,14 @@ export default {
 
 <style>
 .nuxt-content > *:not(:last-child) {
-  margin-bottom: calc(var(--nu-gap) * 2);
+  margin-bottom: calc(var(--gap) * 2);
 }
 .nuxt-content-container > textarea {
-  color: var(--nu-text-color);
-  background-color: var(--nu-bg-color);
-  padding: var(--nu-gap) calc(var(--nu-gap) * 2);
-  border: var(--nu-border-width) solid var(--nu-border-color);
-  border-radius: var(--nu-border-radius);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: var(--gap) calc(var(--gap) * 2);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
   font-size: 17px;
   line-height: 27px;
   font-family: 'Roboto Mono', monospace;
