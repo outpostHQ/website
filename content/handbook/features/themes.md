@@ -56,7 +56,7 @@ If you want archive consistent saturation over themes you can use pastel palette
 ```
 
 ```html
-<preview/>
+<split/>
 <nu-grid flow="row" gap columns="1fr 1fr 1fr" text="w6">
     <nu-theme name="red" hue="1"></nu-theme>
     <nu-theme name="blue" hue="262"></nu-theme>
@@ -123,7 +123,7 @@ or use named `red` theme:
 Let's see all possible variants:
 
 ```html
-<preview/>
+<split/>
 <nu-flex flow="row wrap" gap="2x" content="space-around">
   <nu-card gap="1x" theme>
     <nu-heading level="3" size="h5" inline>Blue - Main theme</nu-heading>

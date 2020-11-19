@@ -44,7 +44,7 @@ Use `"saturation"` property to set saturation of theme.
 Set `"pastel"` property to make themes that have perceptual uniformity of saturation.
 
 ```html
-<preview/>
+<split/>
 <nu-flow gap="2x">
 
 <nu-attrs for="card" border="0"></nu-attrs>
@@ -123,7 +123,7 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 Type modifiers: `"tint"`, `"tone"`, `"swap"`, `"special"`.
 
 ```html
-<preview/>
+<split/>
 <nu-flex gap="2x">
   <nu-card gap fill="subtle">
     <nu-theme hue="250" #[[mod="tint"]]#></nu-theme>

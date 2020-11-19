@@ -5,7 +5,7 @@ The **responsive** property declares style responsive breakpoints in the context
 **Three** breakpoints create **four** zones in which we can declare individual style value:
 
 ```html
-<preview/>
+<split/>
 <nu-root #[[responsive="1200px|900px|600px"]]#>
   <nu-grid columns=#[["repeat(6, 1fr)|repeat(4, 1fr)|1fr 1fr|1fr"]]# gap>
     <nu-card></nu-card>
@@ -22,7 +22,7 @@ The **responsive** property declares style responsive breakpoints in the context
 
 You can skip some values. In that case the previous value will be used:
 ```html
-<preview/>
+<split/>
 <nu-root responsive="1200px|900px|600px">
   <nu-grid columns=#[["repeat(6, 1fr)|||1fr"]]# gap>
     <nu-card></nu-card>

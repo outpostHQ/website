@@ -88,7 +88,7 @@ Modifiers: `"baseline"`, `"middle"`, `"sup"`, `"sub"`, `"top"`, `"bottom"`, `"te
 Modifiers: `"normal"`, `"semi-bold"`, `"bold"`, `"light"`, `"heading"`:
 
 ```html
-<preview/>
+<split/>
 <nu-block text="n">
   Normal
 </nu-block>
@@ -117,7 +117,7 @@ Modifiers: `"normal"`, `"semi-bold"`, `"bold"`, `"light"`, `"heading"`:
 Props: `"normal-font-weight"`, `"semi-bold-font-weight"`, `"bold-font-weight"`, `"light-font-weight"`, `"heading-font-weight"`:
 
 ```html
-<preview/>
+<split/>
 <nu-props
   semi-bold-font-weight="500"
   bold-font-weight="600"
