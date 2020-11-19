@@ -31,7 +31,7 @@ Inline <nu-cd><pre>var str = 'Code snippet';</pre></nu-cd> works!
 
 ## Highlight some parts
 
-Use `#[[` and `]]#` special sequences to mark parts of your code you want to highlight.
+Use ==#\[[== and ==\]\]#== special sequences to mark parts of your code you want to highlight.
 
 ```html
 <nu-code>
@@ -45,7 +45,7 @@ Use `#[[` and `]]#` special sequences to mark parts of your code you want to hig
 </nu-code>
 ```
 
-Use `![[` and `]]!` sequences for the most important parts.
+Use ==![[== and ==]]!== sequences for the most important parts.
 
 ```html
 <nu-code>
