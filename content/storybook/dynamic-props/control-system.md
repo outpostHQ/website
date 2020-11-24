@@ -1,3 +1,8 @@
+---
+title: Control system
+description: "Usage example of the [control](../../reference/utilities/control) utility attribute."
+---
+
 ## Toggle visibility
 
 Toggle [hidden](../../reference/styles/hidden.md) attribute.

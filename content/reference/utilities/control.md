@@ -47,7 +47,7 @@ Control custom property:
     control="root[@opacity]"></nu-slider>
 
   <nu-block box>
-    <nu-svg opacity="@opacity" src="/img/icon.svg"></nu-svg>
+    <nu-svg opacity="@opacity" src="/images/icon.svg"></nu-svg>
   </nu-block>
 </nu-flow>
 ```

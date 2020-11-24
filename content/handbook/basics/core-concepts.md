@@ -38,6 +38,30 @@ nu-card[padding=".5rem 1rem"] {
 }
 ```
 
+Numl supports automatic `calc` insertion to simplify syntax:
+
+```html
+<split/>
+<nu-card width="1rem * 10">
+  Simple card
+</nu-card>
+```
+
+If you have several calc-expressions then you can isolate them using brackets:
+
+```html
+<split/>
+<nu-card padding="(@gap * 2) (@gap * 3)">
+  Simple card
+</nu-card>
+```
+
+It's compiled to:
+
+```css
+padding: calc(var(--gap) * 2) calc(var(--gap) * 3);
+```
+
 ### Properties
 
 Define [Custom Properties](!https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in the context of the element using [nu-props](../../reference/definitions/nu-props.md) or plain CSS. Then use it inside style values:
@@ -52,6 +76,8 @@ Define [Custom Properties](!https://developer.mozilla.org/en-US/docs/Web/CSS/--*
   </nu-grid>
 </nu-block>
 ```
+
+In that example `@grid-gap` means `var(--grid-gap)`. You can also provide a fallback value with the following syntax: `@(grid-gap, 1rem)`.
 
 Define colors using [nu-props](../../reference/definitions/nu-props.md) and `-color` suffix to allow transparency syntax:
 
