@@ -430,6 +430,11 @@ export default {
           name: 'description',
           content: this.page.description,
         },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.page.description,
+        },
       ],
     };
   },
