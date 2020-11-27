@@ -18,10 +18,10 @@
       :pastel="Theme.pastel"
     />
     <nu-props
-      subtle-color="@secondary-subtle-color"
-      shadow-color="@secondary-shadow-color"
-      border-color="@secondary-border-color"
-      special-shadow-color="@secondary-special-shadow-color"
+      subtle-color="#secondary-subtle"
+      shadow-color="#secondary-shadow"
+      border-color="#secondary-border"
+      special-shadow-color="#secondary-special-shadow"
       page-bg-color="^root #bg :dark[#subtle]"
       second-bg-color="^root #subtle :dark[#bg]"
       diff-color="#second-bg"

@@ -11,7 +11,7 @@ If you don't need any explanation you can just clone the [Next.js+Numl Template]
 
 ## Create Next.js project
 
-Before we start, please, follow [the official instruction](!https://nextjs.org/learn/basics/create-nextjs-app/setup) to create a demo Next.js project.
+Before we start, please, follow [the official instruction](!https://nextjs.org/learn/basics/create-nextjs-app/setup) to create a new Next.js project.
 
 ## Integration
 
