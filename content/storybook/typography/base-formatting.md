@@ -89,3 +89,14 @@ Text <nu-mark>Normal mark</nu-mark>,
   Text <nu-el text="n">reset</nu-el> text
 </nu-el>
 ```
+
+## Text overflow
+
+`"ellipsis"` modifier.
+
+```html
+<split/>
+<nu-block width="max 10" text="ellipsis">
+  Very long description of the element.
+</nu-block>
+```

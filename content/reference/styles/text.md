@@ -56,6 +56,7 @@ description: "Use this style to change text characteristics: font, weight, style
 |`"text-bottom"`|Text bottom vertical alignment|
 |`"middle"`|Middle vertical alignment|
 |`"v-middle"`|Custom vertical alignment for inline-block elements|
+|`"ellipsis"`|Text-overflow ellipsis|
 
 ## Usage
 

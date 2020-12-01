@@ -421,10 +421,24 @@ export default {
     },
   },
   head() {
+    const title = `${this.page.title} – ${capitalize(
+      this.section
+    )} – Numl.Design`;
+
     return {
-      title: `${this.page.title} – ${capitalize(this.section)} – Numl.Design`,
+      title,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: title,
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
         {
           hid: 'description',
           name: 'description',

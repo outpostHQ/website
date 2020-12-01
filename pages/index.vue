@@ -398,7 +398,7 @@
         </nu-btn>
         <nu-btn to="!https://www.patreon.com/tenphi">
           <nu-icon name="heart-outline"></nu-icon>
-          Support
+          Sponsor
         </nu-btn>
       </nu-pane>
     </SiteBlock>
@@ -476,7 +476,7 @@ export default {
   computed: {
     startSnippet() {
       return `
-<script src="https://cdn.skypack.dev/numl@${App.version}" type="module" />`;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numl/@${App.version}/index.js" type="module" />`;
     },
     gradient() {
       const hue = (mod) => {

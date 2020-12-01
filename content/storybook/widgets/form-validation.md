@@ -7,15 +7,18 @@ description: Examples of form validation using Numl
 <split/>
 <nu-form>
   <nu-field>
-    <nu-label for="email">Username</nu-label>
-    <nu-input id="email" value=""></nu-input>
+    <nu-label for="email">Email</nu-label>
+    <nu-input id="email"></nu-input>
     <nu-check for="email" assert="required" color="hue(1)">
-      Username is required
+      Email is required
+    </nu-check>
+    <nu-check for="email" assert="email" color="hue(1)">
+      A valid email address is required
     </nu-check>
   </nu-field>
   <nu-field>
     <nu-label for="password">Password</nu-label>
-    <nu-input id="password" value=""></nu-input>
+    <nu-input id="password"></nu-input>
     <nu-check for="password" assert="required" color="hue(1)">
       Password is required
     </nu-check>

@@ -302,21 +302,8 @@ export default {
 
     App.version = `v${Nude.version}`;
 
-    routing.setRouter((url, openNewTab) => {
-      // skip outside links and links that open in new tabs
-      if (
-        openNewTab ||
-        url.startsWith('https://') ||
-        url.includes('//') ||
-        url.startsWith('mailto:') ||
-        url.includes('/api/')
-      ) {
-        return true;
-      }
-
+    routing.setInternalRouter((url) => {
       this.$router.push(url); // handle routing by yourself
-
-      return false;
     });
 
     App.isDev = location.host.includes('localhost');
