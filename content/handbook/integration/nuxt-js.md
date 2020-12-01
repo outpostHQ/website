@@ -57,7 +57,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://cdn.jsdelivr.net/npm/numl@1.0.0-beta.10/dist/index.js',
+        src: 'https://cdn.skypack.dev/numl',
         type: 'module',
       },
     ],

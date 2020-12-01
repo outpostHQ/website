@@ -32,7 +32,7 @@ class MyDocument extends Document {
       <Html data-nu-prevent>
         <Head>
           <script
-            src="https://cdn.jsdelivr.net/npm/numl@1.0.0-beta.10/dist/index.js"
+            src="https://cdn.skypack.dev/numl"
             type="module"
           />
           <style dangerouslySetInnerHTML={{
