@@ -225,3 +225,7 @@ Let's replace the Index (`pages/index.vue`) page with the Numl version.
 You can also use Nuxt.js+Numl template that can be downloaded here:
 
 [github.com/numldesign/nuxtjs-numl-template](!https://github.com/numldesign/nuxtjs-numl-template)
+
+## In the wild
+
+You can also visit [the repo of this Website](https://github.com/numldesign/website) to see a real-world example of Nuxt.js+Numl.Design integration.

@@ -22,14 +22,14 @@ Well, that's all! NUDE automatically find the best saturation for that hue and g
 * **text-strong** `--strong-color` – Color of text and icons with high contrast. You can use it to highlight some parts of the text.
 * **bg** `--bg-color` – Base background color.
 * **border** `--border-color` – Border color.
-* **hover** `--hover-color` – Overlay background color for hover effect.
+* **mark** `--mark-color` – Overlay background color for the mark (or hover) effect with transparency.
 * **focus** `--focus-color` – Color for focus outline.
 * **shadow** `--shadow-color` – Color for shadows.
-* **subtle** `--subtle-color` – Color that is slightly differs from background to differentiate similar blocks.
+* **subtle** `--subtle-color` – Color that is slightly different from the background color to differentiate similar blocks.
 * **special** `--special-color` – Text color to highlight special parts of the content.
-* **special-text** `--special-text-color` – Text color for special elements that are also have special background color applied.
-* **special-bg** `--special-bg-color` – Background color for special elements that are also have special text color applied.
-* **special-hover** `--special-hover-color` – Overlay background color for hover effect on special elements.
+* **special-text** `--special-text-color` – Text color for special elements that also have special background color applied.
+* **special-bg** `--special-bg-color` – Background color for special elements that also have special text color applied.
+* **special-mark** `--special-mark-color` – Overlay background color for hover effect on special elements.
 * **special-shadow** `--shadow-color` – Color for shadows of special elements.
 * **input** `--input-color` – Background color of inputs and some active elements like Dropdown.
 * **dark** `--input-color` – Dark color with main hue.
