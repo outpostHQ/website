@@ -18,8 +18,8 @@ At first, let's define a theme for the element. This theme will be applied to th
 Well, that's all! NUDE automatically find the best saturation for that hue and generate a bunch of colors for your site:
 
 * **text** `--text-color` – Base color of text and icons.
-* **text-soft** `--soft-color` – Color of text and icons with soft contrast. Usable for text with big weight or size and bold icons.
-* **text-strong** `--strong-color` – Color of text and icons with high contrast. You can use it to highlight some parts of the text.
+* **text-soft** `--text-soft-color` – Color of text and icons with soft contrast. Usable for text with big weight or size and bold icons.
+* **text-strong** `--text-strong-color` – Color of text and icons with high contrast. You can use it to highlight some parts of the text.
 * **bg** `--bg-color` – Base background color.
 * **border** `--border-color` – Border color.
 * **mark** `--mark-color` – Overlay background color for the mark (or hover) effect with transparency.
