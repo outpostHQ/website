@@ -1,7 +1,7 @@
 ---
 title: hue
 type: function
-description: The `hue` color function creates an adaptive color that uses custom **HSC(A)** (*Hue, Saturation, Contrast, Alpha*) color space with **variable finite contrast** that adapts to the color scheme and contrast mode. So basically it creates **four** colors for each case.
+description: The `hue` color function creates an adaptive color that uses custom **HSC(A)** (*Hue, Saturation, Contrast, Alpha*) color space with **variable finite contrast** that adapts to the color scheme and contrast mode. So basically it creates **four** colors in total.
 githubLink: https://github.com/numldesign/numl/blob/master/src/themes.js#L618
 ---
 

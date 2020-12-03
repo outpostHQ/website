@@ -51,7 +51,7 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 
 <nu-h3>Normal palette</nu-h3>
 
-<nu-flex gap>
+<nu-flex gap flow="row wrap">
   <nu-card gap fill="subtle">
     <nu-theme hue="250" saturation="100" mod="special"></nu-theme>
     <nu-block>Card text</nu-block>
@@ -83,7 +83,7 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 
 <nu-h3>Pastel palette</nu-h3>
 
-<nu-flex gap>
+<nu-flex gap flow="row wrap">
   <nu-card gap fill="subtle">
     <nu-theme hue="250" saturation="100" mod="special" #[[pastel]]#></nu-theme>
     <nu-block>Card text</nu-block>
@@ -124,7 +124,7 @@ Type modifiers: `"tint"`, `"tone"`, `"swap"`, `"special"`.
 
 ```html
 <split/>
-<nu-flex gap="2x">
+<nu-flex gap="2x" flow="row wrap">
   <nu-card gap fill="subtle">
     <nu-theme hue="250" #[[mod="tint"]]#></nu-theme>
     <nu-block>Card text</nu-block>
