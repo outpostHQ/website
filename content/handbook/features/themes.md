@@ -23,7 +23,7 @@ Well, that's all! NUDE automatically find the best saturation for that hue and g
 * **bg** `--bg-color` – Base background color.
 * **border** `--border-color` – Border color.
 * **mark** `--mark-color` – Overlay background color for the mark (or hover) effect with transparency.
-* **focus** `--focus-color` – Color for focus outline.
+* **outline** `--outline-color` – Color for outline effects (like focus).
 * **shadow** `--shadow-color` – Color for shadows.
 * **subtle** `--subtle-color` – Color that is slightly different from the background color to differentiate similar blocks.
 * **special** `--special-color` – Text color to highlight special parts of the content.

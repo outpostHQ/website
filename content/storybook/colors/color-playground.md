@@ -23,14 +23,16 @@ Each theme has the following list of colors. You can test them all in this playg
           <nu-option value="special">special</nu-option>
           <nu-option value="special-bg">special-bg</nu-option>
           <nu-option value="special-text">special-text</nu-option>
+          <nu-option value="special-mark">special-text</nu-option>
           <nu-option value="mark">mark</nu-option>
-          <nu-option value="focus">focus</nu-option>
+          <nu-option value="outline">outline</nu-option>
           <nu-option value="bg">bg</nu-option>
           <nu-option value="subtle">subtle</nu-option>
           <nu-option value="border">border</nu-option>
           <nu-option value="input">input</nu-option>
           <nu-option value="shadow">shadow</nu-option>
           <nu-option value="special-shadow">special-shadow</nu-option>
+          <nu-option value="dark">dark</nu-option>
         </nu-popuplistbox>
       </nu-btn>
     </nu-pane>
@@ -48,12 +50,16 @@ Each theme has the following list of colors. You can test them all in this playg
           <nu-option value="special">special</nu-option>
           <nu-option value="special-bg">special-bg</nu-option>
           <nu-option value="special-text">special-text</nu-option>
+          <nu-option value="special-mark">special-text</nu-option>
           <nu-option value="mark">mark</nu-option>
-          <nu-option value="focus">focus</nu-option>
+          <nu-option value="outline">outline</nu-option>
           <nu-option value="bg">bg</nu-option>
           <nu-option value="subtle">subtle</nu-option>
+          <nu-option value="border">border</nu-option>
+          <nu-option value="input">input</nu-option>
           <nu-option value="shadow">shadow</nu-option>
           <nu-option value="special-shadow">special-shadow</nu-option>
+          <nu-option value="dark">dark</nu-option>
         </nu-popuplistbox>
       </nu-btn>
     </nu-pane>
