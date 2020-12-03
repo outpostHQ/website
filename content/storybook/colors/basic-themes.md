@@ -52,6 +52,10 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 <nu-h3>Normal palette</nu-h3>
 
 <nu-flex gap>
+  <nu-grid
+  rows="auto auto" flow="row"
+  columns="auto auto" gap>
+    
   <nu-card gap fill="subtle">
     <nu-theme hue="250" saturation="100" mod="special"></nu-theme>
     <nu-block>Card text</nu-block>
@@ -79,11 +83,16 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 
     <nu-block><nu-btn special>Special</nu-btn></nu-block>
   </nu-card>
+</nu-grid>
 </nu-flex>
 
 <nu-h3>Pastel palette</nu-h3>
 
 <nu-flex gap>
+  <nu-grid
+  rows="auto auto" flow="row"
+  columns="auto auto" gap>
+    
   <nu-card gap fill="subtle">
     <nu-theme hue="250" saturation="100" mod="special" #[[pastel]]#></nu-theme>
     <nu-block>Card text</nu-block>
@@ -111,6 +120,7 @@ Set `"pastel"` property to make themes that have perceptual uniformity of satura
 
     <nu-block><nu-btn special>Special</nu-btn></nu-block>
   </nu-card>
+</nu-grid>
 </nu-flex>
 
 </nu-flow>
@@ -125,6 +135,10 @@ Type modifiers: `"tint"`, `"tone"`, `"swap"`, `"special"`.
 ```html
 <split/>
 <nu-flex gap="2x">
+  <nu-grid
+  rows="auto auto" flow="row"
+  columns="auto auto" gap>
+    
   <nu-card gap fill="subtle">
     <nu-theme hue="250" #[[mod="tint"]]#></nu-theme>
     <nu-block>Card text</nu-block>
@@ -152,5 +166,6 @@ Type modifiers: `"tint"`, `"tone"`, `"swap"`, `"special"`.
 
     <nu-block><nu-btn special>Special</nu-btn></nu-block>
   </nu-card>
+</nu-grid>
 </nu-flex>
 ```
