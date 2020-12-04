@@ -4,7 +4,7 @@ Table layouts are for cases when you need a semantically correct table, with row
 
 ```html
 <split/>
-<#[[nu-table]]# text="b center">
+<#[[nu-table]]# text="center">
   <nu-attrs for="cell" width="min 7" height="4" size="l"></nu-attrs>
   <nu-row>
     <nu-cell>A</nu-cell>
@@ -21,7 +21,7 @@ Table layouts are for cases when you need a semantically correct table, with row
 
 ```html
 <split/>
-<#[[nu-table]]# text="b center">
+<#[[nu-table]]# text="center">
   <nu-attrs for="cell" width="min 7" height="4" size="l"></nu-attrs>
   <nu-attrs for="columnheader" text="h"></nu-attrs>
   <nu-rowgroup>
@@ -51,7 +51,7 @@ Table layouts are for cases when you need a semantically correct table, with row
 
 ```html
 <split/>
-<#[[nu-table]]# text="b center">
+<#[[nu-table]]# text="center">
   <nu-attrs for="cell" width="min 7" height="4" size="l"></nu-attrs>
   <nu-attrs for="rowheader" text="h"></nu-attrs>
   <nu-row>
