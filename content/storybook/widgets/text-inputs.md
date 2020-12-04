@@ -1,13 +1,30 @@
-## Simple input
+## Input
 
 ```html
 <split/>
 <nu-flex flow="row wrap" gap>
-  <nu-input width="15" label="Simple input">
-  </nu-input>
+  <nu-input width="12" placeholder="Default input"></nu-input>
+  <nu-input width="12" placeholder="Special input" special></nu-input>
+</nu-flex>
+```
 
-  <nu-input width="15" label="Simple disabled input" disabled>
-  </nu-input>
+## Input states
+```html
+<split/>
+<nu-attrs for="input" width="12"></nu-attrs>
+<nu-flow gap="2x">
+<nu-h5>Default</nu-h5>
+<nu-flex flow="row wrap" gap>
+  <nu-input placeholder="Normal"></nu-input>
+  <nu-input is-focus outline="y" placeholder="Focus"></nu-input>
+  <nu-input disabled placeholder="Disabled"></nu-input>
+</nu-flex>
+
+<nu-h5>Special</nu-h5>
+<nu-flex flow="row wrap" gap>
+  <nu-input special placeholder="Normal"></nu-input>
+  <nu-input special is-focus outline="y" placeholder="Focus"></nu-input>
+  <nu-input special disabled placeholder="Disabled"></nu-input>
 </nu-flex>
 ```
 
