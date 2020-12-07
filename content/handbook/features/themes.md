@@ -30,9 +30,9 @@ Well, that's all! NUDE automatically find the best saturation for that hue and g
 * **special-text** `--special-text-color` – Text color for special elements that also have special background color applied.
 * **special-bg** `--special-bg-color` – Background color for special elements that also have special text color applied.
 * **special-mark** `--special-mark-color` – Overlay background color for hover effect on special elements.
-* **special-shadow** `--shadow-color` – Color for shadows of special elements.
+* **special-shadow** `--special-shadow-color` – Color for shadows of special elements.
 * **input** `--input-color` – Background color of inputs and some active elements like Dropdown.
-* **dark** `--input-color` – Dark color with main hue.
+* **dark** `--dark-color` – Dark color with main hue.
 
 You can use this custom properties names in your elements.
 
