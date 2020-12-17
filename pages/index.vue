@@ -9,7 +9,7 @@
       <Topbar />
       <SiteBlock
         badge="design system · framework · language"
-        heading="Universal UI language\nfor\s modern web\s interfaces"
+        heading="Universal UI Language\nfor\s modern web\s interfaces"
         description="An open-source Library of Web&nbsp;Components and a&nbsp;Runtime&nbsp;CSS&nbsp;Framework for rapidly building UI that follows your&nbsp;Design&nbsp;System."
         padding="10x 0||8x 0|4x 0 8x"
         level="1"

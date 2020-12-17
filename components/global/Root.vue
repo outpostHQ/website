@@ -27,7 +27,11 @@
       diff-color="#second-bg"
       topbar-offset="8.75x|||6.75x"
       sidebar-width="32x||26x"
-      max-content-width="100rem - (@content-padding * 2)"
+      :max-content-width="
+        $route.path.startsWith('/repl')
+          ? '100vw - (@content-padding * 2)'
+          : '100rem - (@content-padding * 2)'
+      "
       grid-gap="3x"
       content-padding="6x||3x|6x|3x"
       column-number="12||||2"

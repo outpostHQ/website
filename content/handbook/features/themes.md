@@ -32,9 +32,10 @@ Well, that's all! NUDE automatically find the best saturation for that hue and g
 * **special-mark** `--special-mark-color` – Overlay background color for hover effect on special elements.
 * **special-shadow** `--special-shadow-color` – Color for shadows of special elements.
 * **input** `--input-color` – Background color of inputs and some active elements like Dropdown.
-* **dark** `--dark-color` – Dark color with main hue.
+* **dark** `--dark-color` – A dark color with the main hue.
+* **light** `--light-color` – A light color with the main hue.
 
-You can use this custom properties names in your elements.
+You can use these custom property names in your elements.
 
 As you see in NUDE we **name colors by their role**, not by their visual characteristics or by their specific usage. It keeps the number of colors minimal but helps NUDE understand their purpose and do some automation to generate various modes for your theme!
 
@@ -84,7 +85,7 @@ Also you can use any hex/rgb/rgba/hsl declaration to provide base color:
 
 The **hue** will be extracted from that color.
 
-If you need custom **saturation** you can set `[saturation]` attribute to specific value or set `auto` for optimal saturation.
+If you need custom **saturation** you can set `[saturation]` attribute to the specific value or set `auto` for optimal saturation.
 
 ## Named themes
 You can name each theme:
@@ -100,14 +101,14 @@ To apply theme use `[theme]` attribute:
 <nu-card theme="red"></nu-card>
 ```
 
-Or use empty value to apply main theme.
+Or use the empty value to apply the main theme.
 
 ## Theme modifiers
 You can use a lot of modifiers to tweak your theme:
 
 * **Type modifiers**: `main`, `common`, `toned`, `swap`, `special` – Several predefined types of theme.
 * **Contrast modifiers**: `soft`, `strong` – Change contrast of theme.
-* **Intensity modifiers**: `dim`, `bold` – Change visual intensity of theme.
+* **Intensity modifiers**: `dim`, `bold` – Change the visual intensity of theme.
 
 Use modifiers in `[theme]` attribute:
 ```html
@@ -215,7 +216,7 @@ Let's see all possible variants:
 
 ## Accessibility
 
-With NUDE it you can automatically get **Dark** and **High-contrast** modes for your site.
+With NUDE you automatically get **Dark** and **High-contrast** modes for your site.
 
 Each theme variant generates four sets of colors for each scenario:
 
@@ -244,5 +245,5 @@ There are also some classes that you should add to the `html` tag for the follow
 
 You can add classes to the `html` element to control over `reduced-motion` preference.
 
-* Add `nu-reduce-motion` to reduce motion in user interface.
+* Add `nu-reduce-motion` to reduce motion in the user interface.
 * Do nothing to reduce motion depending on system preference.

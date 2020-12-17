@@ -103,7 +103,7 @@ Normal and special hues. Use `"special"` modifier for backgrounds with special (
 
 ## Predefined colors
 
-There are few predefined colors. They all are **adaptive** and have **special** modifier.
+There are several predefined grey colors. They all are **adaptive** and have **special** modifier.
 
 ```html
 <split/>
@@ -114,21 +114,38 @@ There are few predefined colors. They all are **adaptive** and have **special** 
   <nu-columnheader></nu-columnheader>
   <nu-cell>black</nu-cell>
   <nu-cell>100</nu-cell>
-  <nu-cell fill="black"></nu-cell>
+  <nu-cell fill="#black"></nu-cell>
   <nu-cell>darkgrey</nu-cell>
   <nu-cell>high</nu-cell>
-  <nu-cell fill="darkgrey"></nu-cell>
+  <nu-cell fill="#darkgrey"></nu-cell>
   <nu-cell>grey</nu-cell>
   <nu-cell>auto</nu-cell>
-  <nu-cell fill="grey"></nu-cell>
+  <nu-cell fill="#grey"></nu-cell>
   <nu-cell>lightgrey</nu-cell>
   <nu-cell>low</nu-cell>
-  <nu-cell fill="lightgrey"></nu-cell>
-  <nu-cell>light</nu-cell>
-  <nu-cell>5</nu-cell>
-  <nu-cell fill="light"></nu-cell>
+  <nu-cell fill="#lightgrey"></nu-cell>
   <nu-cell>white</nu-cell>
   <nu-cell>0</nu-cell>
-  <nu-cell fill="white"></nu-cell>
+  <nu-cell fill="#white"></nu-cell>
 </nu-gridtable>
+```
+
+Also, there are four colors for **success** and **danger** zones:
+
+```html
+<split/>
+<nu-flow gap="1x">
+  <nu-block color="#success">
+    Success text
+  </nu-block>
+  <nu-block color="#danger">
+    Danger text
+  </nu-block>
+  <nu-block color="#white" fill="#success-bg" padding="1x">
+    Success special text
+  </nu-block>
+  <nu-block color="#white" fill="#danger-bg" padding="1x">
+    Danger special text
+  </nu-block>
+</nu-flow>
 ```
