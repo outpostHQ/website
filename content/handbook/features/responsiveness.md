@@ -1,6 +1,6 @@
 ---
 title: Responsive system
-description: "To make your site responsive with Numl is very simple. Any element has [responsive](../../reference/attributes/responsive.md) attribute that can be used to declare responsive points in its context. Every responsive point split a set of screen width values into two zones. So `N` responsive points will split that set into `N + 1` zones. Let's take a look at the example where we declare three values of the attribute for each responsive zone:"
+description: "To make your site responsive with Numl is very simple. Any element has [responsive](../../reference/utilities/responsive.md) utility attribute that can be used to declare responsive points in its context. Every responsive point split a set of screen width values into two zones. So `N` responsive points will split that set into `N + 1` zones. Let's take a look at the example where we declare three values of the attribute for each responsive zone:"
 ---
 
 ```html
