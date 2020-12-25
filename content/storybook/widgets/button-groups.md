@@ -9,7 +9,9 @@
     </nu-btngroup>
   </nu-block>
   <nu-block>
-    <nu-btngroup value="second" flow="column" width="15">
+    <nu-btngroup 
+      value="second" flow="column" 
+      width="15" group-radius="column">
       <nu-btn value="first">First</nu-btn>
       <nu-btn value="second">Second</nu-btn>
       <nu-btn value="third">Third</nu-btn>
