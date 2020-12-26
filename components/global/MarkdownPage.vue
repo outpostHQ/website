@@ -236,7 +236,6 @@
 
         <nu-block order="2|||1" show="y|||n">
           <nu-block
-            v-if="toc.length >= 2"
             display="flex"
             flow="column"
             items="stretch"
