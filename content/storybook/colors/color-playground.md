@@ -33,6 +33,10 @@ Each theme has the following list of colors. You can test them all in this playg
           <nu-option value="shadow">shadow</nu-option>
           <nu-option value="special-shadow">special-shadow</nu-option>
           <nu-option value="dark">dark</nu-option>
+          <nu-option value="light">light</nu-option>
+          <nu-option value="danger">danger</nu-option>
+          <nu-option value="success">success</nu-option>
+          <nu-option value="warning">warning</nu-option>
         </nu-popuplistbox>
       </nu-btn>
     </nu-pane>
@@ -60,6 +64,10 @@ Each theme has the following list of colors. You can test them all in this playg
           <nu-option value="shadow">shadow</nu-option>
           <nu-option value="special-shadow">special-shadow</nu-option>
           <nu-option value="dark">dark</nu-option>
+          <nu-option value="light">light</nu-option>
+          <nu-option value="danger">danger</nu-option>
+          <nu-option value="success">success</nu-option>
+          <nu-option value="warning">warning</nu-option>
         </nu-popuplistbox>
       </nu-btn>
     </nu-pane>
