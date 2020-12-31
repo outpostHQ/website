@@ -8,7 +8,7 @@ description: Get to know how to create high-quality websites using Numl
 >
 > **Numl** is in BETA stage, and some things may change before we hit version 1.0
 >
-> This documentation is a **work-in-progress**. If you get stuck, reach out for help in one of our chats: [Telegram](!https://t.me/numldesign) and [Gitter](!https://gitter.im/numldesign/numl).
+> This documentation is a **work-in-progress**. If you get stuck, reach out for help in one of our chat: [Discord](https://discord.gg/sHnHPnAPZj).
 
 **Numl** is a library of Web Components and a Runtime CSS Framework for rapidly building UI that follows your Design System.
 
