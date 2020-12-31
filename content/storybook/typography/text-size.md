@@ -1,4 +1,4 @@
-See [size](../../reference/elements/) style details page to learn more about default sizes and syntax.
+See [size](../../reference/styles/size/) style details page to learn more about default sizes and syntax.
 
 ## Default base sizes
 
