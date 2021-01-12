@@ -5,7 +5,7 @@ import requireNude from '@/helpers/require-nude';
 const Loader = () => {
   if (process.client) {
     return requireNude().then((Nude) => {
-      return class NuSplitPreview extends window.Nude.elements.NuElement {
+      return class NuSplitPreview extends Nude.elements.NuEl {
         static get nuTag() {
           return 'nu-splitpreview';
         }
