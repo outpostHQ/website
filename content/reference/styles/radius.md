@@ -55,6 +55,8 @@ Use this style to specify border radius.
 |----|----|
 |`"round"`|Make radius as big as possible and keep them equal|
 |`"ellipse"`|Make the biggest border radius possible on each corner|
+|`"leaf"`|Make leaf-shaped border radius|
+|`"backleaf"`|Make inverted leaf-shaped border radius|
 
 ## Usage
 
