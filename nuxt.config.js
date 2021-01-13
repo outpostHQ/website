@@ -32,7 +32,7 @@ export default {
     ],
     script: [
       {
-        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.15',
+        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.16',
         // src: '/numl/index.js',
         type: 'module',
       },

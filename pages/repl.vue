@@ -73,13 +73,13 @@
           The snippet is saved.
         </nu-el>
       </nu-pane>
-      <no-ssr>
+      <client-only>
         <codemirror
           ref="editor"
           v-model="currentMarkup"
           :options="editorOptions"
         ></codemirror>
-      </no-ssr>
+      </client-only>
     </nu-flex>
     <PreviewWindow ref="preview" />
   </nu-block>
