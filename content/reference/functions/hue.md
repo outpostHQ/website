@@ -130,22 +130,28 @@ There are several predefined grey colors. They all are **adaptive** and have **s
 </nu-gridtable>
 ```
 
-Also, there are four colors for **success** and **danger** zones:
+Also, there are three colors for **success**, **danger**, and **warning** zones:
 
 ```html
 <split/>
 <nu-flow gap="1x">
-  <nu-block color="#success">
+  <nu-block theme="success">
     Success text
   </nu-block>
-  <nu-block color="#danger">
+  <nu-block theme="danger">
     Danger text
   </nu-block>
-  <nu-block color="#white" fill="#success-bg" padding="1x">
+   <nu-block theme="warning">
+    Warning text
+  </nu-block>
+  <nu-block fill theme="success special" padding="1x">
     Success special text
   </nu-block>
-  <nu-block color="#white" fill="#danger-bg" padding="1x">
+  <nu-block fill theme="danger special" padding="1x">
     Danger special text
+  </nu-block>
+   <nu-block fill theme="warning special" padding="1x">
+    Warning special text
   </nu-block>
 </nu-flow>
 ```
