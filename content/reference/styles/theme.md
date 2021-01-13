@@ -49,7 +49,7 @@ Use `"soft"` and `"strong"` modifiers to change contrast between background and 
 
 ## See also
 
-* [nu-theme](../decorators/nu-theme.md)
+* [nu-theme](../definitions/nu-theme.md)
 * [color](./color.md)
 * [fill](./fill.md)
 * [hue()](../functions/hue.md)
