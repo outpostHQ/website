@@ -19,7 +19,7 @@ description: The definition element that declares a theme in the context of its 
 |`swap`|**Swap** type. Same as **Tone** but with swapped text and background colors|
 |`special`|**Special** type. Use special color for background. Use white color for base text|
 |`soft`|Opposite to `strong`. Decreases contrast between background color and text color|
-|`strong"`|Opposite to `soft`. Increases contrast between background color and text color|
+|`strong`|Opposite to `soft`. Increases contrast between background color and text color|
 |`dim`|Opposite to `bold`. Decreases contrast between main background color and theme background color|
 |`bold`|Opposite to `dim`. Increases contrast between main background color and theme background color|
 
