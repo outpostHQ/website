@@ -1,4 +1,4 @@
-The **theme** utility property sets the theme (declared via [nu-theme](../decorators/nu-theme.md)) to the element by the name. Also, you can add some modifiers to customize the theme. This utility property behaves like style.
+The **theme** utility property sets the theme (declared via [nu-theme](../definitions/nu-theme.md)) to the element by the name. Also, you can add some modifiers to customize the theme. This utility property behaves like style.
 
 ## Usage
 
