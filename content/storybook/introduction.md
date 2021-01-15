@@ -19,18 +19,17 @@ You can switch between sections using the selector on the top-left of the page.
 
 In case you are curious about how it was built or want to help us:
 
-* [Numl Repo](!https://github.com/numldesign/numl) - Built with Rollup.
-* [Numl Website](!https://github.com/numldesign/website) - Built with Nuxt and Vue.
+* [Numl Repo](https://github.com/numldesign/numl) - Built with Rollup.
+* [Numl Website](https://github.com/numldesign/website) - Built with Nuxt and Vue.
 
 ### Social
 
 Follow us to see the latest news about Numl:
 
-* [Twitter](!https://twitter.com/numldesign)
+* [Twitter](https://twitter.com/numldesign)
 
 ### Chat
 
 You can ask any questions here:
 
-* [Gitter Chat](!https://gitter.im/tenphi/numl?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-* [Telegram Chat](!https://tele.click/numldesign)
+* [Discord Chat](https://discord.gg/sHnHPnAPZj)
