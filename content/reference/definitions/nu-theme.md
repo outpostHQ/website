@@ -28,21 +28,42 @@ description: The definition element that declares a theme in the context of its 
 ```html
 <split/>
 
-<nu-theme name="success" hue="130" mod="tone dim"></nu-theme>
-<nu-theme name="danger" hue="1" mod="special strong"></nu-theme>
+<nu-theme name="cyan" hue="180" mod="tone dim"></nu-theme>
+<nu-theme name="Magenta" hue="300" mod="special strong"></nu-theme>
 
 <nu-flow gap>
-  <nu-card theme="success">
-    Everything is ok!
+  <nu-card theme="cyan">
+    Cyan Tone Dim Theme Card
   </nu-card>
 
-  <nu-card theme="danger">
-    Something went dramatically wrong!
+  <nu-card theme="Magenta">
+    Magenta Special Strong Theme Card
   </nu-card>
 </nu-flow>
 ```
 
 ## Examples
+
+```html
+<split/>
+
+<nu-flow gap="1">
+  <nu-card theme="warning tone dim">
+    <nu-icon name="alert-triangle-outline"></nu-icon>
+    WARNING: Place your warning message here!
+  </nu-card>
+  
+  <nu-card theme="danger tone dim">
+    <nu-icon name="close-outline"></nu-icon>
+    DANGER: Place your error/danger message here!
+  </nu-card>
+  
+  <nu-card theme="success tone dim">
+   	<nu-icon name="checkmark-outline"></nu-icon>
+    SUCCESS: Place your success message here!
+  </nu-card>
+</nu-flow>
+```
 
 * [Colors - Basics themes](../../storybook/colors/basic-themes.md)
 
