@@ -45,9 +45,9 @@
             <nu-icon name="twitter"></nu-icon>
             Twitter
           </nu-btn>
-          <nu-btn clear to="!https://t.me/numldesign">
-            <nu-icon name="paper-plane"></nu-icon>
-            Telegram
+          <nu-btn clear to="!https://discord.gg/sHnHPnAPZj">
+            <nu-icon name="logo-discord"></nu-icon>
+            Chat on Discord
           </nu-btn>
         </nu-grid>
       </SiteBlock>
@@ -388,13 +388,9 @@
           <nu-icon name="twitter-outline"></nu-icon>
           Twitter
         </nu-btn>
-        <nu-btn to="!https://gitter.im/tenphi/numl">
-          <nu-icon name="message-circle-outline"></nu-icon>
-          Gitter
-        </nu-btn>
-        <nu-btn to="!https://t.me/numldesign">
-          <nu-icon name="paper-plane-outline"></nu-icon>
-          Telegram
+        <nu-btn to="!https://discord.gg/sHnHPnAPZj">
+          <nu-icon name="logo-discord"></nu-icon>
+          Chat on Discord
         </nu-btn>
         <nu-btn to="!https://www.patreon.com/tenphi">
           <nu-icon name="heart-outline"></nu-icon>
