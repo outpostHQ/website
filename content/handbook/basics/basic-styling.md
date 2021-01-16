@@ -47,7 +47,7 @@ Many inline elements are affected by `size` style.
 </nu-block>
 ```
 
-You can change default presents according to your Design System. See the [full reference](../reference/styles/size.md) to learn more.
+You can change default presents according to your Design System. See the [full reference](../../reference/styles/size.md) to learn more.
 
 ### Text properties
 
@@ -71,7 +71,7 @@ Here are a few examples compared to CSS analogs:
 |`text="uppercase"` or `text="up"`|`text-transform: uppercase;`|
 |`text="spacing(1px)"`|`letter-spacing: 1px;`|
 
-See the [full reference](../reference/styles/text.md) to learn more.
+See the [full reference](../../reference/styles/text.md) to learn more.
 
 ### Semantic elements
 
@@ -117,7 +117,7 @@ Use `color` style attribute to change the text color and `fill` to change the ba
 
 ### Adaptive colors
 
-In case you want your colors to be more accessible, you should consider using the [hue()](../reference/functions/hue.md) helper to create adaptive colors.
+In case you want your colors to be more accessible, you should consider using the [hue()](../../reference/functions/hue.md) helper to create adaptive colors.
 
 Adaptive colors are colors that change based on the current user scheme and contrast mode.
 
@@ -174,7 +174,7 @@ You can also apply modifiers to your theme to make it more suitable for the spec
 </nu-card>
 ```
 
-You can create named themes and mix them using [nu-props](../reference/definitions/nu-props.md) definition. To learn more see our [Themes Section](../features/themes.md) or the full references of [nu-theme](../reference/definitions/nu-theme.md) definition and [theme](../reference/styles/theme.md) style attribute.
+You can create named themes and mix them using [nu-props](../../reference/definitions/nu-props.md) definition. To learn more see our [Themes Section](../features/themes.md) or the full references of [nu-theme](../../reference/definitions/nu-theme.md) definition and [theme](../../reference/styles/theme.md) style attribute.
 
 
 ## Block styling
@@ -183,7 +183,7 @@ Almost everything you do with CSS can be accomplished using Numl.
 
 ### Paddings
 
-Use [padding](../reference/styles/padding.md) style attribute to add padding to your element:
+Use [padding](../../reference/styles/padding.md) style attribute to add padding to your element:
 
 ```html
 <split/>
@@ -203,7 +203,7 @@ It's very similar to CSS `padding` style but can additionally accept modifiers:
 
 ### Borders
 
-Use [border](../reference/styles/border.md) style attribute to create physical/virtual borders and [radius](../reference/styles/radius.md) to set border radius.
+Use [border](../../reference/styles/border.md) style attribute to create physical/virtual borders and [radius](../../reference/styles/radius.md) to set border radius.
 
 ```html
 <split/>
@@ -227,7 +227,7 @@ Use [border](../reference/styles/border.md) style attribute to create physical/v
 
 ### Shadows
 
-Use [shadow](../reference/styles/shadow.md) style attribute to add outer shadows and [inset](../reference/styles/inset.md) to add inner shadows.
+Use [shadow](../../reference/styles/shadow.md) style attribute to add outer shadows and [inset](../../reference/styles/inset.md) to add inner shadows.
 
 ```html
 <split/>
