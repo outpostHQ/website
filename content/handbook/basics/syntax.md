@@ -204,7 +204,7 @@ We removed ==active==, ==hover==, and ==focus== behaviors 'cause ==action== beha
 
 ## Propagate styles
 
-Our button is ready, but what if we need to add more buttons to our application. It would be a mess to write so many attributes for each button. In **Numl** there is a definition element [nu-attrs](../../reference/elements/nu-attrs.md) that allows to propagate a set of attributes inside specific context. As definition is set we can declare `as` attribute to use it:
+Our button is ready, but what if we need to add more buttons to our application. It would be a mess to write so many attributes for each button. In **Numl** there is a definition element [nu-attrs](../../reference/definitions/nu-attrs.md) that allows to propagate a set of attributes inside specific context. As definition is set we can declare `as` attribute to use it:
 
 ```html
 <split/>
@@ -260,4 +260,4 @@ You can learn more about specific styling attribute by looking at the **Referenc
 
 Each page will give you a detailed description of an attribute, syntax overview, examples, and links, where you can find more examples.
 
-You can also open pages of elements like [nu-btn](../../reference/elements/nu-btn.md) and [nu-attrs](../../reference/elements/nu-attrs.md) to learn more about their default values, behaviors, and check out examples of their usage.
+You can also open pages of elements like [nu-btn](../../reference/elements/nu-btn.md) and [nu-attrs](../../reference/definitions/nu-attrs.md) to learn more about their default values, behaviors, and check out examples of their usage.
