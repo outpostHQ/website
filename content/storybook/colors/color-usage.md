@@ -67,7 +67,7 @@ Shadow with custom color.
 
 ## Declare named colors
 
-Use [nu-props](../../reference/decorators/nu-props.md) definition element to declare custom color with name.
+Use [nu-props](../../reference/definitions/nu-props.md) definition element to declare custom color with name.
 
 ```html
 <split/>
