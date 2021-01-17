@@ -5,7 +5,7 @@ description: "Usage example of the [control](../../reference/utilities/control) 
 
 ## Toggle visibility
 
-Toggle [hidden](../../reference/styles/hidden.md) attribute.
+Toggle [hidden](../../reference/utilities/hidden.md) attribute.
 
 ```html
 <split/>
