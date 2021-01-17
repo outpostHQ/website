@@ -1,6 +1,6 @@
 ## Create entire theme from a single hue param
 
-Use [nu-theme](../../reference/decorators/nu-theme.md) element with `"hue"` property to declare a basic theme.
+Use [nu-theme](../../reference/definitions/nu-theme.md) element with `"hue"` property to declare a basic theme.
 
 ```html
 <split/>
