@@ -15,7 +15,7 @@ font-size: var(--xs-font-size);
 line-height: var(--xs-line-height);
 ```
 
-So you can define your own preset with [nu-props](../decorators/nu-props.md) definition or plain CSS. For example:
+So you can define your own preset with [nu-props](../definitions/nu-props.md) definition or plain CSS. For example:
 
 ```html
 <split/>

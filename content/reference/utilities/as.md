@@ -3,7 +3,7 @@ title: Utility attribute [as]
 description: The as property sets the additional "name" to the element that can be used when you declare styles in context via nu-attrs
 ---
 
-The **as** property sets the additional "name" to the element that can be used when you declare styles in context via [nu-attrs](../decorators/nu-attrs.md).
+The **as** property sets the additional "name" to the element that can be used when you declare styles in context via [nu-attrs](../definitions/nu-attrs.md).
 
 ## Usage
 
