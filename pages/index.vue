@@ -156,7 +156,7 @@
         </nu-region>
 
         <nu-region as="feature">
-          <nu-cardbtn clear to="!/reference/attributes/responsive">
+          <nu-cardbtn clear to="!/reference/utilities/responsive">
             <nu-props
               special-color="hue(250 special pastel)"
               special-bg-color="hue(250 special pastel)"
