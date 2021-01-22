@@ -418,15 +418,16 @@
             <nu-link to="/handbook">Handbook</nu-link>
             <!--            <nu-link to="/repl">REPL</nu-link>-->
             <nu-link to="/reference">API Reference</nu-link>
+            <nu-link to="/blog">Blog</nu-link>
           </nu-nav>
           <nu-flow gap color="white" text="right|||center">
             <nu-block>
               Created with <nu-icon name="heart" /> by
-              <nu-link to="!https://tenphi.me">@tenphi</nu-link>
+              <nu-link to="!https://tenphi.me">@tenphi</nu-link> &
+              <nu-strong>Numl</nu-strong> itself
             </nu-block>
             <nu-block>
-              Powered by <nu-strong>Nuxt</nu-strong> &
-              <nu-strong>Numl</nu-strong> itself
+              Numl Open Source by <nu-link to="!https://forneu.in">Forneu</nu-link>
             </nu-block>
           </nu-flow>
         </nu-pane>
