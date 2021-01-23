@@ -41,13 +41,13 @@
             <nu-icon name="star"></nu-icon>
             {{ githubStars }}
           </nu-btn>
+          <nu-btn clear to="!https://discord.gg/sHnHPnAPZj">
+            <nu-icon name="message-circle-outline"></nu-icon>
+            Discord
+          </nu-btn>
           <nu-btn clear to="!https://twitter.com/numldesign">
             <nu-icon name="twitter"></nu-icon>
             Twitter
-          </nu-btn>
-          <nu-btn clear to="!https://discord.gg/sHnHPnAPZj">
-            <nu-icon name="paper-plane"></nu-icon>
-            Discord Chat
           </nu-btn>
         </nu-grid>
       </SiteBlock>
@@ -378,11 +378,15 @@
           clear
           padding="1x 2x"
           color="special"
-          shadow="no :hover[yes]"
+          shadow="no :hover[#shadow.33]"
         />
         <nu-btn to="!https://github.com/numldesign/numl">
           <nu-icon name="github-outline"></nu-icon>
           Github
+        </nu-btn>
+        <nu-btn to="!https://discord.gg/sHnHPnAPZj">
+          <nu-icon name="message-circle-outline"></nu-icon>
+          Discord
         </nu-btn>
         <nu-btn to="!https://twitter.com/numldesign">
           <nu-icon name="twitter-outline"></nu-icon>
@@ -391,10 +395,6 @@
         <nu-btn to="!mailto:inbox@numl.design">
           <nu-icon name="email-outline"></nu-icon>
           eMail
-        </nu-btn>
-        <nu-btn to="!https://discord.gg/sHnHPnAPZj">
-          <nu-icon name="paper-plane-outline"></nu-icon>
-          Discord Chat
         </nu-btn>
         <nu-btn to="!https://www.patreon.com/tenphi">
           <nu-icon name="heart-outline"></nu-icon>

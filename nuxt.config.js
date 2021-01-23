@@ -17,7 +17,7 @@ export default {
   head: {
     htmlAttrs: {
       lang: 'en',
-      'data-nu-icons': 'eva',
+      'data-nu-icons': 'ion',
       'data-nu-prevent': '',
     },
     title: 'Numl Design – Universal UI Framework for Modern Web Interfaces',
@@ -32,7 +32,7 @@ export default {
     ],
     script: [
       {
-        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.17',
+        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.18',
         // src: '/numl/index.js',
         type: 'module',
       },

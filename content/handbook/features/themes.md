@@ -59,17 +59,17 @@ If you want archive consistent saturation over themes you can use pastel palette
 ```html
 <split/>
 <nu-grid flow="row" gap columns="1fr 1fr 1fr" text="w6">
-    <nu-theme name="red" hue="1"></nu-theme>
-    <nu-theme name="blue" hue="262"></nu-theme>
-    <nu-theme name="green" hue="152"></nu-theme>
+    <nu-theme name="my-red" hue="1"></nu-theme>
+    <nu-theme name="my-blue" hue="262"></nu-theme>
+    <nu-theme name="my-green" hue="152"></nu-theme>
 
-    <nu-card theme="blue special">
+    <nu-card theme="my-blue special">
         BLUE
     </nu-card>
-    <nu-card theme="red special">
+    <nu-card theme="my-red special">
         RED
     </nu-card>
-    <nu-card theme="green special">
+    <nu-card theme="my-green special">
         GREEN
     </nu-card>
 </nu-grid>
@@ -247,3 +247,38 @@ You can add classes to the `html` element to control over `reduced-motion` prefe
 
 * Add `nu-reduce-motion` to reduce motion in the user interface.
 * Do nothing to reduce motion depending on system preference.
+
+## Built-in themes
+
+There are 3 role-based and 8 color-based themes in Numl:
+
+### Role-based themes
+
+Activate them using `success`, `danger` and `warning` attributes. That would be an alias for `theme="{roleTheme}"`.
+
+```html
+<split/>
+<nu-pane flow="row wrap">
+  <nu-btn success>Success</nu-btn>
+  <nu-btn danger>Danger</nu-btn>
+  <nu-btn warning>Warning</nu-btn>
+</nu-pane>
+```
+
+### Color-based themes
+
+Use `theme="{color}"` to activate these themes:
+
+```html
+<split/>
+<nu-pane flow="row wrap">
+  <nu-btn theme="blue">Blue</nu-btn>
+  <nu-btn theme="cyan">Cyan</nu-btn>
+  <nu-btn theme="green">Green</nu-btn>
+  <nu-btn theme="yellow">Yellow</nu-btn>
+  <nu-btn theme="orange">Orange</nu-btn>
+  <nu-btn theme="red">Red</nu-btn>
+  <nu-btn theme="purple">Purple</nu-btn>
+  <nu-btn theme="violet">Violet</nu-btn>
+</nu-pane>
+```
