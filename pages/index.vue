@@ -423,11 +423,12 @@
           <nu-flow gap color="white" text="right|||center">
             <nu-block>
               Created with <nu-icon name="heart" /> by
-              <nu-link to="!https://tenphi.me">@tenphi</nu-link> &
-              <nu-strong>Numl</nu-strong> itself
+              <nu-link to="!https://tenphi.me">@tenphi</nu-link> using
+              <nu-strong>Numl</nu-strong>
             </nu-block>
             <nu-block>
-              Numl Open Source by <nu-link to="!https://forneu.in">Forneu</nu-link>
+              Numl Open Source by
+              <nu-link to="!https://forneu.in">Forneu</nu-link>
             </nu-block>
           </nu-flow>
         </nu-pane>
