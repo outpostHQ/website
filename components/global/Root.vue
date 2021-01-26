@@ -307,6 +307,11 @@ export default {
     App.version = `v${Nude.version}`;
 
     routing.setInternalRouter((url) => {
+      if (url.startsWith('/blog')) {
+        location.pathname = url;
+        return;
+      }
+
       this.$router.push(url); // handle routing by yourself
     });
 
