@@ -214,5 +214,8 @@ export default {
       background_color: '#444',
       theme_color: '#444',
     },
+    icon: {
+      source: 'static/icon.png',
+    },
   },
 };
