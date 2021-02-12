@@ -521,8 +521,10 @@ export default {
     const html = document.documentElement;
     const dataset = html.dataset;
 
-    this.scheme = dataset.nuSchemeIs;
-    this.contrast = dataset.nuContrastIs;
+    setTimeout(() => {
+      this.scheme = dataset.nuSchemeIs;
+      this.contrast = dataset.nuContrastIs;
+    });
   },
   methods: {
     randomizeHues() {
