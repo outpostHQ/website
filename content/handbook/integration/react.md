@@ -39,6 +39,13 @@ Bind `boolean` attribute:
 
 React casts all booleans to the string while attribute binding. So we have to explicitly set corresponding values.
 
+In the most of the cases, it's safe enough to use short version:
+
+```html
+<nu-btn special={isSpecial || null}></nu-btn>
+<nu-btn disabled={isDisabled || null}></nu-btn>
+```
+
 You can use simplified `boolean` binding for the most of the style properties.
 
 ```html

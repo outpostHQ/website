@@ -14,8 +14,18 @@ Bind `string` attribute:
 
 Bind `boolean` attribute:
 
+Since v1.0.0-beta.19:
+
 ```html
 <nu-btn special={isSpecial}></nu-btn>
+<nu-btn disabled={isDisabled}></nu-btn>
+```
+
+Before v1.0.0-beta.19:
+
+```html
+<nu-btn special={isSpecial || null}></nu-btn>
+<nu-btn disabled={isDisabled || null}></nu-btn>
 ```
 
 ## Bind event handlers
