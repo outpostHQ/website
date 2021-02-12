@@ -15,6 +15,25 @@
 </nu-listbox>
 ```
 
+## Multiple choice
+
+Add `multiple` attribute to be able to select multiple options.
+
+```html
+<split/>
+<nu-listbox multiple value="one,three">
+  <nu-option value="one">
+    One
+  </nu-option>
+  <nu-option value="two">
+    Two
+  </nu-option>
+  <nu-option value="three">
+    Three
+  </nu-option>
+</nu-listbox>
+```
+
 ## Select / Popup listbox
 
 ```html
