@@ -17,7 +17,7 @@
         :value="value"
         @input="value = $event.detail"
       >
-        <input id="docsearch" />
+        <input :id="hotkey ? 'docsearch' : 'docsearch-sidebar'" />
       </nu-search>
     </nu-inputgroup>
     <!--    <nu-card-->
@@ -103,8 +103,8 @@ export default {
     window.docsearch({
       apiKey: '81d936007fd01723a9b8662a3359fde3',
       indexName: 'numl',
-      inputSelector: '#docsearch',
-      debug: false, // Set debug to true if you want to inspect the dropdown
+      inputSelector: `#${this.hotkey ? 'docsearch' : 'docsearch-sidebar'}`,
+      debug: true, // Set debug to true if you want to inspect the dropdown
     });
   },
   // computed: {
