@@ -36,6 +36,12 @@ export default {
         // src: '/numl/index.js',
         type: 'module',
       },
+      {
+        src:
+          'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
+        type: 'text/javascript',
+        body: true,
+      },
     ].concat(
       !DEV
         ? [
@@ -81,6 +87,10 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto+Mono&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: '/docsearch.css',
       },
     ],
   },
