@@ -7,6 +7,7 @@
     <nu-block>
       <nu-attrs for="btn" color="text :pressed[special]" padding="1x 2x|||1x" />
       <nu-btngroup
+        use-radiogroup
         size="lg"
         :value="themeSection"
         @input="themeSection = $event.detail"

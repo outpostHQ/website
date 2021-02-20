@@ -73,7 +73,7 @@ description: Interactive example of a grid layout implemented with Numl
 
   <nu-pane>
     <nu-el text="nowrap">Columns:</nu-el>
-    <nu-btngroup value="auto auto auto" width="min-content" control="grid[columns]" trigger>
+    <nu-btngroup use-radiogroup value="auto auto auto" width="min-content" control="grid[columns]" trigger>
       <nu-btn value="auto auto auto auto">4</nu-btn>
       <nu-btn value="auto auto auto">3</nu-btn>
       <nu-btn value="auto auto">2</nu-btn>

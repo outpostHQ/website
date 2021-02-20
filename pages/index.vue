@@ -478,7 +478,7 @@ export default {
   computed: {
     startSnippet() {
       return `
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numl/@${App.version}/index.js" type="module" />`;
+<script src="https://cdn.skypack.dev/numl@${App.version}" type="module" />`;
     },
     gradient() {
       const hue = (mod) => {

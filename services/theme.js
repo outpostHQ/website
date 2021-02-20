@@ -80,7 +80,9 @@ const Theme = {
   init() {
     Theme.set(
       Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
-        map[key] = Lockr.get(`settings:${key}`) || DEFAULT_SETTINGS[key];
+        const storedValue = Lockr.get(`settings:${key}`);
+
+        map[key] = storedValue != null ? storedValue : DEFAULT_SETTINGS[key];
 
         return map;
       }, {})

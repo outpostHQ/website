@@ -60,6 +60,7 @@
       <nu-flow gap>
         <nu-label>Scheme</nu-label>
         <nu-btngroup
+          use-radiogroup
           :value="Theme.scheme"
           @input="Theme.set({ scheme: $event.detail })"
         >
@@ -72,6 +73,7 @@
       <nu-flow gap>
         <nu-label>Contrast</nu-label>
         <nu-btngroup
+          use-radiogroup
           :value="Theme.contrast"
           @input="Theme.set({ contrast: $event.detail })"
         >

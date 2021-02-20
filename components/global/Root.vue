@@ -18,10 +18,14 @@
       :pastel="Theme.pastel"
     />
     <nu-props
+      bg-color="#secondary-bg"
+      text-color="#secondary-text"
+      text-soft-color="#secondary-text-soft"
+      text-strong-color="#secondary-text-strong"
       subtle-color="#secondary-subtle"
       shadow-color="#secondary-shadow"
       border-color="#secondary-border"
-      special-shadow-color="#secondary-special-shadow"
+      input-color="#secondary-input"
       page-bg-color="^root #bg :dark[#subtle]"
       second-bg-color="^root #subtle :dark[#bg]"
       diff-color="#second-bg"
