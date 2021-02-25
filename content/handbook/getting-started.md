@@ -5,7 +5,7 @@ menuIndex: 20
 ---
 
 ```html
-<script type="module" src="https://cdn.skypack.dev/numl@1.0.0-beta.19"></script>
+<script type="module" src="https://cdn.skypack.dev/numl@1.0.0-beta.20"></script>
 ```
 
 That's it! No build step, no explicit function call to apply changes.

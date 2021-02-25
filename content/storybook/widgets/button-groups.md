@@ -9,9 +9,9 @@ description: Interactive example of various button groups implemented with Numl
 <split/>
 <nu-block>
   <nu-btngroup>
-    <nu-btn>First Action</nu-btn>
-    <nu-btn>Second Action</nu-btn>
-    <nu-btn>Third Action</nu-btn>
+    <nu-btn>Action 1</nu-btn>
+    <nu-btn>Action 2</nu-btn>
+    <nu-btn>Action 3</nu-btn>
   </nu-btngroup>
 </nu-block>
 ```

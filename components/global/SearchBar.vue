@@ -101,8 +101,12 @@ export default {
   },
   mounted() {
     window.docsearch({
+      // real config
       apiKey: '81d936007fd01723a9b8662a3359fde3',
       indexName: 'numl',
+      // test config
+      // apiKey: '25626fae796133dc1e734c6bcaaeac3c',
+      // indexName: 'docsearch',
       inputSelector: `#${this.hotkey ? 'docsearch' : 'docsearch-sidebar'}`,
       debug: true, // Set debug to true if you want to inspect the dropdown
     });

@@ -4,8 +4,8 @@ import GlobalEvents from './global-events';
 export const SCHEME_OPTIONS = ['auto', 'light', 'dark'];
 export const CONTRAST_OPTIONS = ['auto', 'low', 'high'];
 const DEFAULT_SETTINGS = {
-  hue: 300,
-  subtleHue: 248,
+  hue: 290,
+  subtleHue: 240,
   saturation: 75,
   pastel: false,
   scheme: 'auto',
