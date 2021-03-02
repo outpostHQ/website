@@ -227,28 +227,28 @@ Each theme variant generates four sets of colors for each scenario:
 
 ### Prefers color scheme
 
-There are some classes that you should add to the `html` tag for the following scenarios:
+There is an attribute that you should add to the `html` tag for the following scenarios:
 
-* Add `nu-scheme-light` to activate Light Theme.
-* Add `nu-scheme-dark` to activate Dark Theme.
-* Do nothing to activate auto-switching depending on system preference.
+* Add `nu-scheme="light"` to force Light Theme.
+* Add `nu-scheme="dark"` to force Dark Theme.
+* Do nothing or set `nu-scheme="auto"` to activate auto-switching depending on system preference.
 
 ### Prefers contrast
 
-There are also some classes that you should add to the `html` tag for the following scenarios:
+There is also an attribute that you should add to the `html` tag for the following scenarios:
 
-* Add `nu-contrast-low` to use default contrast.
-* Add `nu-contrast-high` to use high contrast.
-* Do nothing to use system contrast preference.
+* Add `nu-contrast="no-preference"` to force default contrast.
+* Add `nu-contrast="more"` to force high contrast mode.
+* Do nothing or set `nu-contrast="auto"` to use system contrast preference.
 
 ### Prefers reduced motion
 
-You can add classes to the `html` element to control over `reduced-motion` preference.
+You can use attribute `nu-reduce-motion` to the `html` element to control over `reduced-motion` preference.
 
-* Add `nu-reduce-motion` to reduce motion in the user interface.
+* Add `nu-reduce-motion` attribute to reduce motion in the user interface.
 * Do nothing to reduce motion depending on system preference.
 
-## Built-in themes
+## Built-in themes & colors
 
 There are 3 role-based and 8 color-based themes in Numl:
 
@@ -280,5 +280,23 @@ Use `theme="{color}"` to activate these themes:
   <nu-btn theme="red">Red</nu-btn>
   <nu-btn theme="purple">Purple</nu-btn>
   <nu-btn theme="violet">Violet</nu-btn>
+</nu-pane>
+```
+
+### Built-in colors
+
+There are also built-in colors. You can change them using [nu-props](../../reference/definitions/nu-props.md) definition.
+
+```html
+<split/>
+<nu-pane flow="row wrap">
+  <nu-label color="#blue">Blue</nu-label>
+  <nu-label color="#cyan">Cyan</nu-label>
+  <nu-label color="#green">Green</nu-label>
+  <nu-label color="#yellow">Yellow</nu-label>
+  <nu-label color="#orange">Orange</nu-label>
+  <nu-label color="#red">Red</nu-label>
+  <nu-label color="#purple">Purple</nu-label>
+  <nu-label color="#violet">Violet</nu-label>
 </nu-pane>
 ```

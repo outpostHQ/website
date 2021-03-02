@@ -35,6 +35,7 @@
       <nu-description
         v-if="description"
         size="xl||lg"
+        text="sb"
         v-html="$html(description)"
       />
     </nu-flex>

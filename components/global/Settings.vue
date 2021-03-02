@@ -78,9 +78,10 @@
           @input="Theme.set({ contrast: $event.detail })"
         >
           <nu-btn value="auto">Auto</nu-btn>
-          <nu-btn value="low">Low</nu-btn>
-          <nu-btn value="high">High</nu-btn>
+          <nu-btn value="no-preference">Normal</nu-btn>
+          <nu-btn value="more">More</nu-btn>
         </nu-btngroup>
+        {{ Theme.contrast }}
       </nu-flow>
     </nu-flow>
 

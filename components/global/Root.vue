@@ -78,7 +78,12 @@
               >
                 <nu-el>.<nu-value list>Storybook</nu-value></nu-el>
                 <nu-dropdownicon />
-                <nu-popuplistbox size="md" text="b" gap="0" place="top -1x">
+                <nu-popuplistbox
+                  size="md"
+                  text="heading"
+                  gap="0"
+                  place="top -1x"
+                >
                   <nu-option value="storybook">Storybook</nu-option>
                   <nu-option value="handbook">Handbook</nu-option>
                   <nu-option value="reference">Reference</nu-option>

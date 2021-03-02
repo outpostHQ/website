@@ -28,8 +28,8 @@ requireNude()
     const { dataset } = html;
     const LIGHT_SCHEME = 'nu-scheme-light';
     const DARK_SCHEME = 'nu-scheme-dark';
-    const HIGH_CONTRAST = 'nu-contrast-high';
-    const LOW_CONTRAST = 'nu-contrast-low';
+    const HIGH_CONTRAST = 'nu-contrast-more';
+    const LOW_CONTRAST = 'nu-contrast-no-preference';
     const REDUCE_MOTION = 'nu-reduce-motion';
 
     function clearSchemeSwitch() {
@@ -63,8 +63,8 @@ requireNude()
       clearContrastSwitch();
 
       switch (type) {
-        case 'high':
-        case 'normal':
+        case 'more':
+        case 'no-preference':
           dataset.nuContrast = type;
           break;
         default:

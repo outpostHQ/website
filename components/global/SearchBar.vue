@@ -17,7 +17,12 @@
         :value="value"
         @input="value = $event.detail"
       >
-        <input :id="hotkey ? 'docsearch' : 'docsearch-sidebar'" />
+        <input
+          :id="hotkey ? 'docsearch' : 'docsearch-sidebar'"
+          autocorrect="off"
+          autocapitalize="none"
+          spellcheck="false"
+        />
       </nu-search>
     </nu-inputgroup>
     <!--    <nu-card-->

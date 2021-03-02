@@ -99,9 +99,9 @@
                 <nu-h4>High contrast mode</nu-h4>
                 <nu-switch
                   size="lg"
-                  :pressed="contrast === 'high'"
-                  value="high"
-                  off-value="low"
+                  :pressed="contrast === 'more'"
+                  value="more"
+                  off-value="no-preference"
                   @input="(evt) => changeContrast(evt.detail)"
                 />
               </nu-pane>
@@ -423,6 +423,11 @@
         </nu-grid>
       </nu-card>
     </nu-block>
+
+    <nu-btn special to="!https://numl.design/theme-builder">
+      Try our Theme Builder
+      <nu-icon name="external-link" />
+    </nu-btn>
   </SiteBlock>
 </template>
 

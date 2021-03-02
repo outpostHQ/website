@@ -2,7 +2,7 @@ import Lockr from 'lockr';
 import GlobalEvents from './global-events';
 
 export const SCHEME_OPTIONS = ['auto', 'light', 'dark'];
-export const CONTRAST_OPTIONS = ['auto', 'low', 'high'];
+export const CONTRAST_OPTIONS = ['auto', 'no-preference', 'more'];
 const DEFAULT_SETTINGS = {
   hue: 290,
   subtleHue: 240,
@@ -80,7 +80,15 @@ const Theme = {
   init() {
     Theme.set(
       Object.keys(DEFAULT_SETTINGS).reduce((map, key) => {
-        const storedValue = Lockr.get(`settings:${key}`);
+        let storedValue = Lockr.get(`settings:${key}`);
+
+        if (key === 'contrast') {
+          if (storedValue === 'high') {
+            storedValue = 'more';
+          } else if (storedValue === 'low') {
+            storedValue = 'no-preference';
+          }
+        }
 
         map[key] = storedValue != null ? storedValue : DEFAULT_SETTINGS[key];
 

@@ -8,9 +8,9 @@
     <nu-block theme="special" :image="gradient">
       <Topbar />
       <SiteBlock
-        badge="design system · framework · language"
-        heading="Universal UI Language\nfor\s modern web\s interfaces"
-        description="An open-source Library of Web&nbsp;Components and a&nbsp;Runtime&nbsp;CSS&nbsp;Framework for rapidly building UI that follows your&nbsp;Design&nbsp;System."
+        badge="ui design language · ui library · css framework"
+        heading="UI Design\s Language\nfor\s modern web\s interfaces"
+        description="A UI Design Language, UI\s Library of Web\s Components, and Runtime\s CSS\s Framework for\s rapidly\s building interfaces that\s follow your\s Design\s System"
         padding="10x 0||8x 0|4x 0 8x"
         level="1"
         fill="clear"

@@ -20,7 +20,7 @@ export default {
       'data-nu-icons': 'ion',
       'data-nu-prevent': '',
     },
-    title: 'Numl Design – Universal UI Framework for Modern Web Interfaces',
+    title: 'Numl Design – UI Design Language for modern web interfaces',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,7 +32,7 @@ export default {
     ],
     script: [
       {
-        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.20',
+        src: 'https://cdn.skypack.dev/numl@1.0.0-beta.21',
         // src: '/numl/index.js',
         type: 'module',
       },
