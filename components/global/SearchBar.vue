@@ -7,7 +7,7 @@
       transition="all"
       use-hover
     >
-      <nu-icon name="search" opacity=".5" />
+      <nu-icon name="search" opacity=".5" padding="0 1x" />
       <nu-search
         ref="input"
         grow="1"
