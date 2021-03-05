@@ -1,4 +1,15 @@
-By default Numl uses [Feather Icons](https://github.com/feathericons/feather) for icons.
+By default Numl uses [IonIcons](!https://ionicons.com/) for icons.
+
+It also supports other icon libraries:
+
+- [Feather Icons](!https://feathericons.com/)
+- [Eva Icons](!https://akveo.github.io/eva-icons/)
+
+Our website and storybook **uses Eva Icons**. You can change icon library by setting `data-nu-icons` attribute on `<html/>` element.
+
+- `data-nu-icons="ion"` – for Ion Icons (default)
+- `data-nu-icons="feather"` – for Feather Icons
+- `data-nu-icons="eva"` – for Eva Icons
 
 ## Static icons
 
