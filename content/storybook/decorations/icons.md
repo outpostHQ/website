@@ -23,6 +23,18 @@ Our website and storybook **uses Eva Icons**. You can change icon library by set
 </nu-block>
 ```
 
+## Various sizes
+
+```html
+<split/>
+<nu-block>
+  <nu-icon name="alert-triangle-outline" size="1x"></nu-icon>
+  <nu-icon name="alert-triangle-outline" size="5x"></nu-icon>
+  <nu-icon name="alert-triangle-outline" size="xs"></nu-icon>
+  <nu-icon name="alert-triangle-outline" size="h1"></nu-icon>
+</nu-block>
+```
+
 ## Dynamic icons
 
 You can change icon (with transition) depending on the element state like:

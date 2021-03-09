@@ -424,8 +424,8 @@
       </nu-card>
     </nu-block>
 
-    <nu-btn special to="!https://numl.design/theme-builder">
-      Try our Theme Builder
+    <nu-btn special to="!https://numl.design/theme-generator">
+      Try our Theme Generator
       <nu-icon name="external-link" />
     </nu-btn>
   </SiteBlock>
