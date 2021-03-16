@@ -1,7 +1,6 @@
 ```html
 <split/>
-<nu-grid
-  display="inline-grid" columns="auto auto" rows="auto auto" flow="column" gap="1x 2x">
+<nu-flow gap>
   <nu-flex gap="1x" items="center">
     <nu-checkbox labelledby="label"></nu-checkbox>
     <nu-label>Checkbox</nu-label>
@@ -17,11 +16,11 @@
     <nu-label>Disabled checkbox</nu-label>
   </nu-flex>
 
-  <nu-flex gap="1x" items="center">
+  <nu-flex gap="1x" items="center" shrink="0">
     <nu-checkbox labelledby="label" disabled checked></nu-checkbox>
     <nu-label>Disabled and checked checkbox</nu-label>
   </nu-flex>
-</nu-grid>
+</nu-flow>
 ```
 
 ==@TODO==
