@@ -11,7 +11,7 @@ Use [nu-flow](../../reference/elements/nu-flow.md) element or any element with `
 <#[[nu-flow]]# fill="subtle" padding>
   <nu-attrs
     for="card"
-    place="space-around"
+    space="around"
     width="5 100% 15"></nu-attrs>
 
   <nu-card>
@@ -26,14 +26,14 @@ Use [nu-flow](../../reference/elements/nu-flow.md) element or any element with `
 
 ### Center the blocks
 
-Suitable for landings. Use `place="space-around"`.
+Suitable for landings. Use `space="around"`.
 
 ```html
 <split/>
 <nu-flow fill="subtle" padding>
   <nu-attrs
     for="card"
-    #[[place="space-around"]]#
+    #[[space="around"]]#
     width="5 100% 15"></nu-attrs>
 
   <nu-card>
@@ -55,7 +55,7 @@ Add `gap` attribute. Default value is `1x`.
 <nu-flow fill="subtle" padding #[[gap]]#>
   <nu-attrs
     for="card"
-    place="space-around"
+    space="around"
     width="5 100% 15"></nu-attrs>
 
   <nu-card>
