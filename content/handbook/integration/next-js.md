@@ -123,7 +123,7 @@ export default function initNuml() {
         });
 
         // OPTIONAL: assign new options to the existing elements
-        Nude.define('nu-card', {
+        Nude.assign('nu-card', {
           styles: {
             padding: '.5x 1x',
           },

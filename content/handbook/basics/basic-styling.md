@@ -43,7 +43,7 @@ Many inline elements are affected by `size` style.
 <split/>
 <nu-block size="xl">
   Switcher
-  <nu-switch><nu-switch>
+  <nu-switch></nu-switch>
 </nu-block>
 ```
 

@@ -47,7 +47,17 @@ Bind event handlers as you do it with other Vue Components.
 <nu-input @input="onInput($event.detail)"></nu-input>
 ```
 
-## Real-world examples (repositories)
+## Converters
+
+There are two converters in Numl by default: for code snippets and markdown. To use them in plain HTML we need to inject input via `<textarea/>` element but with Vue we simply do it via `value` property:
+
+```
+<nu-code :value="codeExample"/>
+// or
+<nu-markdown :value="markdownExample"/>
+```
+
+## Real-world examples
 
 ### Websites
 

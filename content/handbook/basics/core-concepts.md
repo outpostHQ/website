@@ -169,7 +169,7 @@ Behavior can be injected using the following syntax:
 
 ## Widgets
 
-There are lots of widget elements in Numl. They can receive `value` (sometimes also `checked` property) and emit the `input` event with a changed value. All widgets are implemented using **Behaviors**.
+There are lots of widget elements in Numl. They can receive `value` (sometimes also `pressed` or `checked` property) via attribute or property and emit the `input` custom event with a changed value inside `detail` property. All widgets are implemented using **Behaviors**.
 
 ```html
 <split/>

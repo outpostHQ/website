@@ -34,7 +34,7 @@ Bind `string` attribute:
 Bind `boolean` attribute:
 
 ```html
-<nu-btn special={isSpecial ? '' : null}></nu-btn>
+<nu-btn special={isSpecial ? '' : undefined}></nu-btn>
 ```
 
 React casts all booleans to the string while attribute binding. So we have to explicitly set corresponding values.
@@ -42,9 +42,11 @@ React casts all booleans to the string while attribute binding. So we have to ex
 In the most of the cases, it's safe enough to use short version:
 
 ```html
-<nu-btn special={isSpecial || null}></nu-btn>
-<nu-btn disabled={isDisabled || null}></nu-btn>
+<nu-btn special={isSpecial || undefined}></nu-btn>
+<nu-btn disabled={isDisabled || undefined}></nu-btn>
 ```
+
+...but it's not recommended.
 
 You can use simplified `boolean` binding for the most of the style properties.
 
@@ -73,7 +75,48 @@ Use the following syntax to bind handlers.
 <nu-input onEventInput={(event) => onInput(event.detail)}></nu-input>
 ```
 
-## Real-world examples (repositories)
+### Without jsx-native-events
+
+```
+import React, { useEffect, useRef } from 'react';
+
+export default function Button({ onTap, ...props }) {
+  const btn = useRef();
+
+  useEffect(() => {
+    btn.current.addEventListener('tap', onTap);
+
+    return () => {
+      btn.current.removeEventListener('tap', onTap);
+    };
+  }, [btn]);
+
+  return <nu-btn ref="btn" {...props}>
+    {children}
+  </nu-btn>
+};
+```
+
+### Converters
+
+There are two converters in Numl by default: for code snippets and markdown. To use them in plain HTML we need to inject input via `<textarea/>` element but with React we can do it directly via `value` property:
+
+```
+import React, { useEffect, useRef } from 'react';
+
+export default function CodeSnippet({ value, ...props }) {
+  const code = useRef();
+
+  useEffect(() => {
+    // make sure Numl is initialized before this line is executed
+    code.current.value = value;
+  }, [value]);
+
+  return <nu-code ref="code" {...props}/>
+};
+```
+
+## Real-world examples
 
 ### Websites
 
@@ -82,4 +125,5 @@ Use the following syntax to bind handlers.
 
 ### Repositories
 
+* [Numl React UIKit](!https://github.com/numldesign/numl-react)
 * [Cube.js UIKit](!https://github.com/cube-js/cubejs-ui-kit)

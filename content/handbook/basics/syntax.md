@@ -1,6 +1,7 @@
 ---
-title: Syntax
-description: An in-depth look at the syntax of the language
+title: Syntax in-depth
+menuTitle: Syntax in-depth
+description: An in-depth look at the syntax of the language.
 menuIndex: 40
 ---
 

@@ -49,6 +49,41 @@ Bind event handlers as you do it with other Svelte Components.
 <nu-input on:input={(event) => onInput(event.detail)}></nu-input>
 ```
 
+## Converters
+
+There are two converters in Numl by default: for code snippets and markdown. To use them in plain HTML we need to inject input via `<textarea/>` element but with Svelte we can do it simply via `value` property:
+
+```
+<nu-code value={codeExample}/>
+<nu-markdown value={markupExample}/>
+```
+
+Before rendering such template make sure that Numl is initialized. Othwerwise, Svelte will bind variable to the attribute `value`, not property. It might cause you some trouble. Use [requireNuml](!https://gist.github.com/tenphi/87a76d29bb534e74dbf4c7359670219b) helper to avoid such scenario.
+
+```
+// example.svelte
+<nu-root>
+  {#if loaded}
+    <nu-code value={codeExample}/>
+  {/if}
+</nu-root>
+
+<script>
+import { onMount } from 'svelte';
+import { requireNuml } from 'require-numl.js';
+
+let loaded = false;
+
+onMount(() => {
+  requireNuml().then(() => {
+    loaded = true;
+  });
+});
+
+const codeExample = `var a = '123';`;
+</script>
+```
+
 ## Real-world examples
 
 ### Repositories
