@@ -20,6 +20,7 @@
         <input
           :id="hotkey ? 'docsearch' : 'docsearch-sidebar'"
           autocorrect="off"
+          autocomplete="off"
           autocapitalize="none"
           spellcheck="false"
         />
@@ -115,119 +116,14 @@ export default {
       inputSelector: `#${this.hotkey ? 'docsearch' : 'docsearch-sidebar'}`,
       debug: true, // Set debug to true if you want to inspect the dropdown
     });
+
+    setTimeout(() => {
+      if (this.$refs.root) {
+        const input = this.$refs.root.querySelector('input');
+
+        input.autocomplete = 'off';
+      }
+    }, 1000);
   },
-  // computed: {
-  //   isActive() {
-  //     return this.value.trim().length >= 2 && this.focused;
-  //   },
-  // },
-  // watch: {
-  //   async value(val) {
-  //     val = val.trim();
-  //
-  //     this.inc += 1;
-  //
-  //     const cache = this.inc;
-  //
-  //     if (this.isActive) {
-  //       this.loading = true;
-  //
-  //       const results = uniqueResults(
-  //         (
-  //           await Promise.all(
-  //             ALL_SECTIONS.map((name) => {
-  //               return this.$content(name)
-  //                 .search('title', val)
-  //                 .fetch()
-  //                 .then((results) => results.map((page) => preparePage(page)));
-  //             })
-  //           )
-  //         )
-  //           .concat(
-  //             await Promise.all(
-  //               ALL_SECTIONS.map((name) => {
-  //                 return this.$content(name)
-  //                   .search('text', val)
-  //                   .fetch()
-  //                   .then((results) =>
-  //                     results.map((page) => preparePage(page))
-  //                   );
-  //               })
-  //             )
-  //           )
-  //           .reduce((list, results) => {
-  //             list.push(...results.map(preparePage));
-  //
-  //             return list;
-  //           }, [])
-  //       );
-  //
-  //       if (this.inc === cache && this.value === val) {
-  //         this.results = results;
-  //         this.loading = false;
-  //       }
-  //     } else {
-  //       this.results = [];
-  //     }
-  //
-  //     this.index = 0;
-  //   },
-  //   index() {
-  //     // scroll to current element
-  //     setTimeout(() => {
-  //       const current = this.$refs.root.querySelector('[is-current]');
-  //
-  //       if (current) {
-  //         WindowService.scrollIntoView(current, true);
-  //       }
-  //     });
-  //   },
-  // },
-  // methods: {
-  //   onKeyDown(event) {
-  //     switch (event.key) {
-  //       case 'ArrowUp':
-  //         if (this.index > 0) {
-  //           this.index -= 1;
-  //         }
-  //         break;
-  //       case 'ArrowDown':
-  //         if (this.index < this.results.length - 1) {
-  //           this.index += 1;
-  //         }
-  //
-  //         break;
-  //       case 'Enter':
-  //         this.goTo(this.index);
-  //
-  //         break;
-  //       default:
-  //         return;
-  //     }
-  //
-  //     event.preventDefault();
-  //   },
-  //   goTo(index) {
-  //     const path = this.results[index].path;
-  //
-  //     this.$router.push(path);
-  //
-  //     this.clear();
-  //   },
-  //   clear() {
-  //     this.value = '';
-  //     this.results = [];
-  //     this.index = 0;
-  //     this.$refs.input.nuRef.blur();
-  //   },
-  //   onBlur() {
-  //     setTimeout(() => {
-  //       this.focused = false;
-  //     }, 100);
-  //   },
-  //   onFocus() {
-  //     this.focused = true;
-  //   },
-  // },
 };
 </script>

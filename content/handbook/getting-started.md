@@ -5,7 +5,7 @@ menuIndex: 20
 ---
 
 ```html
-<script type="module" src="https://cdn.skypack.dev/numl@1.0.0-beta.25"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/numl@1/dist/index.js"></script>
 ```
 
 That's it! No build step, no explicit function call to apply changes.
