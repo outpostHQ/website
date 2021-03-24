@@ -81,7 +81,6 @@
           <nu-btn value="no-preference">Normal</nu-btn>
           <nu-btn value="more">More</nu-btn>
         </nu-btngroup>
-        {{ Theme.contrast }}
       </nu-flow>
     </nu-flow>
 

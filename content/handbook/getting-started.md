@@ -16,7 +16,7 @@ If you want to prevent flash of unstyled content then add the following tag to t
 <style>*:not(:defined) { visibility: hidden; }</style>
 ```
 
-Make sure you are using `nu-root` tags on the top-level of your app:
+Make sure you are using `nu-root` tag on the top-level of your app:
 
 ```html
 <body>
