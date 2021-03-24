@@ -20,7 +20,7 @@ export default {
       'data-nu-icons': 'ion',
       'data-nu-prevent': '',
     },
-    title: 'Numl Design – UI Design Language for modern web interfaces',
+    title: 'Numl Design – Atomic UI Framework for modern web interfaces',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -214,10 +214,10 @@ export default {
   },
   pwa: {
     manifest: {
-      name: 'Numl.Design – Universal UI Framework',
+      name: 'Numl.Design – Atomic UI Web Framework',
       short_name: 'Numl.Design',
       description:
-        'An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI that follows your Design System.',
+        'A UI Design Language, UI Library of Web Components, and Runtime CSS Framework for rapidly building interfaces that follow your Design System',
       dir: 'ltr',
       lang: 'en',
       useWebmanifestExtension: false,

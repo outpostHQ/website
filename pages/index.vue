@@ -9,7 +9,7 @@
       <Topbar />
       <SiteBlock
         badge="ui design language · ui library · css framework"
-        heading="UI Design\s Language\nfor\s modern web\s interfaces"
+        heading="Atomic UI Framework\nfor\s modern web\s interfaces"
         description="A UI Design Language, UI\s Library of Web\s Components, and Runtime\s CSS\s Framework for\s rapidly\s building interfaces that\s follow your\s Design\s System"
         padding="10x 0||8x 0|4x 0 8x"
         level="1"
