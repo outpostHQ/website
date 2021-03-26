@@ -18,6 +18,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
       'data-nu-icons': 'ion',
+      'data-nu-scrollbar': '',
       'data-nu-prevent': '',
     },
     title: 'Numl Design – Atomic UI Framework for modern web interfaces',
@@ -32,7 +33,7 @@ export default {
     ],
     script: [
       {
-        src: 'https://cdn.jsdelivr.net/npm/numl@1/dist/index.js',
+        src: 'https://cdn.jsdelivr.net/npm/numl@^1.0.1/dist/index.js',
         // src: '/numl/index.js',
         type: 'module',
       },
