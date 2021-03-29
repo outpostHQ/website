@@ -1,4 +1,3 @@
-# Sliders
 
 Default minimum value: `0`.
 
