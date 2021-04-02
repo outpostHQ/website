@@ -4,11 +4,11 @@ menuIndex: 10
 description: Get to know how to create high-quality websites using Numl
 ---
 
-> **Disclaimer**
+> **Latest Release**
 >
-> **Numl** is in BETA stage, and some things may change before we hit version 1.0
+> **Numl v1.0.1** is the latest version released.
 >
-> This documentation is a **work-in-progress**. If you get stuck, reach out for help in one of our chat: [Discord](https://discord.gg/sHnHPnAPZj).
+> This documentation is a **work-in-progress**. If you get stuck, reach out for help in our [Discord](https://discord.gg/sHnHPnAPZj) channel for chat support.
 
 **Numl** is a library of Web Components and a Runtime CSS Framework for rapidly building UI that follows your Design System.
 
