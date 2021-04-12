@@ -1,7 +1,6 @@
 ```html
 <split/>
 <nu-card padding="0" overflow="no" selectable="no">
-  <nu-attrs for="slider-cap" show="n"></nu-attrs>
   <nu-img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1457119/after.jpg" width="100%"></nu-img>
   <nu-img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1457119/before.jpg"
           id="overlay"
@@ -10,14 +9,16 @@
           height="100%"
           fit="cover left"
           border="2bw right color(special)"></nu-img>
-  <nu-slider
+  <nu-block
+             use-slider
+             cursor="pointer"
              control="overlay[width:%] cap[@percent:%]"
              value="50"
              place="cover"
              height="100%"
              fill="clear"
              border="0"
-             mark="n"></nu-slider>
+             mark="n"></nu-block>
   <nu-circle id="cap"
              fill="special-bg"
              color="special-text"

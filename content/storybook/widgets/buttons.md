@@ -71,6 +71,13 @@
 </nu-pane>
 ```
 
+## Loading button
+
+```html
+<split/>
+<nu-btn special loading>Submit</nu-btn>
+```
+
 ## Card buttons
 
 ```html
