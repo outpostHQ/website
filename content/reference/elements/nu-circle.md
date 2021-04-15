@@ -1,4 +1,8 @@
-A **decoration** element. It's always recognizable no matter the background.
+---
+title: nu-circle
+type: element
+description: A decoration element. It's always recognizable no matter the background.
+---
 
 ```html
 <split/>

@@ -1,4 +1,8 @@
-A **region** element. It is used to visually and semantically separate a part of the content.
+---
+title: nu-card
+type: element
+description: A region element. It is used to visually and semantically separate a part of the content.
+---
 
 ## Usage
 

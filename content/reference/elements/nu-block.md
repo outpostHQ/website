@@ -1,4 +1,8 @@
-Base element with `block` display.
+---
+title: nu-block
+type: element
+description: Base element with `block` display.
+---
 
 ```html
 <split/>
