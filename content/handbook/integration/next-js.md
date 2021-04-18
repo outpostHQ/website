@@ -69,7 +69,7 @@ import { useRouter } from 'next/router';
 function requireNude() {
   return new Promise((resolve) => {
     if (window.Nude) {
-      return resolve(Nude);
+      return resolve(window.Nude);
     }
 
     window.addEventListener('nudeReady', resolve);
