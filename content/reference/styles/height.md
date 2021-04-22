@@ -18,12 +18,12 @@ where
 
 |Value|Description|
 |----|----|
-|`"10"`|Set height to size of 10x|
-|`"min 10x"`|Set minimum height to 10x|
-|`"max 10x"`|Set miximum height to 10x|
-|`"min 10x"`|Set minimum height to 10x|
-|`"10x 20x"`|Set minimum height to 10x and maximum height to 20x|
-|`"10x 20x 100%"`|Set minimum height to 10x, base height to 20x, and maximum height to 100%|
+|`"10"`|Set height to size of 10rem (deprecated syntax)|
+|`"min 10x"`|Set minimum height to 10x (or 5rem)|
+|`"max 10x"`|Set miximum height to 10x (or 5rem)|
+|`"min 10x"`|Set minimum height to 10x (or 5rem)|
+|`"10x 20x"`|Set minimum height to 10x (or 5rem) and maximum height to 20x (or 10rem)|
+|`"10x 20x 100%"`|Set minimum height to 10x (or 5rem), base height to 20x (or 10rem), and maximum height to 100%|
 
 ## CSS References
 
