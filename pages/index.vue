@@ -477,8 +477,11 @@ export default {
   },
   computed: {
     startSnippet() {
-      return `
-<script src="https://cdn.skypack.dev/numl@${App.version}" type="module" />`;
+      return (
+        `<script src="https://cdn.jsdelivr.net/npm/numl@${App.version}/dist/index.js"` +
+        'type="module"><' +
+        '/script>'
+      );
     },
     gradient() {
       const hue = (mod) => {
