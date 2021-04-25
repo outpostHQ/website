@@ -478,7 +478,7 @@ export default {
   computed: {
     startSnippet() {
       return (
-        `<script src="https://cdn.jsdelivr.net/npm/numl@${App.version}/dist/index.js"` +
+        `<script src="https://cdn.jsdelivr.net/npm/numl@${App.version}/dist/index.js" ` +
         'type="module"><' +
         '/script>'
       );

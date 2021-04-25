@@ -308,6 +308,7 @@ export default {
   background: var(--main-bg-color);
   color: var(--main-text-color);
   flex-grow: 1;
+  font-family: var(--monospace-font);
 }
 
 .CodeMirror-scroll {
