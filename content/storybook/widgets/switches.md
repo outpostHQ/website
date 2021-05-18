@@ -1,4 +1,3 @@
-# Switches
 
 ```html
 <split/>
