@@ -5,7 +5,7 @@ menuIndex: 20
 ---
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/numl@1.1.0/dist/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/numl@1.1.2/dist/index.js"></script>
 ```
 
 That's it! No build step, no explicit function call to apply changes.

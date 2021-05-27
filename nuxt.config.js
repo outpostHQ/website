@@ -33,7 +33,7 @@ export default {
     ],
     script: [
       {
-        src: 'https://cdn.jsdelivr.net/npm/numl@^1.1.0/dist/index.js',
+        src: 'https://cdn.jsdelivr.net/npm/numl@^1.1.2/dist/index.js',
         // src: '/numl/index.js',
         type: 'module',
       },
