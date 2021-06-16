@@ -129,7 +129,7 @@
             </nu-h3>
             <nu-description>
               Feels like
-              <nu-strong>you already now it</nu-strong>
+              <nu-strong>you already know it</nu-strong>
               . It's like CSS but with handy&nbsp;shorthands and
               custom&nbsp;units.
             </nu-description>
