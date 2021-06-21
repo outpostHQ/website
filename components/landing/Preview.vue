@@ -153,9 +153,7 @@
         <nu-card gap="0" clear fill="bg">
           <nu-form>
             <nu-field>
-              <nu-label for="input">
-                Field label
-              </nu-label>
+              <nu-label for="input">Field label</nu-label>
               <nu-input id="input" placeholder="Email" />
               <nu-check for="input" assert="required" color="error">
                 This input is required

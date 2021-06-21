@@ -12,7 +12,7 @@
     padding="0"
     overflow="hidden"
     shadow="4x #main-shadow.50 :moving[4x #main-special-shadow.30]"
-    style="resize: both;"
+    style="resize: both"
     use-movable="holder(heading)"
   >
     <nu-pane
@@ -48,9 +48,7 @@
         height="1.75x"
         @tap="maximize"
       ></nu-action>
-      <nu-el size="xs" text="b" color="#text.70">
-        PREVIEW
-      </nu-el>
+      <nu-el size="xs" text="b" color="#text.70"> PREVIEW </nu-el>
     </nu-pane>
     <nu-flex flow="column" box="y" grow="1">
       <PreviewEmbed ref="embed" :markup="Preview.markup" />

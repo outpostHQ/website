@@ -140,9 +140,7 @@
                 padding="1x"
               />
 
-              <nu-label>
-                Hue
-              </nu-label>
+              <nu-label> Hue </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="hue"
@@ -153,9 +151,7 @@
                 />
               </nu-block>
 
-              <nu-label>
-                Saturation
-              </nu-label>
+              <nu-label> Saturation </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="saturation"
@@ -166,9 +162,7 @@
                 />
               </nu-block>
 
-              <nu-label>
-                Type
-              </nu-label>
+              <nu-label> Type </nu-label>
               <nu-radiogroup
                 :value="themeType"
                 @input="themeType = $event.detail"
@@ -198,27 +192,17 @@
                 </nu-action>
               </nu-radiogroup>
 
-              <nu-label>
-                Contrast
-              </nu-label>
+              <nu-label> Contrast </nu-label>
               <nu-radiogroup
                 :value="contrastType"
                 @input="contrastType = $event.detail"
               >
-                <nu-action as="option" value="soft">
-                  Soft
-                </nu-action>
-                <nu-action as="option" value="normal">
-                  Normal
-                </nu-action>
-                <nu-action as="option" value="strong">
-                  Strong
-                </nu-action>
+                <nu-action as="option" value="soft"> Soft </nu-action>
+                <nu-action as="option" value="normal"> Normal </nu-action>
+                <nu-action as="option" value="strong"> Strong </nu-action>
               </nu-radiogroup>
 
-              <nu-label>
-                Stand out
-              </nu-label>
+              <nu-label> Stand out </nu-label>
               <nu-radiogroup
                 :value="standOutType"
                 gap="1x"
@@ -227,20 +211,12 @@
                 "
                 @input="standOutType = $event.detail"
               >
-                <nu-action as="option" value="dim">
-                  Dim
-                </nu-action>
-                <nu-action as="option" value="normal">
-                  Normal
-                </nu-action>
-                <nu-action as="option" value="bold">
-                  Bold
-                </nu-action>
+                <nu-action as="option" value="dim"> Dim </nu-action>
+                <nu-action as="option" value="normal"> Normal </nu-action>
+                <nu-action as="option" value="bold"> Bold </nu-action>
               </nu-radiogroup>
 
-              <nu-label>
-                Pastel
-              </nu-label>
+              <nu-label> Pastel </nu-label>
               <nu-block padding="0 1x">
                 <nu-checkbox
                   :pressed="isPastel"
@@ -248,9 +224,7 @@
                 />
               </nu-block>
 
-              <nu-label place="start end">
-                HTML
-              </nu-label>
+              <nu-label place="start end"> HTML </nu-label>
               <Snippet padding=".5x 1x" :code="themeSnippet" />
             </nu-grid>
           </nu-flow>
@@ -280,9 +254,7 @@
             >
               <nu-attrs for="label" text="right nowrap" size="md 4x" />
 
-              <nu-label>
-                Saturation
-              </nu-label>
+              <nu-label> Saturation </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="hueOptions.saturation"
@@ -292,9 +264,7 @@
                 />
               </nu-block>
 
-              <nu-label>
-                Contrast
-              </nu-label>
+              <nu-label> Contrast </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="hueOptions.contrast"
@@ -325,9 +295,7 @@
             >
               <nu-attrs for="label" text="right nowrap" size="md 4x" />
 
-              <nu-label>
-                Border radius
-              </nu-label>
+              <nu-label> Border radius </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="props.borderRadius"
@@ -341,9 +309,7 @@
                 {{ props.borderRadius.toFixed(4) }}rem
               </nu-block>
 
-              <nu-label>
-                Base gap
-              </nu-label>
+              <nu-label> Base gap </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="props.gap"
@@ -357,9 +323,7 @@
                 {{ props.gap.toFixed(4) }}rem
               </nu-block>
 
-              <nu-label>
-                Icon size
-              </nu-label>
+              <nu-label> Icon size </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="props.iconSize"
@@ -373,9 +337,7 @@
                 {{ props.iconSize.toFixed(1) }}em
               </nu-block>
 
-              <nu-label>
-                Transition
-              </nu-label>
+              <nu-label> Transition </nu-label>
               <nu-block padding="0 1x">
                 <nu-slider
                   :value="props.transition"
@@ -389,9 +351,7 @@
                 {{ props.transition }}ms
               </nu-block>
 
-              <nu-label place="start end">
-                HTML
-              </nu-label>
+              <nu-label place="start end"> HTML </nu-label>
               <nu-block padding="0 1x" column="span 2">
                 <Snippet padding=".5x 1x" :code="propsSnippet" />
               </nu-block>

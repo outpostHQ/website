@@ -1089,8 +1089,7 @@ export const ELEMENTS = [
       radius: '',
       border: '',
       box: 'y',
-      fill:
-        'var(--local-border-color, var(--border-color)) :disabled[rgba(var(--local-border-color-rgb, var(--border-color-rgb)), var(--disabled-opacity))]',
+      fill: 'var(--local-border-color, var(--border-color)) :disabled[rgba(var(--local-border-color-rgb, var(--border-color-rgb)), var(--disabled-opacity))]',
       outline: 'n :radiogroup[focus-inside visible]',
       transition: 'filter, opacity',
       filter:
@@ -1458,8 +1457,7 @@ export const ELEMENTS = [
       items: 'center stretch',
       inset:
         '#clear :active[#shadow.50] :active:special[#special-shadow.50] :pressed[y] :pressed:special[#special-shadow] :active:pressed[#shadow.50] :active:special[#special-shadow.50] :active:pressed:special[#special-shadow.50]',
-      fill:
-        '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
+      fill: '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
       color:
         '#text :clear[#special] :special[#special-text] :special:clear[#special-text]',
     },
@@ -1504,8 +1502,7 @@ export const ELEMENTS = [
       items: 'center stretch',
       inset:
         '#clear :active[#shadow.50] :active:special[#special-shadow.50] :pressed[y] :pressed:special[#special-shadow] :active:pressed[#shadow.50] :active:special[#special-shadow.50] :active:pressed:special[#special-shadow.50]',
-      fill:
-        '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
+      fill: '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
       color:
         '#text :clear[#special] :special[#special-text] :special:clear[#special-text]',
       shadow: '0 :clear[1.5]',
@@ -1697,8 +1694,7 @@ export const ELEMENTS = [
       space: '0 .25em',
       radius: '1r',
       color: '#text :special[#special-text]',
-      fill:
-        '#mark :special[#special-bg] :themed[#bg] :special:themed[#special-bg]',
+      fill: '#mark :special[#special-bg] :themed[#bg] :special:themed[#special-bg]',
     },
     attrs: {},
     context: {},
@@ -2765,8 +2761,7 @@ export const ELEMENTS = [
       items: 'center stretch',
       inset:
         '#clear :active[#shadow.50] :active:special[#special-shadow.50] :pressed[y] :pressed:special[#special-shadow] :active:pressed[#shadow.50] :active:special[#special-shadow.50] :active:pressed:special[#special-shadow.50]',
-      fill:
-        '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
+      fill: '#bg :disabled[#bg] :special.disabled[#special-bg] :clear[#clear] :clear:disabled[#clear]',
       color:
         '#text :clear[#special] :special[#special-text] :special:clear[#special-text]',
       height: 'min (1lh + 2b + 2x)',

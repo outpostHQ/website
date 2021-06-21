@@ -59,9 +59,7 @@
           ></nu-attrs>
           <nu-btn clear @tap="copy">
             <nu-icon :name="copied ? 'checkmark-outline' : 'copy-outline'" />
-            <nu-tooltip :show="copied ? 'y' : 'n'">
-              Copied!
-            </nu-tooltip>
+            <nu-tooltip :show="copied ? 'y' : 'n'"> Copied! </nu-tooltip>
           </nu-btn>
           <nu-btn clear :to="`!/repl#${storeHash}`">
             <nu-icon name="edit-2-outline"></nu-icon>

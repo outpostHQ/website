@@ -252,9 +252,7 @@
               <nu-icon name="eye-outline" />
               Preview
             </nu-h6>
-            <nu-btn fill="bg :focus[special-bg]">
-              Focus on me
-            </nu-btn>
+            <nu-btn fill="bg :focus[special-bg]">Focus on me</nu-btn>
           </nu-flow>
         </nu-region>
       </nu-grid>
@@ -274,9 +272,7 @@
 
         <nu-card gap clear fill="bg" color="hue(15 pastel)">
           <nu-pane content="space-between" size="h3">
-            <nu-h3>
-              All-in-one
-            </nu-h3>
+            <nu-h3> All-in-one </nu-h3>
             <nu-icon name="layers-outline" />
           </nu-pane>
           <nu-description>
@@ -290,9 +286,7 @@
 
         <nu-card gap clear fill="bg" color="hue(170 pastel)">
           <nu-pane content="space-between" size="h3">
-            <nu-h3>
-              Universal
-            </nu-h3>
+            <nu-h3> Universal </nu-h3>
             <nu-icon name="flash-outline" />
           </nu-pane>
           <nu-description>
@@ -305,9 +299,7 @@
 
         <nu-card gap clear fill="bg" color="hue(250 pastel)">
           <nu-pane content="space-between" size="h3">
-            <nu-h3>
-              Unique
-            </nu-h3>
+            <nu-h3> Unique </nu-h3>
             <nu-icon name="bulb-outline" />
           </nu-pane>
           <nu-description>
@@ -319,9 +311,7 @@
 
         <nu-card gap clear fill="bg" color="hue(290 pastel)">
           <nu-pane content="space-between" size="h3">
-            <nu-h3>
-              DX Focused
-            </nu-h3>
+            <nu-h3> DX Focused </nu-h3>
             <nu-icon name="code-outline" />
           </nu-pane>
           <nu-description>
