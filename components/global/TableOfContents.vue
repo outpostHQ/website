@@ -37,7 +37,7 @@
       <nu-block padding="0 1x" size="sm">
         Help us to improve this page by
         <nu-link
-          :to="`!https://github.com/numldesign/website/edit/master/content${
+          :to="`!https://github.com/numldesign/website/edit/main/content${
             !$route.path.slice(1).includes('/')
               ? `${$route.path}/introduction`
               : $route.path
