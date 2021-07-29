@@ -275,15 +275,15 @@
             />
           </nu-btn>
 
-          <nu-btn
-            to="!https://github.com/numldesign/website"
-            padding="1x 2x 1x 1.5x|||1x"
-            label="theme"
-            radius="round"
-          >
-            <nu-icon name="github" />
-            <nu-el show="y|||n">Website repo</nu-el>
-          </nu-btn>
+          <nu-el text="right">Deployed on 
+            <nu-action
+            to="!https://www.netlify.com/?utm_source=numl.design&utm_medium=doc&utm_campaign=numl"
+           	text=":hover[u]"
+            color="special"
+            mark="no">
+          	Netlify
+            </nu-action>
+  				</nu-el>
         </nu-pane>
       </nu-block>
     </nu-block>
