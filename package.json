@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "npm run build-preview && nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
     "generate-pages": "node ./generators/create-pages.js",
     "generate": "npm run build-preview && nuxt generate",
