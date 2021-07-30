@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/';
+const API_URL = location.hostname ==='localhost' ? '/api/' : '//numl-website-api.netlify.app/api/';
 
 export default {
   get(id) {
