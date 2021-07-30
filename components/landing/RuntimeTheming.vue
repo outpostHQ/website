@@ -384,7 +384,7 @@
       </nu-card>
     </nu-block>
 
-    <nu-btn special to="!https://numl.design/theme-generator">
+    <nu-btn special to="!https://theme.numl.design">
       Try our Theme Generator
       <nu-icon name="external-link" />
     </nu-btn>
