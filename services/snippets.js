@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/';
+const API_URL = '/.netlify/functions/server/api/';
 
 export default {
   get(id) {
