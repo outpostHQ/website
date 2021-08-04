@@ -275,19 +275,21 @@
             />
           </nu-btn>
 
-          <nu-el text="right">Deployed on 
+          <nu-el text="right"
+            >Deployed on
             <nu-action
-            to="!https://www.netlify.com/?utm_source=numl.design&utm_medium=doc&utm_campaign=numl"
-           	text=":hover[u]"
-            color="special"
-            mark="no">
-          	Netlify
+              to="!https://www.netlify.com/?utm_source=numl.design&utm_medium=doc&utm_campaign=numl"
+              text=":hover[u]"
+              color="special"
+              mark="no"
+            >
+              Netlify
             </nu-action>
-  				</nu-el>
+          </nu-el>
         </nu-pane>
       </nu-block>
     </nu-block>
-
+    
     <PreviewWindow />
   </nu-flow>
 </template>
