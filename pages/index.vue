@@ -386,7 +386,7 @@
           <nu-icon name="email-outline"></nu-icon>
           eMail
         </nu-btn>
-        <nu-btn to="!https://www.patreon.com/tenphi">
+        <nu-btn to="!https://opencollective.com/numldesign">
           <nu-icon name="heart-outline"></nu-icon>
           Sponsor
         </nu-btn>
@@ -412,13 +412,15 @@
           </nu-nav>
           <nu-flow gap color="white" text="right|||center">
             <nu-block>
-              Created with <nu-icon name="heart" /> by
-              <nu-link to="!https://tenphi.me">@tenphi</nu-link> using
-              <nu-strong>Numl</nu-strong>
+              Numl.Design is an open source project by
+              <nu-link to="!https://forneu.com">Forneu</nu-link>
             </nu-block>
             <nu-block>
-              Numl Open Source by
-              <nu-link to="!https://forneu.in">Forneu</nu-link>
+              Released under the
+              <nu-link
+                to="!https://github.com/numldesign/numl/blob/main/LICENSE"
+                >MIT License</nu-link
+              >
             </nu-block>
           </nu-flow>
         </nu-pane>
