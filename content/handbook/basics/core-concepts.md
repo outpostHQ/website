@@ -162,7 +162,7 @@ Behavior can be injected using the following syntax:
 <split/>
 <nu-btn use-hotkey="o" to="!/">
   Click me
-</nu-block>
+</nu-btn>
 ```
 
 > Click the button or press ==o== to open this site in a new tab.
